@@ -1,0 +1,1 @@
+# Resumic Schema (JSON)
