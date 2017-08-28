@@ -105,7 +105,6 @@
           },
           "highlights": {
             "type": "array",
-            
             "description": "Specify multiple accomplishments",
             "additionalItems": false,
             "items": {
