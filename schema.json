@@ -174,6 +174,34 @@
         }
       }
     },
+    "awards": {
+      "type": "array",
+      "description": "Specify any awards you have received throughout your professional career",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "e.g. Awarded Software Process Achievement Award "
+          },
+          "date": {
+            "type": "string",
+            "description": "e.g. 2016-06-12",
+            "format": "date"
+          },
+          "awarder": {
+            "type": "string",
+            "description": "e.g.  IEEE"
+          },
+          "summary": {
+            "type": "string",
+            "description": "e.g. Received for my work in Deep learning and AI"
+          }
+        }
+      }
+    },
     "meta": {
       "type": "object",
       "description": "The schema version and any other tooling configuration lives here",
