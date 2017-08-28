@@ -4,7 +4,7 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "basics": {
+    "core": {
       "type": "object",
       "additionalProperties": true,
       "properties": {
