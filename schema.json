@@ -202,6 +202,102 @@
         }
       }
     },
+    "projects": {
+      "type": "array",
+      "description": "Specify career projects",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "e.g. File Transfer application"
+          },
+          "location": {
+            "type": "object",
+            "format": "location",
+            "description": "Select the location where you live.",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Short summary of project. e.g.Developed a client and server based application."
+          },
+          "highlights": {
+            "type": "array",
+            "description": "Specify multiple features",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. used Java AWT and Swing for client side userinterface"
+            }
+          },
+          "keywords": {
+            "type": "array",
+            "description": "Specify special elements involved",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. Java"
+            }
+          },
+          "startDate": {
+            "type": "string",
+            "description": "resume.json uses the ISO 8601 date standard e.g. 2017-06-29",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "e.g. 2017-06-29",
+            "format": "date"
+          },
+          "resources": {
+            "type": "array",
+            "description": "Specify multiple resources with label",
+            "additionalItems": false,
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "e.g. http://www.example.com/my-awesome-slides/"
+            },
+            "label": {
+              "type": "string",
+              "description": "e.g slides"
+            }
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html"
+          },
+          "roles": {
+            "type": "array",
+            "description": "Specify your role on this project or in company",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. Team Lead, Speaker, Writer"
+            }
+          },
+          "entity": {
+            "type": "string",
+            "description": "Specify the relevant company/entity affiliations e.g. 'greenpeace', 'corporationXYZ'"
+          },
+          "type": {
+            "type": "string",
+            "description": " e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"
+          }
+        }
+      }
+    },
     "meta": {
       "type": "object",
       "description": "The schema version and any other tooling configuration lives here",
