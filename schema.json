@@ -115,6 +115,65 @@
         }
       }
     },
+    "volunteer": {
+      "type": "array",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "organization": {
+            "type": "string",
+            "description": "e.g. Firefox"
+          },
+          "position": {
+            "type": "string",
+            "description": "e.g. Open Source Contributor"
+          },
+          "location": {
+            "type": "object",
+            "format": "location",
+            "description": "Select the location where you live.",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            }
+          },
+          "url": {
+            "type": "string",
+            "description": "e.g. http://firefox.example.com",
+            "format": "uri"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "resume.json uses the ISO 8601 date standard e.g. 2014-06-29",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "e.g. 2017-06-29",
+            "format": "date"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Give an overview of your responsibilities at the company"
+          },
+          "highlights": {
+            "type": "array",
+            "description": "Specify accomplishments and achievements",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "Invited as a speaker in Mozcon'17 "
+            }
+          }
+        }
+      }
+    },
     "meta": {
       "type": "object",
       "description": "The schema version and any other tooling configuration lives here",
