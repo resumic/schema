@@ -52,6 +52,70 @@
         }
       }
     },
+    "work": {
+      "type": "array",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Company name, e.g Twitter "
+          },
+          "description": {
+            "type": "string",
+            "description": "e.g. Social Media Company"
+          },
+          "position": {
+            "type": "string",
+            "description": "e.g. Software Engineer"
+          },
+          "location": {
+            "type": "object",
+            "format": "location",
+            "description": "Select the location where you live.",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            }
+          },
+          "url": {
+            "type": "string",
+            "description": "e.g. http://twitter.example.com",
+            "format": "uri"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "resume.json uses the ISO 8601 date standard e.g. 2017-06-28",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "e.g. 2018-12-29",
+            "format": "date"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Give an overview of your responsibilities at the company"
+          },
+          "highlights": {
+            "type": "array",
+            
+            "description": "Specify multiple accomplishments",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers "
+            }
+          }
+        }
+      }
+    },
     "meta": {
       "type": "object",
       "description": "The schema version and any other tooling configuration lives here",
