@@ -344,7 +344,7 @@
           },
           "position": {
             "type": "string",
-            "description": "e.g. Senior Software Engineer."
+            "description": "e.g. Senior Software Engineer"
           },
           "reference": {
             "type": "string",
