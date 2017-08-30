@@ -21,7 +21,7 @@
         },
         "email": {
           "type": "string",
-          "description": "e.g. lucas@yahoo.com",
+          "description": "e.g. lucas@xyz.com",
           "format": "email"
         },
         "phone": {
@@ -61,7 +61,7 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "Company name, e.g Twitter "
+            "description": "Company name, e.g XYZ "
           },
           "description": {
             "type": "string",
@@ -86,7 +86,7 @@
           },
           "url": {
             "type": "string",
-            "description": "e.g. http://twitter.example.com",
+            "description": "e.g. http://xyz.example.com",
             "format": "uri"
           },
           "startDate": {
@@ -124,7 +124,7 @@
         "properties": {
           "organization": {
             "type": "string",
-            "description": "e.g. Firefox"
+            "description": "e.g. Xyz"
           },
           "position": {
             "type": "string",
@@ -145,7 +145,7 @@
           },
           "url": {
             "type": "string",
-            "description": "e.g. http://firefox.example.com",
+            "description": "e.g. http://xyz.example.com",
             "format": "uri"
           },
           "startDate": {
@@ -168,7 +168,7 @@
             "additionalItems": false,
             "items": {
               "type": "string",
-              "description": "Invited as a speaker in Mozcon'17 "
+              "description": "Invited as a speaker in Xyzcon'17 "
             }
           }
         }
@@ -276,7 +276,7 @@
           "url": {
             "type": "string",
             "format": "uri",
-            "description": "e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html"
+            "description": "e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html"
           },
           "roles": {
             "type": "array",
