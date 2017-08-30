@@ -326,6 +326,33 @@
         }
       }
     },
+    "references": {
+      "type": "array",
+      "description": "List references you have received",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "e.g. Stephan Mark"
+          },
+          "company": {
+            "type": "string",
+            "description": "e.g. Xyz"
+          },
+          "position": {
+            "type": "string",
+            "description": "e.g. Senior Software Engineer."
+          },
+          "reference": {
+            "type": "string",
+            "description": "e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
+          }
+        }
+      }
+    },
     "meta": {
       "type": "object",
       "description": "The schema version and any other tooling configuration lives here",
