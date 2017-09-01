@@ -26,7 +26,7 @@
         },
         "phone": {
           "type": "string",
-          "description": "Phone numbers are stored as strings so use any format you like, e.g. 912-217-7923"
+          "description": "e.g. 912-217-7923 [Phone numbers are stored as strings so use any format you like]"
         },
         "url": {
           "type": "string",
