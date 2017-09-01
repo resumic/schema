@@ -61,20 +61,20 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "Company name, e.g XYZ "
+            "description": "e.g. XYZ Inc. - [Company name]"
           },
           "description": {
             "type": "string",
-            "description": "e.g. Social Media Company"
+            "description": "e.g. A social media company - [Description of the companies primary activity]"
           },
           "position": {
             "type": "string",
-            "description": "e.g. Software Engineer"
+            "description": "e.g. Software Engineer - [Position at the company]"
           },
           "location": {
             "type": "object",
             "format": "location",
-            "description": "Select the location where you live.",
+            "description": "e.g. Germany - [Current living location]",
             "properties": {
               "lat": {
                 "type": "number"
@@ -86,12 +86,12 @@
           },
           "url": {
             "type": "string",
-            "description": "e.g. http://xyz.example.com",
+            "description": "e.g. http://xyz.example.com - [Related link to the company website]",
             "format": "uri"
           },
           "startDate": {
             "type": "string",
-            "description": "resume.json uses the ISO 8601 date standard e.g. 2017-06-28",
+            "description": "e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "endDate": {
