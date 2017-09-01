@@ -74,7 +74,7 @@
           "location": {
             "type": "object",
             "format": "location",
-            "description": "e.g. Germany - [Current living location]",
+            "description": "e.g. Germany - [Location for this activity]",
             "properties": {
               "lat": {
                 "type": "number"
