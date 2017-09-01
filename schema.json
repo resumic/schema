@@ -285,12 +285,12 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "e.g. File Transfer application"
+            "description": "e.g. File Transfer application - [Name of the project]"
           },
           "location": {
             "type": "object",
             "format": "location",
-            "description": "Select the location where you live.",
+            "description": "e.g France - [Location for this activity]",
             "properties": {
               "lat": {
                 "type": "number"
@@ -302,7 +302,7 @@
           },
           "description": {
             "type": "string",
-            "description": "Short summary of project. e.g.Developed a client and server based application."
+            "description": "e.g. Developed a client and server based application - [Short summary of project]"
           },
           "highlights": {
             "type": "array",
@@ -324,12 +324,12 @@
           },
           "startDate": {
             "type": "string",
-            "description": "resume.json uses the ISO 8601 date standard e.g. 2017-06-29",
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "endDate": {
             "type": "string",
-            "description": "e.g. 2017-06-29",
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
             "format": "date"
           },
           "resources": {
@@ -362,7 +362,7 @@
           },
           "entity": {
             "type": "string",
-            "description": "Specify the relevant company/entity affiliations e.g. 'greenpeace', 'corporationXYZ'"
+            "description": "e.g. 'greenpeace', 'corporationXYZ' - [Relevant company/entity affiliations]"
           },
           "type": {
             "type": "string",
