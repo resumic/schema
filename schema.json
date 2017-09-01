@@ -423,7 +423,7 @@
         },
         "version": {
           "type": "string",
-          "description": "A version field which follows semver - e.g. v1.0.0"
+          "description": "e.g. v1.0.0 - A version field which follows semver"
         },
         "lastModified": {
           "type": "string",
