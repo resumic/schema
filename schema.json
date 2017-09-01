@@ -124,16 +124,16 @@
         "properties": {
           "organization": {
             "type": "string",
-            "description": "e.g. Xyz"
+            "description": "e.g. Xyz "
           },
           "position": {
             "type": "string",
-            "description": "e.g. Open Source Contributor"
+            "description": "e.g. Open Source Contributor [Contribution type]"
           },
           "location": {
             "type": "object",
             "format": "location",
-            "description": "Select the location where you live.",
+            "description": "e.g. Germany - [Location for this activity]",
             "properties": {
               "lat": {
                 "type": "number"
@@ -145,17 +145,17 @@
           },
           "url": {
             "type": "string",
-            "description": "e.g. http://xyz.example.com",
+            "description": "e.g. http://xyz.example.com - [Related link to support volunteer experience]",
             "format": "uri"
           },
           "startDate": {
             "type": "string",
-            "description": "resume.json uses the ISO 8601 date standard e.g. 2014-06-29",
+            "description": "e.g. 2014-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "endDate": {
             "type": "string",
-            "description": "e.g. 2017-06-29",
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
             "format": "date"
           },
           "summary": {
@@ -168,7 +168,7 @@
             "additionalItems": false,
             "items": {
               "type": "string",
-              "description": "Invited as a speaker in Xyzcon'17 "
+              "description": "e.g Invited as a speaker in Xyzcon'17"
             }
           }
         }
