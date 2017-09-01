@@ -205,7 +205,7 @@
             },
             "label": {
               "type": "string",
-              "description": "e.g slides"
+              "description": "e.g Slides"
             }
           },
           "url": {
@@ -214,7 +214,7 @@
           },
           "summary": {
             "type": "string",
-            "description": "Short summary of publication. e.g. Discussion of the advent of deep learning and artificial intelligence."
+            "description": "e.g. Discussion of the advent of deep learning and artificial intelligence - Short summary of publication"
           }
         }
       }
