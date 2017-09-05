@@ -37,10 +37,23 @@
           "type": "string",
           "description": "Write a short 2-3 sentence biography about yourself"
         },
-        "location": {
+        "currentLocation": {
           "type": "object",
           "format": "location",
-          "description": "Select the location where you live.",
+          "description": "Select the location where you currently live.",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "long": {
+              "type": "number"
+            }
+          }
+        },
+        "permanentLocation": {
+          "type": "object",
+          "format": "location",
+          "description": "Select the location where you permanently live.",
           "properties": {
             "lat": {
               "type": "number"
