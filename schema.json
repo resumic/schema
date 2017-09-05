@@ -115,6 +115,61 @@
         }
       }
     },
+    "education": {
+      "type": "array",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "institution": {
+            "type": "string",
+            "description": "e.g. XYZ Institute of Technology - [Add institute name]"
+          },
+          "area": {
+            "type": "string",
+            "description": "e.g. Engineering"
+          },
+          "studyType": {
+            "type": "string",
+            "description": "e.g. Bachelor"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "e.g. 2017-06-29",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "e.g. 2013-06-29",
+            "format": "date"
+          },
+          "score": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "scoretype": {
+                "type": "string",
+                "description": "eg. GPA or PERCENTAGE - [Add score type]"
+              },
+              "scorevalue": {
+                "type": "string",
+                "description": "eg. 3.4/4.0 - [Add obtained score/total score]"
+              }
+            }
+          },
+          "courses": {
+            "type": "array",
+            "description": "List notable courses/subjects",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. CS302 - Introduction to Algorithms - [Add course name]"
+            }
+          }
+        }
+      }
+    },
     "volunteer": {
       "type": "array",
       "additionalItems": false,
