@@ -459,6 +459,25 @@
         }
       }
     },
+    "languages": {
+      "type": "array",
+      "description": "List any other languages you speak",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "e.g. English, Spanish - [Name of language]"
+          },
+          "score": {
+            "type": "number",
+            "description": "e.g. 20 - [Score for the language]"
+          }
+        }
+      }
+    },
     "interests": {
       "type": "array",
       "additionalItems": false,
