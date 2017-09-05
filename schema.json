@@ -286,17 +286,23 @@
             "type": "string",
             "description": "e.g. Web Development"
           },
-          "level": {
-            "type": "string",
-            "description": "e.g. Master"
-          },
-          "keywords": {
+          "keyword": {
             "type": "array",
-            "description": "List some keywords pertaining to this skill",
+            "description": "List some keywords pertaining to the skill",
             "additionalItems": false,
             "items": {
-              "type": "string",
-              "description": "e.g. HTML"
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "e.g. HTML - [Add the skill name]"
+                },
+                "score": {
+                  "type": "number",
+                  "description": "e.g. 20 - [Score for the skill name]"
+                }
+              }
             }
           }
         }
