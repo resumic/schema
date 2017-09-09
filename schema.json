@@ -505,6 +505,53 @@
         }
       }
     },
+    "certificates": {
+      "type": "array",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "e.g. 1Z0-062"
+          },
+          "name": {
+            "type": "string",
+            "description": "e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]"
+          },
+          "website": {
+            "type": "string",
+            "description": "Link to issuing authority's description of the certificate",
+            "format": "uri"
+          },
+          "verification": {
+            "type": "string",
+            "description": "External candidate verification URL",
+            "format": "uri"
+          },
+          "achievedDate": {
+            "type": "string",
+            "description": "resume.json uses the ISO 8601 date standard e.g. 2017-06-29",
+            "format": "date"
+          },
+          "score": {
+            "type": "string",
+            "description": "Exam result (PASS/FAIL, 100%, 100)",
+            "format": "date"
+          },
+          "expireDate": {
+            "type": "string",
+            "description": "e.g. 2020-01-20",
+            "format": "date"
+          },
+          "doesNotExpire": {
+            "type": "boolean",
+            "format": "checkbox"
+          }
+        }
+      }
+    },
     "references": {
       "type": "array",
       "description": "List references you have received",
