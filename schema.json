@@ -109,7 +109,7 @@
           },
           "endDate": {
             "type": "string",
-            "description": "e.g. 2018-12-29",
+            "description": "e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "summary": {
@@ -149,12 +149,12 @@
           },
           "startDate": {
             "type": "string",
-            "description": "e.g. 2017-06-29",
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "endDate": {
             "type": "string",
-            "description": "e.g. 2013-06-29",
+            "description": "e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "score": {
@@ -269,7 +269,7 @@
           },
           "releaseDate": {
             "type": "string",
-            "description": "e.g. 2015-08-01"
+            "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]"
           },
           "resources": {
             "type": "array",
@@ -318,12 +318,12 @@
           },
           "applicationDate": {
             "type": "string",
-            "description": "e.g. 2015-08-01",
+            "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "grantDate": {
             "type": "string",
-            "description": "e.g. 2016-09-01",
+            "description": "e.g. 2016-09-01 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "resources": {
@@ -395,7 +395,7 @@
           },
           "date": {
             "type": "string",
-            "description": "e.g. 2016-06-12",
+            "description": "e.g. 2016-06-12 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "awarder": {
@@ -532,7 +532,7 @@
           },
           "achievedDate": {
             "type": "string",
-            "description": "resume.json uses the ISO 8601 date standard e.g. 2017-06-29",
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
           "score": {
