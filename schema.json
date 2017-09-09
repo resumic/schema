@@ -296,6 +296,57 @@
         }
       }
     },
+    "legal": {
+      "type": "array",
+      "description": "Specify your labels",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "e.g. XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format - [Add document name]"
+          },
+          "legalType": {
+            "type": "string",
+            "description": "e.g. Patent, Trademark, Copyright - Give the type of this document"
+          },
+          "description": {
+            "type": "string",
+            "description": "Give a brief description about this document"
+          },
+          "applicationDate": {
+            "type": "string",
+            "description": "e.g. 2015-08-01",
+            "format": "date"
+          },
+          "grantDate": {
+            "type": "string",
+            "description": "e.g. 2016-09-01",
+            "format": "date"
+          },
+          "resources": {
+            "type": "array",
+            "description": "Specify multiple resources with label",
+            "additionalItems": false,
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "e.g. http://www.example.com/my-patent-slides/"
+            },
+            "label": {
+              "type": "string",
+              "description": "e.g Slides"
+            }
+          },
+          "idNumber": {
+            "type": "string",
+            "description": "e.g. JP2004369746A - [Add the application number or Id Number]  "
+          }
+        }
+      }
+    },
     "skills": {
       "type": "array",
       "description": "List out your professional skill-set",
