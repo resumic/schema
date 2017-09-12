@@ -545,7 +545,7 @@
             "description": "Exam result (PASS/FAIL, 100%, 100)",
             "format": "date"
           },
-          "expireDate": {
+          "endDate": {
             "type": "string",
             "description": "e.g. 2020-01-20",
             "format": "date"
