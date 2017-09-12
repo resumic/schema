@@ -535,7 +535,7 @@
             "description": "External candidate verification URL",
             "format": "uri"
           },
-          "achievedDate": {
+          "grantDate": {
             "type": "string",
             "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
