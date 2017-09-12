@@ -326,6 +326,11 @@
             "description": "e.g. 2016-09-01 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           },
+          "endDate": {
+            "type": "string",
+            "description": "e.g. 2020-09-03 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date"
+          },
           "resources": {
             "type": "array",
             "description": "Specify multiple resources with label",
