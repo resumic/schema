@@ -1,3 +1,4 @@
+#Overview
 The schema.json file consists of a set of sections,sub-sections with related properties.
 The current version of schema.json consists of the following sub-sections:
 
@@ -17,7 +18,6 @@ The current version of schema.json consists of the following sub-sections:
     * interests
     * meta
 
-----
 # core
 
 This section is of object type that tells about the basic information of the user and consists of the following sub-sections:
