@@ -18,7 +18,7 @@ The current version of schema.json consists of the following sub-sections:
     * meta
 
 ----
-#core
+# core
 
 This section is of object type that tells about the basic information of the user and consists of the following sub-sections:
 
@@ -47,7 +47,7 @@ This section is of object type that tells about the basic information of the use
             }
     which will store the latitude and longitude numerical values of the current location. 
 ##### permanentLocation
-Sub-section of type object used to select location.
+    Sub-section of type object used to select location.
     It has two properties lat and long:
         "lat": {
               "type": "number"
