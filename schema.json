@@ -278,7 +278,7 @@
             "url": {
               "type": "string",
               "format": "uri",
-              "description": "e.g. http://www.example.com/my-example-slides/"
+              "descrcd openstackiption": "e.g. http://www.example.com/my-example-slides/"
             },
             "label": {
               "type": "string",
