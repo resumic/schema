@@ -15,3 +15,15 @@ The current version of schema.json consists of the following sub-sections:
     *languages
     *interests
     *meta
+
+#core
+This section is of object type that tells about the basic information of the user and consists of the following sub-sections:
+    ##name    
+    ##title
+    ##image
+    ##email
+    ##phone
+    ##url
+    ##summary
+    ##currentLocation
+    ##permanentLocation
