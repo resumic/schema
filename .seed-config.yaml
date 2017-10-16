@@ -1,0 +1,68 @@
+project:
+  name: "Resumic"
+  state: "unstable"
+  #image: "https://github.com/resumic/schema/blob/master/media/logo.svg"
+  #website: "about.resumic.io"
+  oneLiner: ""
+  description: |
+    Resumic is a standardized and generic data schema for your resume/CV.
+    Easily share your machine readable data or export your resume/CV to a great looking website or PDF.
+  version: "v0.1.0"
+
+vision:
+  type: "community"
+  overview: |
+    With resumic the goal is to enable everyone to have an up to date and awesome resume/CV.
+  items:
+    - "Generic schema additions only"
+  concept: "Resumic strives to provide a standardized and generic data schema for resumes/CVs."
+  aim: "Resumic aims to be a generic data schema with a thin layer of tooling around to enable easily working with your data."
+supportLinks:
+  documentation: "/docs" # recommended
+  examples: "/examples"
+
+contributionLinks:
+  issueTemplate: "/.github/ISSUE_TEMPLATE.md"
+  starterIssues: "https://github.com/resumic/schema/labels/starter%20issue" # replace dear-github with your actual url
+
+emails:
+  commercialSupport: "support@okkur.io"
+  security: "security@okkur.io"
+  coc: "coc@okkur.io"
+
+copyright:
+  year: "2017"
+
+cla:
+  copyrightHolder: "Michael Grosser"
+
+maintainers:
+  - name: "Suramya Shah"
+    nick: "ss22ever"
+  - name: "Michael Grosser"
+    nick: "stp-ip"
+
+repo:
+  link: "https://github.com/resumic/schema/"
+  type: "Github"
+
+issueTemplate:
+  questions:
+  - "OS"
+  - "CLI version"
+
+badges:
+  - image: "https://img.shields.io/badge/state-unstable-red.svg"
+    alt: "state"
+  - image: "https://img.shields.io/github/release/resumic/schema.svg"
+    link: "https://github.com/resumic/schema/releases"
+    alt: "release"
+  - image: "https://img.shields.io/github/license/resumic/schema.svg"
+    link: "LICENSE"
+    alt: "license"
+  - image: "https://travis-ci.org/resumic/schema.svg?branch=master"
+    alt: "Build Status"
+    link: "https://travis-ci.org/resumic/schema"
+  - image: "https://goreportcard.com/badge/github.com/resumic/schema"
+    alt: "Go Report Card"
+    link: "https://goreportcard.com/report/github.com/resumic/schema"
