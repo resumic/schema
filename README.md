@@ -22,8 +22,8 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 
 ----
 
-*Code is licensed under the [Apache License, Version 2.0](/LICENSE)*  
-*Documentation/examples are licensed under [Creative Commons BY-SA 4.0](/docs/LICENSE)*  
+*Code is licensed under the [Apache License, Version 2.0](/LICENSE).*  
+*Documentation/examples are licensed under [Creative Commons BY-SA 4.0](/docs/LICENSE).*  
 *Illustrations, trademarks and third-party resources are owned by their respective party and are subject to different licensing.*
 
 ---
