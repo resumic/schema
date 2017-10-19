@@ -122,31 +122,38 @@ This section is of array type that tells about the basic information of the user
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. XYZ Inc. - [Company name]"
           }
+
 ###        description
 Sub-section of type string, used to specify the description of the person
 The schema snippet can be shown below:
-        description:
+
+       description:
         {
             "type": "string",
             "description": "e.g. A social media company - [Description of the companies primary activity]"
           }
+
 ###        position
 Sub-section of type string, used to specify the position of the person
 The schema snippet can be shown below:
-        position:
+
+       position:
         {
             "type": "string",
             "description": "e.g. Software Engineer - [Position at the company]"
           }
+
 ###        location
 Sub-section of type object, used to specify the location of the person
 The schema snippet can be shown below:
-        location:
+
+       location:
         {
             "type": "object",
             "format": "location",
@@ -160,45 +167,55 @@ The schema snippet can be shown below:
               }
             }
           }
+
 ###        url
 Sub-section of type string, used to specify the url of the person
 The schema snippet can be shown below:
-        url:
+
+       url:
         {
             "type": "string",
             "description": "e.g. http://xyz.example.com - [Related link to the company website]",
             "format": "uri"
           }
+
 ###        startDate
 Sub-section of type string, used to specify the startDate of the person
 The schema snippet can be shown below:
-        startDate:
+
+       startDate:
         {
             "type": "string",
             "description": "e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        endDate
 Sub-section of type string, used to specify the endDate of the person
 The schema snippet can be shown below:
-        endDate:
+
+       endDate:
         {
             "type": "string",
             "description": "e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        summary
 Sub-section of type string, used to specify the summary of the person
 The schema snippet can be shown below:
-        summary:
+
+       summary:
         {
             "type": "string",
             "description": "Give an overview of your responsibilities at the company"
           }
+
 ###        highlights
 Sub-section of type array, used to specify the highlights of the person
 The schema snippet can be shown below:
-        highlights:
+
+       highlights:
         {
             "type": "array",
             "description": "Specify multiple accomplishments",
@@ -209,6 +226,7 @@ The schema snippet can be shown below:
             }
           }
 
+
 # Education
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
 ##    type
@@ -217,49 +235,60 @@ This section is of array type that tells about the basic information of the user
 ###        institution
 Sub-section of type string, used to specify the institution of the person
 The schema snippet can be shown below:
-        institution:
+
+       institution:
         {
             "type": "string",
             "description": "e.g. XYZ Institute of Technology - [Add institute name]"
           }
+
 ###        area
 Sub-section of type string, used to specify the area of the person
 The schema snippet can be shown below:
-        area:
+
+       area:
         {
             "type": "string",
             "description": "e.g. Engineering"
           }
+
 ###        studyType
 Sub-section of type string, used to specify the studyType of the person
 The schema snippet can be shown below:
-        studyType:
+
+       studyType:
         {
             "type": "string",
             "description": "e.g. Bachelor"
           }
+
 ###        startDate
 Sub-section of type string, used to specify the startDate of the person
 The schema snippet can be shown below:
-        startDate:
+
+       startDate:
         {
             "type": "string",
             "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        endDate
 Sub-section of type string, used to specify the endDate of the person
 The schema snippet can be shown below:
-        endDate:
+
+       endDate:
         {
             "type": "string",
             "description": "e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        score
 Sub-section of type object, used to specify the score of the person
 The schema snippet can be shown below:
-        score:
+
+       score:
         {
             "type": "object",
             "additionalProperties": true,
@@ -274,10 +303,12 @@ The schema snippet can be shown below:
               }
             }
           }
+
 ###        courses
 Sub-section of type array, used to specify the courses of the person
 The schema snippet can be shown below:
-        courses:
+
+       courses:
         {
             "type": "array",
             "description": "List notable courses/subjects",
@@ -287,10 +318,12 @@ The schema snippet can be shown below:
               "description": "e.g. CS302 - Introduction to Algorithms - [Add course name]"
             }
           }
+
 ###        honors
 Sub-section of type array, used to specify the honors of the person
 The schema snippet can be shown below:
-        honors:
+
+       honors:
         {
             "type": "array",
             "description": "List education honours",
@@ -301,6 +334,7 @@ The schema snippet can be shown below:
             }
           }
 
+
 # Volunteer
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
 ##    type
@@ -309,23 +343,28 @@ This section is of array type that tells about the basic information of the user
 ###        organization
 Sub-section of type string, used to specify the organization of the person
 The schema snippet can be shown below:
-        organization:
+
+       organization:
         {
             "type": "string",
             "description": "e.g. Xyz "
           }
+
 ###        position
 Sub-section of type string, used to specify the position of the person
 The schema snippet can be shown below:
-        position:
+
+       position:
         {
             "type": "string",
             "description": "e.g. Open Source Contributor [Contribution type]"
           }
+
 ###        location
 Sub-section of type object, used to specify the location of the person
 The schema snippet can be shown below:
-        location:
+
+       location:
         {
             "type": "object",
             "format": "location",
@@ -339,45 +378,55 @@ The schema snippet can be shown below:
               }
             }
           }
+
 ###        url
 Sub-section of type string, used to specify the url of the person
 The schema snippet can be shown below:
-        url:
+
+       url:
         {
             "type": "string",
             "description": "e.g. http://xyz.example.com - [Related link to support volunteer experience]",
             "format": "uri"
           }
+
 ###        startDate
 Sub-section of type string, used to specify the startDate of the person
 The schema snippet can be shown below:
-        startDate:
+
+       startDate:
         {
             "type": "string",
             "description": "e.g. 2014-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        endDate
 Sub-section of type string, used to specify the endDate of the person
 The schema snippet can be shown below:
-        endDate:
+
+       endDate:
         {
             "type": "string",
             "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
             "format": "date"
           }
+
 ###        summary
 Sub-section of type string, used to specify the summary of the person
 The schema snippet can be shown below:
-        summary:
+
+       summary:
         {
             "type": "string",
             "description": "Give an overview of your responsibilities at the company"
           }
+
 ###        highlights
 Sub-section of type array, used to specify the highlights of the person
 The schema snippet can be shown below:
-        highlights:
+
+       highlights:
         {
             "type": "array",
             "description": "Specify accomplishments and achievements",
@@ -388,6 +437,7 @@ The schema snippet can be shown below:
             }
           }
 
+
 # Publications
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
 ##    type
@@ -397,31 +447,38 @@ This section is of array type that tells about the basic information of the user
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. Deep learning and Artificial Intelligence"
           }
+
 ###        publisher
 Sub-section of type string, used to specify the publisher of the person
 The schema snippet can be shown below:
-        publisher:
+
+       publisher:
         {
             "type": "string",
             "description": "e.g. XYZ, Computer Magazine"
           }
+
 ###        releaseDate
 Sub-section of type string, used to specify the releaseDate of the person
 The schema snippet can be shown below:
-        releaseDate:
+
+       releaseDate:
         {
             "type": "string",
             "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]"
           }
+
 ###        resources
 Sub-section of type array, used to specify the resources of the person
 The schema snippet can be shown below:
-        resources:
+
+       resources:
         {
             "type": "array",
             "description": "Specify multiple resources with label",
@@ -436,22 +493,27 @@ The schema snippet can be shown below:
               "description": "e.g Slides"
             }
           }
+
 ###        url
 Sub-section of type string, used to specify the url of the person
 The schema snippet can be shown below:
-        url:
+
+       url:
         {
             "type": "string",
             "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"
           }
+
 ###        summary
 Sub-section of type string, used to specify the summary of the person
 The schema snippet can be shown below:
-        summary:
+
+       summary:
         {
             "type": "string",
             "description": "e.g. Discussion of the advent of deep learning and artificial intelligence - Short summary of publication"
           }
+
 
 # Legal
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
@@ -462,58 +524,71 @@ This section is of array type that tells about the basic information of the user
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format - [Add document name]"
           }
+
 ###        legalType
 Sub-section of type string, used to specify the legalType of the person
 The schema snippet can be shown below:
-        legalType:
+
+       legalType:
         {
             "type": "string",
             "description": "e.g. Patent, Trademark, Copyright - Give the type of this document"
           }
+
 ###        description
 Sub-section of type string, used to specify the description of the person
 The schema snippet can be shown below:
-        description:
+
+       description:
         {
             "type": "string",
             "description": "Give a brief description about this document"
           }
+
 ###        applicationDate
 Sub-section of type string, used to specify the applicationDate of the person
 The schema snippet can be shown below:
-        applicationDate:
+
+       applicationDate:
         {
             "type": "string",
             "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        grantDate
 Sub-section of type string, used to specify the grantDate of the person
 The schema snippet can be shown below:
-        grantDate:
+
+       grantDate:
         {
             "type": "string",
             "description": "e.g. 2016-09-01 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        endDate
 Sub-section of type string, used to specify the endDate of the person
 The schema snippet can be shown below:
-        endDate:
+
+       endDate:
         {
             "type": "string",
             "description": "e.g. 2020-09-03 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        resources
 Sub-section of type array, used to specify the resources of the person
 The schema snippet can be shown below:
-        resources:
+
+       resources:
         {
             "type": "array",
             "description": "Specify multiple resources with label",
@@ -528,14 +603,17 @@ The schema snippet can be shown below:
               "description": "e.g Slides"
             }
           }
+
 ###        idNumber
 Sub-section of type string, used to specify the idNumber of the person
 The schema snippet can be shown below:
-        idNumber:
+
+       idNumber:
         {
             "type": "string",
             "description": "e.g. JP2004369746A - [Add the application number or Id Number]  "
           }
+
 
 # Skills
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
@@ -546,15 +624,18 @@ This section is of array type that tells about the basic information of the user
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. Web Development"
           }
+
 ###        keyword
 Sub-section of type array, used to specify the keyword of the person
 The schema snippet can be shown below:
-        keyword:
+
+       keyword:
         {
             "type": "array",
             "description": "List some keywords pertaining to the skill",
@@ -575,6 +656,7 @@ The schema snippet can be shown below:
             }
           }
 
+
 # Awards
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
 ##    type
@@ -584,36 +666,44 @@ This section is of array type that tells about the basic information of the user
 ###        title
 Sub-section of type string, used to specify the title of the person
 The schema snippet can be shown below:
-        title:
+
+       title:
         {
             "type": "string",
             "description": "e.g. Awarded Software Process Achievement Award "
           }
+
 ###        date
 Sub-section of type string, used to specify the date of the person
 The schema snippet can be shown below:
-        date:
+
+       date:
         {
             "type": "string",
             "description": "e.g. 2016-06-12 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        awarder
 Sub-section of type string, used to specify the awarder of the person
 The schema snippet can be shown below:
-        awarder:
+
+       awarder:
         {
             "type": "string",
             "description": "e.g.  IEEE"
           }
+
 ###        summary
 Sub-section of type string, used to specify the summary of the person
 The schema snippet can be shown below:
-        summary:
+
+       summary:
         {
             "type": "string",
             "description": "e.g. Received for my work in Deep learning and AI"
           }
+
 
 # Projects
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
@@ -624,15 +714,18 @@ This section is of array type that tells about the basic information of the user
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. File Transfer application - [Name of the project]"
           }
+
 ###        location
 Sub-section of type object, used to specify the location of the person
 The schema snippet can be shown below:
-        location:
+
+       location:
         {
             "type": "object",
             "format": "location",
@@ -646,18 +739,22 @@ The schema snippet can be shown below:
               }
             }
           }
+
 ###        description
 Sub-section of type string, used to specify the description of the person
 The schema snippet can be shown below:
-        description:
+
+       description:
         {
             "type": "string",
             "description": "e.g. Developed a client and server based application - [Short summary of project]"
           }
+
 ###        highlights
 Sub-section of type array, used to specify the highlights of the person
 The schema snippet can be shown below:
-        highlights:
+
+       highlights:
         {
             "type": "array",
             "description": "Specify multiple features",
@@ -667,10 +764,12 @@ The schema snippet can be shown below:
               "description": "e.g. used Java AWT and Swing for client side userinterface"
             }
           }
+
 ###        keywords
 Sub-section of type array, used to specify the keywords of the person
 The schema snippet can be shown below:
-        keywords:
+
+       keywords:
         {
             "type": "array",
             "description": "Specify special elements involved",
@@ -680,28 +779,34 @@ The schema snippet can be shown below:
               "description": "e.g. Java"
             }
           }
+
 ###        startDate
 Sub-section of type string, used to specify the startDate of the person
 The schema snippet can be shown below:
-        startDate:
+
+       startDate:
         {
             "type": "string",
             "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        endDate
 Sub-section of type string, used to specify the endDate of the person
 The schema snippet can be shown below:
-        endDate:
+
+       endDate:
         {
             "type": "string",
             "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
             "format": "date"
           }
+
 ###        resources
 Sub-section of type array, used to specify the resources of the person
 The schema snippet can be shown below:
-        resources:
+
+       resources:
         {
             "type": "array",
             "description": "Specify multiple resources with label",
@@ -716,19 +821,23 @@ The schema snippet can be shown below:
               "description": "e.g slides"
             }
           }
+
 ###        url
 Sub-section of type string, used to specify the url of the person
 The schema snippet can be shown below:
-        url:
+
+       url:
         {
             "type": "string",
             "format": "uri",
             "description": "e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html"
           }
+
 ###        roles
 Sub-section of type array, used to specify the roles of the person
 The schema snippet can be shown below:
-        roles:
+
+       roles:
         {
             "type": "array",
             "description": "Specify your role on this project or in company",
@@ -738,22 +847,27 @@ The schema snippet can be shown below:
               "description": "e.g. Team Lead, Speaker, Writer"
             }
           }
+
 ###        entity
 Sub-section of type string, used to specify the entity of the person
 The schema snippet can be shown below:
-        entity:
+
+       entity:
         {
             "type": "string",
             "description": "e.g. 'greenpeace', 'corporationXYZ' - [Relevant company/entity affiliations]"
           }
+
 ###        type
 Sub-section of type string, used to specify the type of the person
 The schema snippet can be shown below:
-        type:
+
+       type:
         {
             "type": "string",
             "description": " e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"
           }
+
 
 # Certificates
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
@@ -763,72 +877,88 @@ This section is of array type that tells about the basic information of the user
 ###        code
 Sub-section of type string, used to specify the code of the person
 The schema snippet can be shown below:
-        code:
+
+       code:
         {
             "type": "string",
             "description": "e.g. 1Z0-062"
           }
+
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]"
           }
+
 ###        website
 Sub-section of type string, used to specify the website of the person
 The schema snippet can be shown below:
-        website:
+
+       website:
         {
             "type": "string",
             "description": "Link to issuing authority's description of the certificate",
             "format": "uri"
           }
+
 ###        verification
 Sub-section of type string, used to specify the verification of the person
 The schema snippet can be shown below:
-        verification:
+
+       verification:
         {
             "type": "string",
             "description": "External candidate verification URL",
             "format": "uri"
           }
+
 ###        grantDate
 Sub-section of type string, used to specify the grantDate of the person
 The schema snippet can be shown below:
-        grantDate:
+
+       grantDate:
         {
             "type": "string",
             "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
             "format": "date"
           }
+
 ###        score
 Sub-section of type string, used to specify the score of the person
 The schema snippet can be shown below:
-        score:
+
+       score:
         {
             "type": "string",
             "description": "Exam result (PASS/FAIL, 100%, 100)",
             "format": "date"
           }
+
 ###        endDate
 Sub-section of type string, used to specify the endDate of the person
 The schema snippet can be shown below:
-        endDate:
+
+       endDate:
         {
             "type": "string",
             "description": "e.g. 2020-01-20",
             "format": "date"
           }
+
 ###        doesNotExpire
 Sub-section of type boolean, used to specify the doesNotExpire of the person
 The schema snippet can be shown below:
-        doesNotExpire:
+
+       doesNotExpire:
         {
             "type": "boolean",
             "format": "checkbox"
           }
+
 
 # References
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
@@ -839,35 +969,43 @@ This section is of array type that tells about the basic information of the user
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. Stephan Mark"
           }
+
 ###        company
 Sub-section of type string, used to specify the company of the person
 The schema snippet can be shown below:
-        company:
+
+       company:
         {
             "type": "string",
             "description": "e.g. Xyz"
           }
+
 ###        position
 Sub-section of type string, used to specify the position of the person
 The schema snippet can be shown below:
-        position:
+
+       position:
         {
             "type": "string",
             "description": "e.g. Senior Software Engineer"
           }
+
 ###        reference
 Sub-section of type string, used to specify the reference of the person
 The schema snippet can be shown below:
-        reference:
+
+       reference:
         {
             "type": "string",
             "description": "e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
           }
+
 
 # Languages
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
@@ -878,19 +1016,23 @@ This section is of array type that tells about the basic information of the user
 ###        language
 Sub-section of type string, used to specify the language of the person
 The schema snippet can be shown below:
-        language:
+
+       language:
         {
             "type": "string",
             "description": "e.g. English, Spanish - [Name of language]"
           }
+
 ###        score
 Sub-section of type number, used to specify the score of the person
 The schema snippet can be shown below:
-        score:
+
+       score:
         {
             "type": "number",
             "description": "e.g. 20 - [Score for the language]"
           }
+
 
 # Interests
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
@@ -900,11 +1042,13 @@ This section is of array type that tells about the basic information of the user
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
-        name:
+
+       name:
         {
             "type": "string",
             "description": "e.g. Philosophy"
           }
+
 
 # Meta
 This section is of object type that tells about the basic information of the user and consists of the following sub-sections:

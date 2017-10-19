@@ -53,7 +53,7 @@ func main() {
 			if key1.String() == "items" {
 				result1 := gjson.GetBytes(content, "properties."+key.String()+".items.properties")
 				result1.ForEach(func(key2, value gjson.Result) bool {
-					_, err := f.WriteString("###        " + key2.String() + "" + "\nSub-section of type {{.Properties." + strings.Title(key.String()) + ".Items.Properties." + strings.Title(key2.String()) + ".Type}}, used to specify the " + key2.String() + " of the person\nThe schema snippet can be shown below:\n        " + key2.String() + ":\n        " + value.String() + "\n") //print items of subsections
+					_, err := f.WriteString("###        " + key2.String() + "" + "\nSub-section of type {{.Properties." + strings.Title(key.String()) + ".Items.Properties." + strings.Title(key2.String()) + ".Type}}, used to specify the " + key2.String() + " of the person\nThe schema snippet can be shown below:\n\n       " + key2.String() + ":\n        " + value.String() + "\n\n") //print items of subsections
 					if err != nil {
 						log.Fatal(err)
 					}
