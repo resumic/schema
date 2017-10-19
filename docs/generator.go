@@ -15,13 +15,13 @@ import (
 func main() {
 	var conf, doc, tmpl string
 	flag.StringVar(&conf, "conf", "schema.json", "Schema file")
-	flag.StringVar(&doc, "doc", "docs/dev/doc.tmpl", "Template file")
-	flag.StringVar(&tmpl, "tmpl", "docs/dev/doc.md", "Output file")
+	flag.StringVar(&tmpl, "tmpl", "docs/dev/doc.tmpl", "Template file")
+	flag.StringVar(&doc, "doc", "docs/dev/doc.md", "Output file")
 	content, err := ioutil.ReadFile(conf)
 	if err != nil {
 		log.Fatal(err)
 	}
-	f, err := os.OpenFile(doc, os.O_APPEND, 0666)
+	f, err := os.OpenFile(tmpl, os.O_APPEND, 0666)
 	value := gjson.GetBytes(content, "properties")
 	value.ForEach(func(key, value gjson.Result) bool {
 		_, err = f.WriteString("\n# " + strings.Title(key.String()) + "\n" + "This section is of " + "{{.Properties." + strings.Title(key.String()) + ".Type}} type that tells about the basic information of the user and consists of the following sub-sections:\n") //print name of sections
@@ -71,11 +71,11 @@ func main() {
 	if err := json.Unmarshal(content, &schema); err != nil {
 		log.Fatal(err)
 	}
-	tpl, err := template.ParseFiles(doc)
+	tpl, err := template.ParseFiles(tmpl)
 	if err != nil {
 		log.Fatal(err)
 	}
-	file, err := os.Create(tmpl)
+	file, err := os.Create(doc)
 	if err != nil {
 		log.Fatal(err)
 	}
