@@ -1,4 +1,4 @@
-package main
+package util
 
 type SchemaData struct {
 	Schema               string `json:"$schema"`
@@ -30,7 +30,7 @@ type SchemaData struct {
 					Type        string `json:"type"`
 					Description string `json:"description"`
 				} `json:"phone"`
-				URL struct {
+				Url struct {
 					Type        string `json:"type"`
 					Format      string `json:"format"`
 					Description string `json:"description"`
@@ -99,7 +99,7 @@ type SchemaData struct {
 							} `json:"long"`
 						} `json:"properties"`
 					} `json:"location"`
-					URL struct {
+					Url struct {
 						Type        string `json:"type"`
 						Description string `json:"description"`
 						Format      string `json:"format"`
@@ -222,7 +222,7 @@ type SchemaData struct {
 							} `json:"long"`
 						} `json:"properties"`
 					} `json:"location"`
-					URL struct {
+					Url struct {
 						Type        string `json:"type"`
 						Description string `json:"description"`
 						Format      string `json:"format"`
@@ -277,7 +277,7 @@ type SchemaData struct {
 						Type            string `json:"type"`
 						Description     string `json:"description"`
 						AdditionalItems bool   `json:"additionalItems"`
-						URL             struct {
+						Url             struct {
 							Type        string `json:"type"`
 							Format      string `json:"format"`
 							Description string `json:"description"`
@@ -287,7 +287,7 @@ type SchemaData struct {
 							Description string `json:"description"`
 						} `json:"label"`
 					} `json:"resources"`
-					URL struct {
+					Url struct {
 						Type        string `json:"type"`
 						Description string `json:"description"`
 					} `json:"url"`
@@ -337,7 +337,7 @@ type SchemaData struct {
 						Type            string `json:"type"`
 						Description     string `json:"description"`
 						AdditionalItems bool   `json:"additionalItems"`
-						URL             struct {
+						Url             struct {
 							Type        string `json:"type"`
 							Format      string `json:"format"`
 							Description string `json:"description"`
@@ -347,7 +347,7 @@ type SchemaData struct {
 							Description string `json:"description"`
 						} `json:"label"`
 					} `json:"resources"`
-					IDNumber struct {
+					IdNumber struct {
 						Type        string `json:"type"`
 						Description string `json:"description"`
 					} `json:"idNumber"`
@@ -477,7 +477,7 @@ type SchemaData struct {
 						Type            string `json:"type"`
 						Description     string `json:"description"`
 						AdditionalItems bool   `json:"additionalItems"`
-						URL             struct {
+						Url             struct {
 							Type        string `json:"type"`
 							Format      string `json:"format"`
 							Description string `json:"description"`
@@ -487,7 +487,7 @@ type SchemaData struct {
 							Description string `json:"description"`
 						} `json:"label"`
 					} `json:"resources"`
-					URL struct {
+					Url struct {
 						Type        string `json:"type"`
 						Format      string `json:"format"`
 						Description string `json:"description"`
