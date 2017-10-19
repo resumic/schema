@@ -1,6 +1,6 @@
-package util
+package schema
 
-type SchemaData struct {
+type Data struct {
 	Schema               string `json:"$schema"`
 	Title                string `json:"title"`
 	Type                 string `json:"type"`
