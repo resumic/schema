@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 	"text/template"
-	"docs/util"
+	"github.com/resumic/schema/docs/util"
 	"github.com/tidwall/gjson"
 )
 
