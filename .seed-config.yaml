@@ -3,9 +3,8 @@ project:
   state: "unstable"
   #image: "https://github.com/resumic/schema/blob/master/media/logo.svg"
   #website: "about.resumic.io"
-  oneLiner: ""
+  oneLiner: "Standardized and generic data schema for a perfect resume/CV"
   description: |
-    Resumic is a standardized and generic data schema for your resume/CV.
     Easily share your machine readable data or export your resume/CV to a great looking website or PDF.
   version: "v0.1.0"
 

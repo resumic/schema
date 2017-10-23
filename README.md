@@ -1,14 +1,11 @@
 # Resumic
 
-
-
+Standardized and generic data schema for a perfect resume/CV
 
  [![state](https://img.shields.io/badge/state-unstable-red.svg)]() [![release](https://img.shields.io/github/release/resumic/schema.svg)](https://github.com/resumic/schema/releases) [![license](https://img.shields.io/github/license/resumic/schema.svg)](LICENSE) [![Build Status](https://travis-ci.org/resumic/schema.svg?branch=master)](https://travis-ci.org/resumic/schema) [![Go Report Card](https://goreportcard.com/badge/github.com/resumic/schema)](https://goreportcard.com/report/github.com/resumic/schema)
 
 **NOTE: This is a work-in-progress, we do not consider it production ready. Use at your own risk.**
 
-# Resumic
-Resumic is a standardized and generic data schema for your resume/CV.
 Easily share your machine readable data or export your resume/CV to a great looking website or PDF.
 
 ## Using Resumic

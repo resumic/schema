@@ -5,7 +5,8 @@ With resumic the goal is to enable everyone to have an up to date and awesome re
 Our detailed items:
   * Generic schema additions only
 
-## Core ConceptResumic strives to provide a standardized and generic data schema for resumes/CVs.
+## Core Concept
+Resumic strives to provide a standardized and generic data schema for resumes/CVs.
 
 ## General Aim
 Resumic aims to be a generic data schema with a thin layer of tooling around to enable easily working with your data.
