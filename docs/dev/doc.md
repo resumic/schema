@@ -1,9 +1,9 @@
 
 # Core
 This section is of object type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    additionalProperties
-##    properties
+##   type
+##   additionalProperties
+##   properties
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -116,9 +116,9 @@ The schema snippet can be shown below:
 
 # Work
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    additionalItems
-##    items
+##   type
+##   additionalItems
+##   items
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -229,9 +229,9 @@ The schema snippet can be shown below:
 
 # Education
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    additionalItems
-##    items
+##   type
+##   additionalItems
+##   items
 ###        institution
 Sub-section of type string, used to specify the institution of the person
 The schema snippet can be shown below:
@@ -337,9 +337,9 @@ The schema snippet can be shown below:
 
 # Volunteer
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    additionalItems
-##    items
+##   type
+##   additionalItems
+##   items
 ###        organization
 Sub-section of type string, used to specify the organization of the person
 The schema snippet can be shown below:
@@ -440,10 +440,10 @@ The schema snippet can be shown below:
 
 # Publications
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalItems
-##    items
+##   type
+##   description
+##   additionalItems
+##   items
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -517,10 +517,10 @@ The schema snippet can be shown below:
 
 # Legal
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalItems
-##    items
+##   type
+##   description
+##   additionalItems
+##   items
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -617,10 +617,10 @@ The schema snippet can be shown below:
 
 # Skills
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalItems
-##    items
+##   type
+##   description
+##   additionalItems
+##   items
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -659,10 +659,10 @@ The schema snippet can be shown below:
 
 # Awards
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalItems
-##    items
+##   type
+##   description
+##   additionalItems
+##   items
 ###        title
 Sub-section of type string, used to specify the title of the person
 The schema snippet can be shown below:
@@ -707,10 +707,10 @@ The schema snippet can be shown below:
 
 # Projects
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalItems
-##    items
+##   type
+##   description
+##   additionalItems
+##   items
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -871,9 +871,9 @@ The schema snippet can be shown below:
 
 # Certificates
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    additionalItems
-##    items
+##   type
+##   additionalItems
+##   items
 ###        code
 Sub-section of type string, used to specify the code of the person
 The schema snippet can be shown below:
@@ -962,10 +962,10 @@ The schema snippet can be shown below:
 
 # References
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalItems
-##    items
+##   type
+##   description
+##   additionalItems
+##   items
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -1009,10 +1009,10 @@ The schema snippet can be shown below:
 
 # Languages
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalItems
-##    items
+##   type
+##   description
+##   additionalItems
+##   items
 ###        language
 Sub-section of type string, used to specify the language of the person
 The schema snippet can be shown below:
@@ -1036,9 +1036,9 @@ The schema snippet can be shown below:
 
 # Interests
 This section is of array type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    additionalItems
-##    items
+##   type
+##   additionalItems
+##   items
 ###        name
 Sub-section of type string, used to specify the name of the person
 The schema snippet can be shown below:
@@ -1052,10 +1052,10 @@ The schema snippet can be shown below:
 
 # Meta
 This section is of object type that tells about the basic information of the user and consists of the following sub-sections:
-##    type
-##    description
-##    additionalProperties
-##    properties
+##   type
+##   description
+##   additionalProperties
+##   properties
 ###        canonical
 Sub-section of type string, used to specify the canonical of the person
 The schema snippet can be shown below:
