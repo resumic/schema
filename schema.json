@@ -542,8 +542,7 @@
           },
           "score": {
             "type": "string",
-            "description": "Exam result (PASS/FAIL, 100%, 100)",
-            "format": "date"
+            "description": "Exam result (PASS/FAIL, 100%, 100)"
           },
           "endDate": {
             "type": "string",
