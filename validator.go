@@ -19,7 +19,7 @@ func main() {
 }
 
 // ValidateJSON is used to check for validity
-func ValidateJSON(doc string) {
+func ValidateJSON(doc string) bool {
 
 	file := path.Join("file:///", GetPath(), "/", doc)
 	box := packr.NewBox("./")
@@ -33,11 +33,13 @@ func ValidateJSON(doc string) {
 
 	if result.Valid() {
 		fmt.Printf("The document is valid\n")
+		return true
 	} else {
 		fmt.Printf("The document is not valid. see errors :\n")
 		for _, desc := range result.Errors() {
 			fmt.Printf("- %s\n", desc)
 		}
+		return false
 	}
 
 }
