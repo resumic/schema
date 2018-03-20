@@ -1,7 +1,6 @@
-package main
+package validate
 
 import (
-	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -11,19 +10,15 @@ import (
 	"github.com/xeipuuv/gojsonschema"
 )
 
-func main() {
-	var doc string
-	flag.StringVar(&doc, "doc", "examples/invalid/invalid_email.json", "Example file")
-	flag.Parse()
-	ValidateJSON(doc)
-}
-
 // ValidateJSON is used to check for validity
 func ValidateJSON(doc string) bool {
 
 	file := path.Join("file:///", GetPath(), "/", doc)
-	box := packr.NewBox("./")
-	s := box.String("schema.json")
+	box := packr.NewBox("../../../")
+	s, err := box.MustString("schema.json")
+	if err != nil {
+		panic(err.Error())
+	}
 	schemaLoader := gojsonschema.NewStringLoader(s)
 	documentLoader := gojsonschema.NewReferenceLoader(file)
 	result, err := gojsonschema.Validate(schemaLoader, documentLoader)
