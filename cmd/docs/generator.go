@@ -16,9 +16,9 @@ import (
 
 func main() {
 	var conf, doc, tmpl string
-	flag.StringVar(&conf, "conf", "schema.json", "Schema file")
-	flag.StringVar(&tmpl, "tmpl", "docs/dev/doc.tmpl", "Template file")
-	flag.StringVar(&doc, "doc", "docs/dev/doc.md", "Output file")
+	flag.StringVar(&conf, "conf", "../../schema.json", "Schema file")
+	flag.StringVar(&tmpl, "tmpl", "../../docs/dev/doc.tmpl", "Template file")
+	flag.StringVar(&doc, "doc", "../../docs/dev/doc.md", "Output file")
 	content, err := ioutil.ReadFile(conf)
 	if err != nil {
 		log.Fatal(err)
