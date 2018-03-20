@@ -14,11 +14,7 @@ import (
 func ValidateJSON(doc string) bool {
 
 	file := path.Join("file:///", GetPath(), "/", doc)
-	box := packr.NewBox("../../../")
-	s, err := box.MustString("schema.json")
-	if err != nil {
-		panic(err.Error())
-	}
+	s := GetSchema()
 	schemaLoader := gojsonschema.NewStringLoader(s)
 	documentLoader := gojsonschema.NewReferenceLoader(file)
 	result, err := gojsonschema.Validate(schemaLoader, documentLoader)
@@ -46,4 +42,14 @@ func GetPath() string {
 		log.Fatal(err)
 	}
 	return dir
+}
+
+//GetSchema is used to obtain the string representation of schema.json via packr
+func GetSchema() string {
+	box := packr.NewBox("../../../")
+	s, err := box.MustString("schema.json")
+	if err != nil {
+		panic(err.Error())
+	}
+	return s
 }
