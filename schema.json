@@ -505,7 +505,7 @@
           },
           "type": {
             "type": "string",
-            "description": " e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"
+            "description": "e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"
           }
         }
       }
