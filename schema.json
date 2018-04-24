@@ -9,7 +9,8 @@
       "additionalProperties": true,
       "properties": {
         "name": {
-          "type": "string"
+          "type": "string",
+          "description": "e.g. John Doe"
         },
         "title": {
           "type": "string",
