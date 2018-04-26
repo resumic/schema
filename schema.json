@@ -18,7 +18,7 @@
         },
         "image": {
           "type": "string",
-          "description": "e.g. example.com/Abcxyz [URL (as per RFC 3986) to a image in JPEG or PNG format]"
+          "description": "e.g. example.com/Abcxyz - [URL (as per RFC 3986) to a image in JPEG or PNG format]"
         },
         "email": {
           "type": "string",
@@ -27,7 +27,7 @@
         },
         "phone": {
           "type": "string",
-          "description": "e.g. 912-217-7923 [Phone numbers are stored as strings so use any format you like]"
+          "description": "e.g. 912-217-7923 - [Phone numbers are stored as strings so use any format you like]"
         },
         "url": {
           "type": "string",
@@ -206,7 +206,7 @@
           },
           "position": {
             "type": "string",
-            "description": "e.g. Open Source Contributor [Contribution type]"
+            "description": "e.g. Open Source Contributor - [Contribution type]"
           },
           "location": {
             "type": "object",
@@ -292,7 +292,7 @@
           },
           "summary": {
             "type": "string",
-            "description": "e.g. Discussion of the advent of deep learning and artificial intelligence - Short summary of publication"
+            "description": "e.g. Discussion of the advent of deep learning and artificial intelligence - [Short summary of publication]"
           }
         }
       }
@@ -311,7 +311,7 @@
           },
           "legalType": {
             "type": "string",
-            "description": "e.g. Patent, Trademark, Copyright - Give the type of this document"
+            "description": "e.g. Patent, Trademark, Copyright - [Give the type of this document]"
           },
           "description": {
             "type": "string",
@@ -628,7 +628,7 @@
         },
         "version": {
           "type": "string",
-          "description": "e.g. v1.0.0 - A version field which follows semver"
+          "description": "e.g. v1.0.0 - [A version field which follows semver]"
         },
         "lastModified": {
           "type": "string",
