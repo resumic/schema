@@ -17,5 +17,3 @@ limitations under the License.
 No documentation available yet. Start your first contribution with some documentation.
 
 See how you can contribute with our [contribution guide](/CONTRIBUTING.md).
-
-This project was based on [JSON Resume] (https://github.com/jsonresume "JSON Resume")
