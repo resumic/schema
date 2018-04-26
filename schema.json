@@ -140,6 +140,10 @@
             "type": "string",
             "description": "e.g. XYZ Institute of Technology - [Add institute name]"
           },
+          "location": {
+            "type": "string",
+            "description": "e.g. Vancouver, British Columbia, Canada - [Add institution city, state/province, country]"
+          },
           "area": {
             "type": "string",
             "description": "e.g. Engineering"

@@ -141,6 +141,10 @@ type Data struct {
 						Type        string `json:"type"`
 						Description string `json:"description"`
 					} `json:"institution"`
+					Location struct {
+						Type        string `json:"type"`
+						Description string `json:"description"`
+					} `json:"location"`
 					Area struct {
 						Type        string `json:"type"`
 						Description string `json:"description"`
