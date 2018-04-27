@@ -141,8 +141,17 @@
             "description": "e.g. XYZ Institute of Technology - [Add institute name]"
           },
           "location": {
-            "type": "string",
-            "description": "e.g. Vancouver, British Columbia, Canada - [Add institution city, state/province, country]"
+            "type": "object",
+            "format": "location",
+            "description": "e.g. Germany - [Location for this institution]",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            }
           },
           "area": {
             "type": "string",

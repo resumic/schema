@@ -143,7 +143,16 @@ type Data struct {
 					} `json:"institution"`
 					Location struct {
 						Type        string `json:"type"`
+						Format      string `json:"format"`
 						Description string `json:"description"`
+						Properties  struct {
+							Lat struct {
+								Type string `json:"type"`
+							} `json:"lat"`
+							Long struct {
+								Type string `json:"type"`
+							} `json:"long"`
+						} `json:"properties"`
 					} `json:"location"`
 					Area struct {
 						Type        string `json:"type"`
