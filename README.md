@@ -25,7 +25,7 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 
 ---
 
-This project was based on [JSON Resume](https://github.com/jsonresume)
+This project is based on [JSON Resume](https://github.com/jsonresume)
 
 Copyright 2017 - The Resumic Authors
 
