@@ -612,7 +612,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "e.g. Philosophy"
+            "description": "e.g. Machine Learning"
+          },
+          "keywords": {
+            "type": "string",
+            "description": "e.g. Neural Networks, Convoluted Neural Networks"
           }
         }
       }

@@ -616,6 +616,10 @@ type Data struct {
 						Type        string `json:"type"`
 						Description string `json:"description"`
 					} `json:"name"`
+					Keywords struct {
+						Type        string `json:"type"`
+						Description string `json:"description"`
+					} `json:"keywords"`
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"interests"`
