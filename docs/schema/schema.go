@@ -289,6 +289,7 @@ type Data struct {
 					} `json:"resources"`
 					Url struct {
 						Type        string `json:"type"`
+						Format      string `json:"format"`
 						Description string `json:"description"`
 					} `json:"url"`
 					Summary struct {
