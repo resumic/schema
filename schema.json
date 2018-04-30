@@ -632,7 +632,8 @@
         },
         "lastModified": {
           "type": "string",
-          "description": "Using ISO 8601 with YYYY-MM-DDThh:mm:ss"
+          "description": "Using ISO 8601 with YYYY-MM-DDThh:mm:ss",
+          "format": "date"
         }
       }
     }

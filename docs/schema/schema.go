@@ -635,6 +635,7 @@ type Data struct {
 				LastModified struct {
 					Type        string `json:"type"`
 					Description string `json:"description"`
+					Format      string `json:"format"`
 				} `json:"lastModified"`
 			} `json:"properties"`
 		} `json:"meta"`
