@@ -632,7 +632,7 @@
         },
         "lastModified": {
           "type": "string",
-          "description": "Using ISO 8601 with YYYY-MM-DDThh:mm:ss",
+          "description": "e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard]",
           "format": "date"
         }
       }
