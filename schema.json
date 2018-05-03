@@ -613,14 +613,19 @@
           "name": {
             "type": "string",
             "description": "e.g. Machine Learning"
-          },
+          }
+        },
           "keywords": {
-            "type": "string",
-            "description": "e.g. Neural Networks, Convoluted Neural Networks"
+            "type": "array",
+            "description": "Specify keywords associated with the particular interest",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "e.g. Neural Networks, Convoluted Neural Networks"
+            }
           }
         }
-      }
-    },
+      },
     "meta": {
       "type": "object",
       "description": "The schema version and any other tooling configuration lives here",
