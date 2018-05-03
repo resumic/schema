@@ -301,6 +301,7 @@
           },
           "url": {
             "type": "string",
+            "format": "uri",
             "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"
           },
           "summary": {
