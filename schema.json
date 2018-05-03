@@ -140,6 +140,19 @@
             "type": "string",
             "description": "e.g. XYZ Institute of Technology - [Add institute name]"
           },
+          "location": {
+            "type": "object",
+            "format": "location",
+            "description": "e.g. Germany - [Location for this institution]",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            }
+          },
           "area": {
             "type": "string",
             "description": "e.g. Engineering"
