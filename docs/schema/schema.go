@@ -633,6 +633,20 @@ type Data struct {
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"interests"`
+		Tags struct {
+			Type            string `json:"type"`
+			AdditionalItems bool   `json:"additionalItems"`
+			Items           struct {
+				Type                 string `json:"type"`
+				AdditionalProperties bool   `json:"additionalProperties"`
+				Properties           struct {
+					Name struct {
+						Type        string `json:"type"`
+						Description string `json:"description"`
+					} `json:"name"`
+				} `json:"properties"`
+			} `json:"items"`
+		} `json:"tags"`
 		Meta struct {
 			Type                 string `json:"type"`
 			Description          string `json:"description"`

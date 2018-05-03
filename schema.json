@@ -631,6 +631,20 @@
         }
       }
     },
+    "tags": {
+      "type": "array",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "e.g. Software Engineer"
+          }
+        }
+      }
+    },
     "meta": {
       "type": "object",
       "description": "The schema version and any other tooling configuration lives here",
