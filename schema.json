@@ -420,7 +420,7 @@
           },
           "awarder": {
             "type": "string",
-            "description": "e.g.  IEEE"
+            "description": "e.g. IEEE"
           },
           "summary": {
             "type": "string",
