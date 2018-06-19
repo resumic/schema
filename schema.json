@@ -608,7 +608,7 @@
         "properties": {
           "language": {
             "type": "string",
-            "description": "e.g. English, Spanish - [Name of language]"
+            "description": "e.g. English - [Name of language]"
           },
           "score": {
             "type": "number",
