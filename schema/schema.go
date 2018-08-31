@@ -21,7 +21,7 @@ type Core struct {
 		Image           StandardField `json:"image"`
 		Email           StandardField `json:"email"`
 		Phone           StandardField `json:"phone"`
-		Url             StandardField `json:"url"`
+		URL             StandardField `json:"url"`
 		Summary         StandardField `json:"summary"`
 		CurrentLocation struct {
 			Type        string `json:"type"`
@@ -75,7 +75,7 @@ type Work struct {
 					} `json:"long"`
 				} `json:"properties"`
 			} `json:"location"`
-			Url        StandardField `json:"url"`
+			URL        StandardField `json:"url"`
 			StartDate  StandardField `json:"startDate"`
 			EndDate    StandardField `json:"endDate"`
 			Summary    StandardField `json:"summary"`
@@ -160,7 +160,7 @@ type Volunteer struct {
 					} `json:"long"`
 				} `json:"properties"`
 			} `json:"location"`
-			Url        StandardField `json:"url"`
+			URL        StandardField `json:"url"`
 			StartDate  StandardField `json:"startDate"`
 			EndDate    StandardField `json:"endDate"`
 			Summary    StandardField `json:"summary"`
@@ -189,10 +189,10 @@ type Publications struct {
 				Type            string        `json:"type"`
 				Description     string        `json:"description"`
 				AdditionalItems bool          `json:"additionalItems"`
-				Url             StandardField `json:"url"`
+				URL             StandardField `json:"url"`
 				Label           StandardField `json:"label"`
 			} `json:"resources"`
-			Url     StandardField `json:"url"`
+			URL     StandardField `json:"url"`
 			Summary StandardField `json:"summary"`
 		} `json:"properties"`
 	} `json:"items"`
@@ -216,10 +216,10 @@ type Legal struct {
 				Type            string        `json:"type"`
 				Description     string        `json:"description"`
 				AdditionalItems bool          `json:"additionalItems"`
-				Url             StandardField `json:"url"`
+				URL             StandardField `json:"url"`
 				Label           StandardField `json:"label"`
 			} `json:"resources"`
-			IdNumber StandardField `json:"idNumber"`
+			IDNumber StandardField `json:"idNumber"`
 		} `json:"properties"`
 	} `json:"items"`
 }
@@ -307,10 +307,10 @@ type Projects struct {
 				Type            string        `json:"type"`
 				Description     string        `json:"description"`
 				AdditionalItems bool          `json:"additionalItems"`
-				Url             StandardField `json:"url"`
+				URL             StandardField `json:"url"`
 				Label           StandardField `json:"label"`
 			} `json:"resources"`
-			Url   StandardField `json:"url"`
+			URL   StandardField `json:"url"`
 			Roles struct {
 				Type            string        `json:"type"`
 				Description     string        `json:"description"`
