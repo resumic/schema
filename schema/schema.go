@@ -6,6 +6,11 @@ import (
 	"os"
 )
 
+type StandardField struct {
+	Type        string `json:"type"`
+	Description string `json:"description"`
+	Format      string `json:"format,omitempty"`
+}
 type Schema struct {
 	Schema               string `json:"$schema"`
 	Title                string `json:"title"`
@@ -16,36 +21,13 @@ type Schema struct {
 			Type                 string `json:"type"`
 			AdditionalProperties bool   `json:"additionalProperties"`
 			Properties           struct {
-				Name struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-				} `json:"name"`
-				Title struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-				} `json:"title"`
-				Image struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-				} `json:"image"`
-				Email struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-					Format      string `json:"format"`
-				} `json:"email"`
-				Phone struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-				} `json:"phone"`
-				Url struct {
-					Type        string `json:"type"`
-					Format      string `json:"format"`
-					Description string `json:"description"`
-				} `json:"url"`
-				Summary struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-				} `json:"summary"`
+				Name            StandardField `json:"name"`
+				Title           StandardField `json:"title"`
+				Image           StandardField `json:"image"`
+				Email           StandardField `json:"email"`
+				Phone           StandardField `json:"phone"`
+				Url             StandardField `json:"url"`
+				Summary         StandardField `json:"summary"`
 				CurrentLocation struct {
 					Type        string `json:"type"`
 					Format      string `json:"format"`
@@ -81,19 +63,10 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
-					Description struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"description"`
-					Position struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"position"`
-					Location struct {
+					Name        StandardField `json:"name"`
+					Description StandardField `json:"description"`
+					Position    StandardField `json:"position"`
+					Location    struct {
 						Type        string `json:"type"`
 						Format      string `json:"format"`
 						Description string `json:"description"`
@@ -106,33 +79,15 @@ type Schema struct {
 							} `json:"long"`
 						} `json:"properties"`
 					} `json:"location"`
-					Url struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"url"`
-					StartDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"startDate"`
-					EndDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"endDate"`
-					Summary struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"summary"`
+					Url        StandardField `json:"url"`
+					StartDate  StandardField `json:"startDate"`
+					EndDate    StandardField `json:"endDate"`
+					Summary    StandardField `json:"summary"`
 					Highlights struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"highlights"`
 				} `json:"properties"`
 			} `json:"items"`
@@ -144,11 +99,8 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Institution struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"institution"`
-					Location struct {
+					Institution StandardField `json:"institution"`
+					Location    struct {
 						Type        string `json:"type"`
 						Format      string `json:"format"`
 						Description string `json:"description"`
@@ -161,55 +113,29 @@ type Schema struct {
 							} `json:"long"`
 						} `json:"properties"`
 					} `json:"location"`
-					Area struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"area"`
-					StudyType struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"studyType"`
-					StartDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"startDate"`
-					EndDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"endDate"`
-					Score struct {
+					Area      StandardField `json:"area"`
+					StudyType StandardField `json:"studyType"`
+					StartDate StandardField `json:"startDate"`
+					EndDate   StandardField `json:"endDate"`
+					Score     struct {
 						Type                 string `json:"type"`
 						AdditionalProperties bool   `json:"additionalProperties"`
 						Properties           struct {
-							Scoretype struct {
-								Type        string `json:"type"`
-								Description string `json:"description"`
-							} `json:"scoretype"`
-							Scorevalue struct {
-								Type        string `json:"type"`
-								Description string `json:"description"`
-							} `json:"scorevalue"`
+							Scoretype  StandardField `json:"scoretype"`
+							Scorevalue StandardField `json:"scorevalue"`
 						} `json:"properties"`
 					} `json:"score"`
 					Courses struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"courses"`
 					Honors struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"honors"`
 				} `json:"properties"`
 			} `json:"items"`
@@ -221,15 +147,9 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Organization struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"organization"`
-					Position struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"position"`
-					Location struct {
+					Organization StandardField `json:"organization"`
+					Position     StandardField `json:"position"`
+					Location     struct {
 						Type        string `json:"type"`
 						Format      string `json:"format"`
 						Description string `json:"description"`
@@ -242,33 +162,15 @@ type Schema struct {
 							} `json:"long"`
 						} `json:"properties"`
 					} `json:"location"`
-					Url struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"url"`
-					StartDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"startDate"`
-					EndDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"endDate"`
-					Summary struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"summary"`
+					Url        StandardField `json:"url"`
+					StartDate  StandardField `json:"startDate"`
+					EndDate    StandardField `json:"endDate"`
+					Summary    StandardField `json:"summary"`
 					Highlights struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"highlights"`
 				} `json:"properties"`
 			} `json:"items"`
@@ -281,41 +183,18 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
-					Publisher struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"publisher"`
-					ReleaseDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"releaseDate"`
-					Resources struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Url             struct {
-							Type        string `json:"type"`
-							Format      string `json:"format"`
-							Description string `json:"description"`
-						} `json:"url"`
-						Label struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"label"`
+					Name        StandardField `json:"name"`
+					Publisher   StandardField `json:"publisher"`
+					ReleaseDate StandardField `json:"releaseDate"`
+					Resources   struct {
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Url             StandardField `json:"url"`
+						Label           StandardField `json:"label"`
 					} `json:"resources"`
-					Url struct {
-						Type        string `json:"type"`
-						Format      string `json:"format"`
-						Description string `json:"description"`
-					} `json:"url"`
-					Summary struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"summary"`
+					Url     StandardField `json:"url"`
+					Summary StandardField `json:"summary"`
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"publications"`
@@ -327,51 +206,20 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
-					LegalType struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"legalType"`
-					Description struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"description"`
-					ApplicationDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"applicationDate"`
-					GrantDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"grantDate"`
-					EndDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"endDate"`
-					Resources struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Url             struct {
-							Type        string `json:"type"`
-							Format      string `json:"format"`
-							Description string `json:"description"`
-						} `json:"url"`
-						Label struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"label"`
+					Name            StandardField `json:"name"`
+					LegalType       StandardField `json:"legalType"`
+					Description     StandardField `json:"description"`
+					ApplicationDate StandardField `json:"applicationDate"`
+					GrantDate       StandardField `json:"grantDate"`
+					EndDate         StandardField `json:"endDate"`
+					Resources       struct {
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Url             StandardField `json:"url"`
+						Label           StandardField `json:"label"`
 					} `json:"resources"`
-					IdNumber struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"idNumber"`
+					IdNumber StandardField `json:"idNumber"`
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"legal"`
@@ -383,10 +231,7 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
+					Name    StandardField `json:"name"`
 					Keyword struct {
 						Type            string `json:"type"`
 						Description     string `json:"description"`
@@ -395,14 +240,8 @@ type Schema struct {
 							Type                 string `json:"type"`
 							AdditionalProperties bool   `json:"additionalProperties"`
 							Properties           struct {
-								Name struct {
-									Type        string `json:"type"`
-									Description string `json:"description"`
-								} `json:"name"`
-								Score struct {
-									Type        string `json:"type"`
-									Description string `json:"description"`
-								} `json:"score"`
+								Name  StandardField `json:"name"`
+								Score StandardField `json:"score"`
 							} `json:"properties"`
 						} `json:"items"`
 					} `json:"keyword"`
@@ -417,23 +256,10 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Title struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"title"`
-					Date struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"date"`
-					Awarder struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"awarder"`
-					Summary struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"summary"`
+					Title   StandardField `json:"title"`
+					Date    StandardField `json:"date"`
+					Awarder StandardField `json:"awarder"`
+					Summary StandardField `json:"summary"`
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"awards"`
@@ -445,10 +271,7 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
+					Name     StandardField `json:"name"`
 					Location struct {
 						Type        string `json:"type"`
 						Format      string `json:"format"`
@@ -462,74 +285,37 @@ type Schema struct {
 							} `json:"long"`
 						} `json:"properties"`
 					} `json:"location"`
-					Description struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"description"`
-					Highlights struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+					Description StandardField `json:"description"`
+					Highlights  struct {
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"highlights"`
 					Keywords struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"keywords"`
-					StartDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"startDate"`
-					EndDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"endDate"`
+					StartDate StandardField `json:"startDate"`
+					EndDate   StandardField `json:"endDate"`
 					Resources struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Url             struct {
-							Type        string `json:"type"`
-							Format      string `json:"format"`
-							Description string `json:"description"`
-						} `json:"url"`
-						Label struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"label"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Url             StandardField `json:"url"`
+						Label           StandardField `json:"label"`
 					} `json:"resources"`
-					Url struct {
-						Type        string `json:"type"`
-						Format      string `json:"format"`
-						Description string `json:"description"`
-					} `json:"url"`
+					Url   StandardField `json:"url"`
 					Roles struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"roles"`
-					Entity struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"entity"`
-					Type struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"type"`
+					Entity StandardField `json:"entity"`
+					Type   StandardField `json:"type"`
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"projects"`
@@ -540,38 +326,13 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Code struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"code"`
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
-					Website struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"website"`
-					Verification struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"verification"`
-					GrantDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"grantDate"`
-					Score struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"score"`
-					EndDate struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-						Format      string `json:"format"`
-					} `json:"endDate"`
+					Code          StandardField `json:"code"`
+					Name          StandardField `json:"name"`
+					Website       StandardField `json:"website"`
+					Verification  StandardField `json:"verification"`
+					GrantDate     StandardField `json:"grantDate"`
+					Score         StandardField `json:"score"`
+					EndDate       StandardField `json:"endDate"`
 					DoesNotExpire struct {
 						Type   string `json:"type"`
 						Format string `json:"format"`
@@ -587,22 +348,10 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
-					Company struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"company"`
-					Position struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"position"`
-					Reference struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"reference"`
+					Name      StandardField `json:"name"`
+					Company   StandardField `json:"company"`
+					Position  StandardField `json:"position"`
+					Reference StandardField `json:"reference"`
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"references"`
@@ -614,14 +363,8 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Language struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"language"`
-					Score struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"score"`
+					Language StandardField `json:"language"`
+					Score    StandardField `json:"score"`
 				} `json:"properties"`
 			} `json:"items"`
 		} `json:"languages"`
@@ -632,18 +375,12 @@ type Schema struct {
 				Type                 string `json:"type"`
 				AdditionalProperties bool   `json:"additionalProperties"`
 				Properties           struct {
-					Name struct {
-						Type        string `json:"type"`
-						Description string `json:"description"`
-					} `json:"name"`
+					Name     StandardField `json:"name"`
 					Keywords struct {
-						Type            string `json:"type"`
-						Description     string `json:"description"`
-						AdditionalItems bool   `json:"additionalItems"`
-						Items           struct {
-							Type        string `json:"type"`
-							Description string `json:"description"`
-						} `json:"items"`
+						Type            string        `json:"type"`
+						Description     string        `json:"description"`
+						AdditionalItems bool          `json:"additionalItems"`
+						Items           StandardField `json:"items"`
 					} `json:"keywords"`
 				} `json:"properties"`
 			} `json:"items"`
@@ -653,19 +390,9 @@ type Schema struct {
 			Description          string `json:"description"`
 			AdditionalProperties bool   `json:"additionalProperties"`
 			Properties           struct {
-				Canonical struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-				} `json:"canonical"`
-				Version struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-				} `json:"version"`
-				LastModified struct {
-					Type        string `json:"type"`
-					Description string `json:"description"`
-					Format      string `json:"format"`
-				} `json:"lastModified"`
+				Canonical    StandardField `json:"canonical"`
+				Version      StandardField `json:"version"`
+				LastModified StandardField `json:"lastModified"`
 			} `json:"properties"`
 		} `json:"meta"`
 	} `json:"properties"`
