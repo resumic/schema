@@ -7,8 +7,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/erbesharat/schema/schema"
 	"github.com/resumic/schema/cmd/resumic/validate"
+	"github.com/resumic/schema/schema"
 )
 
 func main() {
