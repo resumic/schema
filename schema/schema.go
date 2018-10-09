@@ -23,8 +23,8 @@ type workSchema struct {
 	Position    string   `jsonschema:"position,description:e.g. Software Engineer - [Position at the company]"`
 	Location    string   `jsonschema:"location,description:e.g. Germany - [Location for this activity],format:location"`
 	URL         string   `jsonschema:"url,description:e.g. http://xyz.example.com - [Related link to the company website],format:uri"`
-	StartDate   string   `jsonschema:"startDate,description:e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard]"`
-	EndDate     string   `jsonschema:"endDate,description:e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard]"`
+	StartDate   string   `jsonschema:"startDate,description:e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard],format:date"`
+	EndDate     string   `jsonschema:"endDate,description:e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard],format:date"`
 	Summary     string   `jsonschema:"summary,description:Give an overview of your responsibilities at the company"`
 	Highlights  []string `jsonschema:"highlights,description:Specify multiple accomplishments,items_description:e.g. Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers"`
 }
@@ -57,7 +57,7 @@ type volunteerSchema struct {
 
 type publicationSchema struct {
 	Name        string `jsonschema:"name,description:e.g. Deep learning and Artificial Intelligence"`
-	publisher   string `jsonschema:"publisher,description:e.g. XYZ, Computer Magazine"`
+	publisher   string `jsonschema:"publisher,description:e.g. XYZ Computer Magazine"`
 	ReleaseDate string `jsonschema:"releaseDate,description:e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]"`
 	Resources   []struct {
 		URL   string `jsonschema:"url,description:e.g. http://www.example.com/my-example-slides/,format:uri"`
@@ -68,8 +68,8 @@ type publicationSchema struct {
 }
 
 type legalSchema struct {
-	Name            string `jsonschema:"name,description:e.g. XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format - [Add document name]"`
-	legalType       string `jsonschema:"legalType,description:e.g. Patent, Trademark, Copyright - [Give the type of this document]"`
+	Name            string `jsonschema:"name,description:e.g. XYZ's patent on LZW compression a fundamental part of the widely used GIF graphics format - [Add document name]"`
+	legalType       string `jsonschema:"legalType,description:e.g. Patent Trademark Copyright - [Give the type of this document]"`
 	Description     string `jsonschema:"description,description:Give a brief description about this document"`
 	ApplicationDate string `jsonschema:"applicationDate,description:e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard],format:date"`
 	GrantDate       string `jsonschema:"grantDate,description:e.g. 2016-09-01 - [resume.json uses the ISO 8601 date standard],format:date"`
@@ -99,7 +99,7 @@ type awardSchema struct {
 type projectSchema struct {
 	Name        string         `jsonschema:"name,description:e.g. File Transfer application - [Name of the project]"`
 	Location    locationSchema `jsonschema:"location,description:e.g France - [Location for this activity],format:location"`
-	Description locationSchema `jsonschema:"description,description:e.g. Developed a client and server based application - [Short summary of project]"`
+	Description string         `jsonschema:"description,description:e.g. Developed a client and server based application - [Short summary of project]"`
 	Highlights  []string       `jsonschema:"highlights,description:Specify multiple features,items_description:e.g. used Java AWT and Swing for client side userinterface"`
 	Keywords    []string       `jsonschema:"keywords,description:Specify special elements involved,items_description:e.g. Java"`
 	StartDate   string         `jsonschema:"startDate,description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard],format:date"`
@@ -109,8 +109,8 @@ type projectSchema struct {
 		Label string `jsonschema:"label,description:e.g Slides"`
 	} `jsonschema:"resources,description:Specify multiple resources with label"`
 	URL    string   `jsonschema:"url,description:e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html,format:uri"`
-	Roles  []string `jsonschema:"roles,description:e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html,format:uri,items_description:e.g. Team Lead, Speaker, Writer"`
-	Entity string   `jsonschema:"entity,description:e.g. 'greenpeace', 'corporationXYZ' - [Relevant company/entity affiliations]"`
+	Roles  []string `jsonschema:"roles,description:e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html,items_description:e.g. Team Lead Speaker Writer"`
+	Entity string   `jsonschema:"entity,description:e.g. 'greenpeace' 'corporationXYZ' - [Relevant company/entity affiliations]"`
 	Type   string   `jsonschema:"type,description:e.g. 'volunteering' 'presentation' 'talk' 'application' 'conference'"`
 }
 
@@ -120,7 +120,7 @@ type certificateSchema struct {
 	Website       string `jsonschema:"website,description:Link to issuing authority's description of the certificate,format:uri"`
 	Verification  string `jsonschema:"verification,description:External candidate verification URL,format:uri"`
 	GrantDate     string `jsonschema:"grantDate,description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard],format:date"`
-	Score         string `jsonschema:"score,description:e.g. 95% - [Exam result (PASS/FAIL, 100%, 100)]"`
+	Score         string `jsonschema:"score,description:e.g. 95% - [Exam result (PASS/FAIL 100% 100)]"`
 	EndDate       string `jsonschema:"endDate,description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard],format:date"`
 	DoesNotExpire bool   `jsonschema:"doesNotExpire,format:checkbox"`
 }
@@ -133,13 +133,13 @@ type referenceSchema struct {
 }
 
 type languageSchema struct {
-	Language string `jsonschema:"language,description:e.g. English - [Name of language]"`
-	Score    string `jsonschema:"score,description:e.g. 20 - [Score for the language]"`
+	Language string  `jsonschema:"language,description:e.g. English - [Name of language]"`
+	Score    float64 `jsonschema:"score,description:e.g. 20 - [Score for the language]"`
 }
 
 type interestSchema struct {
 	Name     string   `jsonschema:"name,description:e.g. Machine Learning"`
-	Keywords []string `jsonschema:"keywords,description:Specify keywords associated with the particular interest,items_description:e.g. Neural Networks, Convoluted Neural Networks"`
+	Keywords []string `jsonschema:"keywords,description:Specify keywords associated with the particular interest,items_description:e.g. Neural Networks Convoluted Neural Networks"`
 }
 
 type metaSchema struct {
@@ -154,7 +154,7 @@ type Schema struct {
 	Education    []educationSchema   `jsonschema:"education,items_additionalProperties"`
 	Volunteer    []volunteerSchema   `jsonschema:"volunteer,items_additionalProperties"`
 	Publications []publicationSchema `jsonschema:"publications,description:Specify your publications,items_additionalProperties"`
-	Legal        []legalSchema       `jsonschema:"publications,description:Specify your labels,items_additionalProperties"`
+	Legal        []legalSchema       `jsonschema:"legal,description:Specify your labels,items_additionalProperties"`
 	Skills       []skillSchema       `jsonschema:"skills,description:List out your professional skill-set,items_additionalProperties"`
 	Awards       []awardSchema       `jsonschema:"awards,description:Specify any awards you have received throughout your professional career,items_additionalProperties"`
 	Projects     []projectSchema     `jsonschema:"projects,description:Specify career projects,items_additionalProperties"`
