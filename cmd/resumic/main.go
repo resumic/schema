@@ -8,12 +8,13 @@ import (
 	"os"
 
 	"github.com/resumic/schema/cmd/resumic/validate"
+	"github.com/resumic/schema/jsonschema"
 	"github.com/resumic/schema/schema"
 )
 
 // GenerateSchema generates the schema.json file
 func GenerateSchema(schemaFile string) {
-	schema, err := schema.GetSchema()
+	schema, err := jsonschema.NewSchema(schema.Schema{}, "", "Resumic Schema")
 	if err != nil {
 		log.Fatalf("Couldn't get the schema struct: %s", err)
 	}
