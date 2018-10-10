@@ -161,7 +161,7 @@ func newObjectSchema(tags []string, properties []reflect.StructField) (*objectSc
 
 	s.properties = make(map[string]schema)
 	for _, p := range properties {
-		tt := strings.Split(string(p.Tag.Get("jsonschema")), ",")
+		tt := strings.Split(string(p.Tag.Get("jsonschema")), ";")
 		k := p.Name
 		if tt[0] != "" {
 			if tt[0] != "-" {
@@ -230,7 +230,7 @@ type Schema struct {
 }
 
 func NewSchema(i interface{}, tags, title string) (*Schema, error) {
-	tt := strings.Split(tags, ",")
+	tt := strings.Split(tags, ";")
 	if len(tt) == 1 {
 		if tt[0] == "" {
 			tt = []string{}
