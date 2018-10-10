@@ -18,7 +18,7 @@ func GenerateSchema(schemaFile string) {
 	if err != nil {
 		log.Fatalf("Couldn't get the schema struct: %s", err)
 	}
-	json, err := json.Marshal(schema)
+	json, err := json.MarshalIndent(schema, "", "  ")
 	if err != nil {
 		log.Fatal("couldn't parse the schema")
 	}
