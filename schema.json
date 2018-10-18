@@ -58,8 +58,19 @@
             "type": "string"
           },
           "score": {
-            "description": "e.g. 95% - [Exam result (PASS/FAIL, 100%, 100)]",
-            "type": "string"
+            "additionalProperties": true,
+            "description": "Exam result (PASS/FAIL, 100%, 100)",
+            "properties": {
+              "type": {
+                "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                "type": "string"
+              },
+              "value": {
+                "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                "type": "string"
+              }
+            },
+            "type": "object"
           },
           "verification": {
             "description": "External candidate verification URL",
@@ -252,8 +263,19 @@
             "type": "string"
           },
           "score": {
-            "description": "e.g. 20 - [Score for the language]",
-            "type": "number"
+            "additionalProperties": true,
+            "description": "Score for the language",
+            "properties": {
+              "type": {
+                "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                "type": "string"
+              },
+              "value": {
+                "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                "type": "string"
+              }
+            },
+            "type": "object"
           }
         },
         "type": "object"
@@ -540,8 +562,19 @@
                   "type": "string"
                 },
                 "score": {
-                  "description": "e.g. 20 - [Score for the skill name]",
-                  "type": "number"
+                  "additionalProperties": true,
+                  "description": "Score for the skill name",
+                  "properties": {
+                    "type": {
+                      "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                      "type": "string"
+                    },
+                    "value": {
+                      "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
                 }
               },
               "type": "object"

@@ -5,6 +5,11 @@ type locationSchema struct {
 	Long float64 `jsonschema:"long"`
 }
 
+type scoreSchema struct {
+	Type  string `jsonschema:"type;description:eg. GPA or PERCENTAGE - [Add score type]"`
+	Value string `jsonschema:"value;description:eg. 3.4/4.0 - [Add obtained score/total score]"`
+}
+
 type coreSchema struct {
 	Name              string         `jsonschema:"name;description:e.g. John Doe"`
 	Title             string         `jsonschema:"title;description:e.g. Software Engineer"`
@@ -36,12 +41,9 @@ type educationSchema struct {
 	StudyType   string         `jsonschema:"studyType;description:e.g. Bachelor"`
 	StartDate   string         `jsonschema:"startDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
 	EndDate     string         `jsonschema:"endDate;description:e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
-	Score       struct {
-		Type  string `jsonschema:"type;description:eg. GPA or PERCENTAGE - [Add score type]"`
-		Value string `jsonschema:"value;description:eg. 3.4/4.0 - [Add obtained score/total score]"`
-	} `jsonschema:"score;additionalProperties"`
-	Courses []string `jsonschema:"courses;description:List notable courses/subjects;items_description:e.g. CS302 - Introduction to Algorithms - [Add course name]"`
-	Honors  []string `jsonschema:"honors;description:List education honours;items_description:e.g. Magna Cum Laude"`
+	Score       scoreSchema    `jsonschema:"score;additionalProperties"`
+	Courses     []string       `jsonschema:"courses;description:List notable courses/subjects;items_description:e.g. CS302 - Introduction to Algorithms - [Add course name]"`
+	Honors      []string       `jsonschema:"honors;description:List education honours;items_description:e.g. Magna Cum Laude"`
 }
 
 type volunteerSchema struct {
@@ -84,8 +86,8 @@ type legalSchema struct {
 type skillSchema struct {
 	Name    string `jsonschema:"name;description:e.g. Web Development"`
 	Keyword []struct {
-		Name  string  `jsonschema:"name;description:e.g. HTML - [Add the skill name]"`
-		Score float64 `jsonschema:"score;description:e.g. 20 - [Score for the skill name]"`
+		Name  string      `jsonschema:"name;description:e.g. HTML - [Add the skill name]"`
+		Score scoreSchema `jsonschema:"score;additionalProperties;description:Score for the skill name"`
 	} `jsonschema:"keyword;description:List some keywords pertaining to the skill;items_additionalProperties"`
 }
 
@@ -115,14 +117,14 @@ type projectSchema struct {
 }
 
 type certificateSchema struct {
-	Code          string `jsonschema:"code;description:e.g. 1Z0-062"`
-	Name          string `jsonschema:"name;description:e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]"`
-	Website       string `jsonschema:"website;description:Link to issuing authority's description of the certificate;format:uri"`
-	Verification  string `jsonschema:"verification;description:External candidate verification URL;format:uri"`
-	GrantDate     string `jsonschema:"grantDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
-	Score         string `jsonschema:"score;description:e.g. 95% - [Exam result (PASS/FAIL, 100%, 100)]"`
-	EndDate       string `jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
-	DoesNotExpire bool   `jsonschema:"doesNotExpire;format:checkbox"`
+	Code          string      `jsonschema:"code;description:e.g. 1Z0-062"`
+	Name          string      `jsonschema:"name;description:e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]"`
+	Website       string      `jsonschema:"website;description:Link to issuing authority's description of the certificate;format:uri"`
+	Verification  string      `jsonschema:"verification;description:External candidate verification URL;format:uri"`
+	GrantDate     string      `jsonschema:"grantDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	Score         scoreSchema `jsonschema:"score;additionalProperties;description:Exam result (PASS/FAIL, 100%, 100)"`
+	EndDate       string      `jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	DoesNotExpire bool        `jsonschema:"doesNotExpire;format:checkbox"`
 }
 
 type referenceSchema struct {
@@ -133,8 +135,8 @@ type referenceSchema struct {
 }
 
 type languageSchema struct {
-	Language string  `jsonschema:"language;description:e.g. English - [Name of language]"`
-	Score    float64 `jsonschema:"score;description:e.g. 20 - [Score for the language]"`
+	Language string      `jsonschema:"language;description:e.g. English - [Name of language]"`
+	Score    scoreSchema `jsonschema:"score;additionalProperties;description:Score for the language"`
 }
 
 type interestSchema struct {
