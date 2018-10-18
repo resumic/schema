@@ -193,11 +193,11 @@
           "score": {
             "additionalProperties": true,
             "properties": {
-              "scoretype": {
+              "type": {
                 "description": "eg. GPA or PERCENTAGE - [Add score type]",
                 "type": "string"
               },
-              "scorevalue": {
+              "value": {
                 "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
                 "type": "string"
               }

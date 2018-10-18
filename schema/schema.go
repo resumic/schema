@@ -37,8 +37,8 @@ type educationSchema struct {
 	StartDate   string         `jsonschema:"startDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
 	EndDate     string         `jsonschema:"endDate;description:e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
 	Score       struct {
-		Scoretype  string `jsonschema:"scoretype;description:eg. GPA or PERCENTAGE - [Add score type]"`
-		Scorevalue string `jsonschema:"scorevalue;description:eg. 3.4/4.0 - [Add obtained score/total score]"`
+		Type  string `jsonschema:"type;description:eg. GPA or PERCENTAGE - [Add score type]"`
+		Value string `jsonschema:"value;description:eg. 3.4/4.0 - [Add obtained score/total score]"`
 	} `jsonschema:"score;additionalProperties"`
 	Courses []string `jsonschema:"courses;description:List notable courses/subjects;items_description:e.g. CS302 - Introduction to Algorithms - [Add course name]"`
 	Honors  []string `jsonschema:"honors;description:List education honours;items_description:e.g. Magna Cum Laude"`
