@@ -1,382 +1,168 @@
 package schema
 
-import (
-	"encoding/json"
-	"io/ioutil"
-	"os"
-)
-
-// Schema fields
-
-type StandardField struct {
-	Type        string `json:"type"`
-	Description string `json:"description"`
-	Format      string `json:"format,omitempty"`
+type locationSchema struct {
+	Lat  float64 `jsonschema:"lat"`
+	Long float64 `jsonschema:"long"`
 }
 
-type Location struct {
-	Type        string `json:"type"`
-	Format      string `json:"format"`
-	Description string `json:"description"`
-	Properties  struct {
-		Lat struct {
-			Type string `json:"type"`
-		} `json:"lat"`
-		Long struct {
-			Type string `json:"type"`
-		} `json:"long"`
-	} `json:"properties"`
+type scoreSchema struct {
+	Type  string `jsonschema:"type;description:eg. GPA or PERCENTAGE - [Add score type]"`
+	Value string `jsonschema:"value;description:eg. 3.4/4.0 - [Add obtained score/total score]"`
 }
 
-type Highlights struct {
-	Type            string        `json:"type"`
-	Description     string        `json:"description"`
-	AdditionalItems bool          `json:"additionalItems"`
-	Items           StandardField `json:"items"`
+type coreSchema struct {
+	Name              string         `jsonschema:"name;description:e.g. John Doe"`
+	Title             string         `jsonschema:"title;description:e.g. Software Engineer"`
+	Image             string         `jsonschema:"image;description:e.g. example.com/Abcxyz - [URL (as per RFC 3986) to a image in JPEG or PNG format]"`
+	Email             string         `jsonschema:"email;description:e.g. lucas@example.com;format:email"`
+	Phone             string         `jsonschema:"phone;description:e.g. 912-217-7923 - [Phone numbers are stored as strings so use any format you like]"`
+	URL               string         `jsonschema:"url;description:e.g. http://www.example.com/my-slides/;format:uri"`
+	Summary           string         `jsonschema:"summary;description:Write a short 2-3 sentence biography about yourself"`
+	CurrentLocation   locationSchema `jsonschema:"currentLocation;description:Select the location where you currently live.;format:location"`
+	PermanentLocation locationSchema `jsonschema:"permanentLocation;description:Select the location where you permanently live.;format:location"`
 }
 
-// Main properties
-type Core struct {
-	Type                 string `json:"type"`
-	AdditionalProperties bool   `json:"additionalProperties"`
-	Properties           struct {
-		Name              StandardField `json:"name"`
-		Title             StandardField `json:"title"`
-		Image             StandardField `json:"image"`
-		Email             StandardField `json:"email"`
-		Phone             StandardField `json:"phone"`
-		URL               StandardField `json:"url"`
-		Summary           StandardField `json:"summary"`
-		CurrentLocation   Location      `json:"currentLocation"`
-		PermanentLocation Location      `json:"permanentLocation"`
-	} `json:"properties"`
+type workSchema struct {
+	Name        string         `jsonschema:"name;description:e.g. XYZ Inc. - [Company name]"`
+	Description string         `jsonschema:"description;description:e.g. A social media company - [Description of the companies primary activity]"`
+	Position    string         `jsonschema:"position;description:e.g. Software Engineer - [Position at the company]"`
+	Location    locationSchema `jsonschema:"location;description:e.g. Germany - [Location for this activity];format:location"`
+	URL         string         `jsonschema:"url;description:e.g. http://xyz.example.com - [Related link to the company website];format:uri"`
+	StartDate   string         `jsonschema:"startDate;description:e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard];format:date"`
+	EndDate     string         `jsonschema:"endDate;description:e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	Summary     string         `jsonschema:"summary;description:Give an overview of your responsibilities at the company"`
+	Highlights  []string       `jsonschema:"highlights;description:Specify multiple accomplishments;items_description:e.g. Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers"`
 }
 
-type Work struct {
-	Type            string `json:"type"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Name        StandardField `json:"name"`
-			Description StandardField `json:"description"`
-			Position    StandardField `json:"position"`
-			Location    Location      `json:"location"`
-			URL         StandardField `json:"url"`
-			StartDate   StandardField `json:"startDate"`
-			EndDate     StandardField `json:"endDate"`
-			Summary     StandardField `json:"summary"`
-			Highlights  Highlights    `json:"highlights"`
-		} `json:"properties"`
-	} `json:"items"`
+type educationSchema struct {
+	Institution string         `jsonschema:"institution;description:e.g. XYZ Institute of Technology - [Add institute name]"`
+	Location    locationSchema `jsonschema:"location;description:e.g. Germany - [Location for this institution];format:location"`
+	Area        string         `jsonschema:"area;description:e.g. Engineering"`
+	StudyType   string         `jsonschema:"studyType;description:e.g. Bachelor"`
+	StartDate   string         `jsonschema:"startDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	EndDate     string         `jsonschema:"endDate;description:e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	Score       scoreSchema    `jsonschema:"score;additionalProperties"`
+	Courses     []string       `jsonschema:"courses;description:List notable courses/subjects;items_description:e.g. CS302 - Introduction to Algorithms - [Add course name]"`
+	Honors      []string       `jsonschema:"honors;description:List education honours;items_description:e.g. Magna Cum Laude"`
 }
 
-type Education struct {
-	Type            string `json:"type"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Institution StandardField `json:"institution"`
-			Location    Location      `json:"location"`
-			Area        StandardField `json:"area"`
-			StudyType   StandardField `json:"studyType"`
-			StartDate   StandardField `json:"startDate"`
-			EndDate     StandardField `json:"endDate"`
-			Score       struct {
-				Type                 string `json:"type"`
-				AdditionalProperties bool   `json:"additionalProperties"`
-				Properties           struct {
-					Scoretype  StandardField `json:"scoretype"`
-					Scorevalue StandardField `json:"scorevalue"`
-				} `json:"properties"`
-			} `json:"score"`
-			Courses struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				Items           StandardField `json:"items"`
-			} `json:"courses"`
-			Honors struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				Items           StandardField `json:"items"`
-			} `json:"honors"`
-		} `json:"properties"`
-	} `json:"items"`
+type volunteerSchema struct {
+	Organization string         `jsonschema:"organization;description:e.g. Xyz "`
+	Position     string         `jsonschema:"position;description:e.g. Open Source Contributor - [Contribution type]"`
+	Location     locationSchema `jsonschema:"location;description:e.g. Germany - [Location for this activity];format:location"`
+	URL          string         `jsonschema:"url;description:e.g. http://xyz.example.com - [Related link to support volunteer experience];format:uri"`
+	StartDate    string         `jsonschema:"startDate;description:e.g. 2014-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	EndDate      string         `jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ;format:date"`
+	Summary      string         `jsonschema:"summary;description:Give an overview of your responsibilities at the company"`
+	Highlights   []string       `jsonschema:"highlights;description:Specify accomplishments and achievements;items_description:e.g Invited as a speaker in Xyzcon'17"`
 }
 
-type Volunteer struct {
-	Type            string `json:"type"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Organization StandardField `json:"organization"`
-			Position     StandardField `json:"position"`
-			Location     Location      `json:"location"`
-			URL          StandardField `json:"url"`
-			StartDate    StandardField `json:"startDate"`
-			EndDate      StandardField `json:"endDate"`
-			Summary      StandardField `json:"summary"`
-			Highlights   Highlights    `json:"highlights"`
-		} `json:"properties"`
-	} `json:"items"`
+type publicationSchema struct {
+	Name        string `jsonschema:"name;description:e.g. Deep learning and Artificial Intelligence"`
+	publisher   string `jsonschema:"publisher;description:e.g. XYZ, Computer Magazine"`
+	ReleaseDate string `jsonschema:"releaseDate;description:e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]"`
+	Resources   []struct {
+		URL   string `jsonschema:"url;description:e.g. http://www.example.com/my-example-slides/;format:uri"`
+		Label string `jsonschema:"label;description:e.g Slides"`
+	} `jsonschema:"resources;description:Specify multiple resources with label"`
+	URL     string `jsonschema:"url;description:e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html;format:uri"`
+	Summary string `jsonschema:"summary;description:e.g. Discussion of the advent of deep learning and artificial intelligence - [Short summary of publication]"`
 }
 
-type Publications struct {
-	Type            string `json:"type"`
-	Description     string `json:"description"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Name        StandardField `json:"name"`
-			Publisher   StandardField `json:"publisher"`
-			ReleaseDate StandardField `json:"releaseDate"`
-			Resources   struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				URL             StandardField `json:"url"`
-				Label           StandardField `json:"label"`
-			} `json:"resources"`
-			URL     StandardField `json:"url"`
-			Summary StandardField `json:"summary"`
-		} `json:"properties"`
-	} `json:"items"`
+type legalSchema struct {
+	Name            string `jsonschema:"name;description:e.g. XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format - [Add document name]"`
+	LegalType       string `jsonschema:"legalType;description:e.g. Patent, Trademark, Copyright - [Give the type of this document]"`
+	Description     string `jsonschema:"description;description:Give a brief description about this document"`
+	ApplicationDate string `jsonschema:"applicationDate;description:e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard];format:date"`
+	GrantDate       string `jsonschema:"grantDate;description:e.g. 2016-09-01 - [resume.json uses the ISO 8601 date standard];format:date"`
+	EndDate         string `jsonschema:"endDate;description:e.g. 2020-09-03 - [resume.json uses the ISO 8601 date standard];format:date"`
+	Resources       []struct {
+		URL   string `jsonschema:"url;description:e.g. http://www.example.com/my-patent-slides/;format:uri"`
+		Label string `jsonschema:"label;description:e.g Slides"`
+	} `jsonschema:"resources;description:Specify multiple resources with label"`
+	IDNumber string `jsonschema:"idNumber;description:e.g. JP2004369746A - [Add the application number or Id Number]  "`
 }
 
-type Legal struct {
-	Type            string `json:"type"`
-	Description     string `json:"description"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Name            StandardField `json:"name"`
-			LegalType       StandardField `json:"legalType"`
-			Description     StandardField `json:"description"`
-			ApplicationDate StandardField `json:"applicationDate"`
-			GrantDate       StandardField `json:"grantDate"`
-			EndDate         StandardField `json:"endDate"`
-			Resources       struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				URL             StandardField `json:"url"`
-				Label           StandardField `json:"label"`
-			} `json:"resources"`
-			IDNumber StandardField `json:"idNumber"`
-		} `json:"properties"`
-	} `json:"items"`
+type skillSchema struct {
+	Name    string `jsonschema:"name;description:e.g. Web Development"`
+	Keyword []struct {
+		Name  string      `jsonschema:"name;description:e.g. HTML - [Add the skill name]"`
+		Score scoreSchema `jsonschema:"score;additionalProperties;description:Score for the skill name"`
+	} `jsonschema:"keyword;description:List some keywords pertaining to the skill;items_additionalProperties"`
 }
 
-type Skills struct {
-	Type            string `json:"type"`
-	Description     string `json:"description"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Name    StandardField `json:"name"`
-			Keyword struct {
-				Type            string `json:"type"`
-				Description     string `json:"description"`
-				AdditionalItems bool   `json:"additionalItems"`
-				Items           struct {
-					Type                 string `json:"type"`
-					AdditionalProperties bool   `json:"additionalProperties"`
-					Properties           struct {
-						Name  StandardField `json:"name"`
-						Score StandardField `json:"score"`
-					} `json:"properties"`
-				} `json:"items"`
-			} `json:"keyword"`
-		} `json:"properties"`
-	} `json:"items"`
+type awardSchema struct {
+	Title   string `jsonschema:"title;description:e.g. Awarded Software Process Achievement Award "`
+	Date    string `jsonschema:"date;description:e.g. 2016-06-12 - [resume.json uses the ISO 8601 date standard];format:date"`
+	Awarder string `jsonschema:"awarder;description:e.g. IEEE"`
+	Summary string `jsonschema:"summary;description:e.g. Received for my work in Deep learning and AI"`
 }
 
-type Awards struct {
-	Type            string `json:"type"`
-	Description     string `json:"description"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Title   StandardField `json:"title"`
-			Date    StandardField `json:"date"`
-			Awarder StandardField `json:"awarder"`
-			Summary StandardField `json:"summary"`
-		} `json:"properties"`
-	} `json:"items"`
+type projectSchema struct {
+	Name        string         `jsonschema:"name;description:e.g. File Transfer application - [Name of the project]"`
+	Location    locationSchema `jsonschema:"location;description:e.g France - [Location for this activity];format:location"`
+	Description string         `jsonschema:"description;description:e.g. Developed a client and server based application - [Short summary of project]"`
+	Highlights  []string       `jsonschema:"highlights;description:Specify multiple features;items_description:e.g. used Java AWT and Swing for client side userinterface"`
+	Keywords    []string       `jsonschema:"keywords;description:Specify special elements involved;items_description:e.g. Java"`
+	StartDate   string         `jsonschema:"startDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	EndDate     string         `jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ;format:date"`
+	Resources   []struct {
+		URL   string `jsonschema:"url;description:e.g. http://www.example.com/my-awesome-slides/"`
+		Label string `jsonschema:"label;description:e.g Slides"`
+	} `jsonschema:"resources;description:Specify multiple resources with label"`
+	URL    string   `jsonschema:"url;description:e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html;format:uri"`
+	Roles  []string `jsonschema:"roles;description:Specify your role on this project or in company;items_description:e.g. Team Lead, Speaker, Writer"`
+	Entity string   `jsonschema:"entity;description:e.g. 'greenpeace', 'corporationXYZ' - [Relevant company/entity affiliations]"`
+	Type   string   `jsonschema:"type;description:e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"`
 }
 
-type Projects struct {
-	Type            string `json:"type"`
-	Description     string `json:"description"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Name        StandardField `json:"name"`
-			Location    Location      `json:"location"`
-			Description StandardField `json:"description"`
-			Highlights  Highlights    `json:"highlights"`
-			Keywords    struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				Items           StandardField `json:"items"`
-			} `json:"keywords"`
-			StartDate StandardField `json:"startDate"`
-			EndDate   StandardField `json:"endDate"`
-			Resources struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				URL             StandardField `json:"url"`
-				Label           StandardField `json:"label"`
-			} `json:"resources"`
-			URL   StandardField `json:"url"`
-			Roles struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				Items           StandardField `json:"items"`
-			} `json:"roles"`
-			Entity StandardField `json:"entity"`
-			Type   StandardField `json:"type"`
-		} `json:"properties"`
-	} `json:"items"`
+type certificateSchema struct {
+	Code          string      `jsonschema:"code;description:e.g. 1Z0-062"`
+	Name          string      `jsonschema:"name;description:e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]"`
+	Website       string      `jsonschema:"website;description:Link to issuing authority's description of the certificate;format:uri"`
+	Verification  string      `jsonschema:"verification;description:External candidate verification URL;format:uri"`
+	GrantDate     string      `jsonschema:"grantDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	Score         scoreSchema `jsonschema:"score;additionalProperties;description:Exam result (PASS/FAIL, 100%, 100)"`
+	EndDate       string      `jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
+	DoesNotExpire bool        `jsonschema:"doesNotExpire;format:checkbox"`
 }
 
-type Certificates struct {
-	Type            string `json:"type"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Code          StandardField `json:"code"`
-			Name          StandardField `json:"name"`
-			Website       StandardField `json:"website"`
-			Verification  StandardField `json:"verification"`
-			GrantDate     StandardField `json:"grantDate"`
-			Score         StandardField `json:"score"`
-			EndDate       StandardField `json:"endDate"`
-			DoesNotExpire struct {
-				Type   string `json:"type"`
-				Format string `json:"format"`
-			} `json:"doesNotExpire"`
-		} `json:"properties"`
-	} `json:"items"`
+type referenceSchema struct {
+	Name      string `jsonschema:"name;description:e.g. Stephan Mark"`
+	Company   string `jsonschema:"company;description:e.g. Xyz"`
+	Position  string `jsonschema:"position;description:e.g. Senior Software Engineer"`
+	Reference string `jsonschema:"reference;description:e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."`
 }
 
-type References struct {
-	Type            string `json:"type"`
-	Description     string `json:"description"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Name      StandardField `json:"name"`
-			Company   StandardField `json:"company"`
-			Position  StandardField `json:"position"`
-			Reference StandardField `json:"reference"`
-		} `json:"properties"`
-	} `json:"items"`
+type languageSchema struct {
+	Language string      `jsonschema:"language;description:e.g. English - [Name of language]"`
+	Score    scoreSchema `jsonschema:"score;additionalProperties;description:Score for the language"`
 }
 
-type Languages struct {
-	Type            string `json:"type"`
-	Description     string `json:"description"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Language StandardField `json:"language"`
-			Score    StandardField `json:"score"`
-		} `json:"properties"`
-	} `json:"items"`
+type interestSchema struct {
+	Name     string   `jsonschema:"name;description:e.g. Machine Learning"`
+	Keywords []string `jsonschema:"keywords;description:Specify keywords associated with the particular interest;items_description:e.g. Neural Networks, Convoluted Neural Networks"`
 }
 
-type Interests struct {
-	Type            string `json:"type"`
-	AdditionalItems bool   `json:"additionalItems"`
-	Items           struct {
-		Type                 string `json:"type"`
-		AdditionalProperties bool   `json:"additionalProperties"`
-		Properties           struct {
-			Name     StandardField `json:"name"`
-			Keywords struct {
-				Type            string        `json:"type"`
-				Description     string        `json:"description"`
-				AdditionalItems bool          `json:"additionalItems"`
-				Items           StandardField `json:"items"`
-			} `json:"keywords"`
-		} `json:"properties"`
-	} `json:"items"`
-}
-
-type Meta struct {
-	Type                 string `json:"type"`
-	Description          string `json:"description"`
-	AdditionalProperties bool   `json:"additionalProperties"`
-	Properties           struct {
-		Canonical    StandardField `json:"canonical"`
-		Version      StandardField `json:"version"`
-		LastModified StandardField `json:"lastModified"`
-	} `json:"properties"`
+type metaSchema struct {
+	Canonical    string `jsonschema:"canonical;description:URL (as per RFC 3986) to latest version of this document"`
+	Version      string `jsonschema:"version;description:e.g. v1.0.0 - [A version field which follows semver]"`
+	LastModified string `jsonschema:"lastModified;description:e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard];format:date"`
 }
 
 type Schema struct {
-	Schema               string `json:"$schema"`
-	Title                string `json:"title"`
-	Type                 string `json:"type"`
-	AdditionalProperties bool   `json:"additionalProperties"`
-	Properties           struct {
-		Core         Core         `json:"core"`
-		Work         Work         `json:"work"`
-		Education    Education    `json:"education"`
-		Volunteer    Volunteer    `json:"volunteer"`
-		Publications Publications `json:"publications"`
-		Legal        Legal        `json:"legal"`
-		Skills       Skills       `json:"skills"`
-		Awards       Awards       `json:"awards"`
-		Projects     Projects     `json:"projects"`
-		Certificates Certificates `json:"certificates"`
-		References   References   `json:"references"`
-		Languages    Languages    `json:"languages"`
-		Interests    Interests    `json:"interests"`
-		Meta         Meta         `json:"meta"`
-	} `json:"properties"`
-}
-
-// GetSchema fills the Schema{} struct with correct values and returns it
-func GetSchema() (Schema, error) {
-	valuesFile, err := os.Open("./schema.json")
-	if err != nil {
-		return Schema{}, err
-	}
-	defer valuesFile.Close()
-
-	values, err := ioutil.ReadAll(valuesFile)
-	if err != nil {
-		return Schema{}, err
-	}
-	schema := Schema{}
-	err = json.Unmarshal(values, &schema)
-	return schema, nil
+	Core         coreSchema          `jsonschema:"core;additionalProperties"`
+	Work         []workSchema        `jsonschema:"work;items_additionalProperties"`
+	Education    []educationSchema   `jsonschema:"education;items_additionalProperties"`
+	Volunteer    []volunteerSchema   `jsonschema:"volunteer;items_additionalProperties"`
+	Publications []publicationSchema `jsonschema:"publications;description:Specify your publications;items_additionalProperties"`
+	Legal        []legalSchema       `jsonschema:"legal;description:Specify your labels;items_additionalProperties"`
+	Skills       []skillSchema       `jsonschema:"skills;description:List out your professional skill-set;items_additionalProperties"`
+	Awards       []awardSchema       `jsonschema:"awards;description:Specify any awards you have received throughout your professional career;items_additionalProperties"`
+	Projects     []projectSchema     `jsonschema:"projects;description:Specify career projects;items_additionalProperties"`
+	Certificates []certificateSchema `jsonschema:"certificate;items_additionalProperties"`
+	References   []referenceSchema   `jsonschema:"references;description:List references you have received;items_additionalProperties"`
+	Languages    []languageSchema    `jsonschema:"languages;description:List any other languages you speak;items_additionalProperties"`
+	Interests    []interestSchema    `jsonschema:"interests;items_additionalProperties"`
+	Meta         metaSchema          `jsonschema:"meta;description:The schema version and any other tooling configuration lives here;additionalProperties"`
 }

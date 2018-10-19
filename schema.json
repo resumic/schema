@@ -1,664 +1,720 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Resumic Schema",
-  "type": "object",
   "additionalProperties": false,
   "properties": {
-    "core": {
-      "type": "object",
-      "additionalProperties": true,
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "e.g. John Doe"
-        },
-        "title": {
-          "type": "string",
-          "description": "e.g. Software Engineer"
-        },
-        "image": {
-          "type": "string",
-          "description": "e.g. example.com/Abcxyz - [URL (as per RFC 3986) to a image in JPEG or PNG format]"
-        },
-        "email": {
-          "type": "string",
-          "description": "e.g. lucas@example.com",
-          "format": "email"
-        },
-        "phone": {
-          "type": "string",
-          "description": "e.g. 912-217-7923 - [Phone numbers are stored as strings so use any format you like]"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri",
-          "description": "e.g. http://www.example.com/my-slides/"
-        },
-        "summary": {
-          "type": "string",
-          "description": "Write a short 2-3 sentence biography about yourself"
-        },
-        "currentLocation": {
-          "type": "object",
-          "format": "location",
-          "description": "Select the location where you currently live.",
-          "properties": {
-            "lat": {
-              "type": "number"
-            },
-            "long": {
-              "type": "number"
-            }
-          }
-        },
-        "permanentLocation": {
-          "type": "object",
-          "format": "location",
-          "description": "Select the location where you permanently live.",
-          "properties": {
-            "lat": {
-              "type": "number"
-            },
-            "long": {
-              "type": "number"
-            }
-          }
-        }
-      }
-    },
-    "work": {
-      "type": "array",
-      "additionalItems": false,
-      "items": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "e.g. XYZ Inc. - [Company name]"
-          },
-          "description": {
-            "type": "string",
-            "description": "e.g. A social media company - [Description of the companies primary activity]"
-          },
-          "position": {
-            "type": "string",
-            "description": "e.g. Software Engineer - [Position at the company]"
-          },
-          "location": {
-            "type": "object",
-            "format": "location",
-            "description": "e.g. Germany - [Location for this activity]",
-            "properties": {
-              "lat": {
-                "type": "number"
-              },
-              "long": {
-                "type": "number"
-              }
-            }
-          },
-          "url": {
-            "type": "string",
-            "description": "e.g. http://xyz.example.com - [Related link to the company website]",
-            "format": "uri"
-          },
-          "startDate": {
-            "type": "string",
-            "description": "e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "endDate": {
-            "type": "string",
-            "description": "e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "summary": {
-            "type": "string",
-            "description": "Give an overview of your responsibilities at the company"
-          },
-          "highlights": {
-            "type": "array",
-            "description": "Specify multiple accomplishments",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g. Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers "
-            }
-          }
-        }
-      }
-    },
-    "education": {
-      "type": "array",
-      "additionalItems": false,
-      "items": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "institution": {
-            "type": "string",
-            "description": "e.g. XYZ Institute of Technology - [Add institute name]"
-          },
-          "location": {
-            "type": "object",
-            "format": "location",
-            "description": "e.g. Germany - [Location for this institution]",
-            "properties": {
-              "lat": {
-                "type": "number"
-              },
-              "long": {
-                "type": "number"
-              }
-            }
-          },
-          "area": {
-            "type": "string",
-            "description": "e.g. Engineering"
-          },
-          "studyType": {
-            "type": "string",
-            "description": "e.g. Bachelor"
-          },
-          "startDate": {
-            "type": "string",
-            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "endDate": {
-            "type": "string",
-            "description": "e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "score": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-              "scoretype": {
-                "type": "string",
-                "description": "eg. GPA or PERCENTAGE - [Add score type]"
-              },
-              "scorevalue": {
-                "type": "string",
-                "description": "eg. 3.4/4.0 - [Add obtained score/total score]"
-              }
-            }
-          },
-          "courses": {
-            "type": "array",
-            "description": "List notable courses/subjects",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g. CS302 - Introduction to Algorithms - [Add course name]"
-            }
-          },
-          "honors": {
-            "type": "array",
-            "description": "List education honours",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g. Magna Cum Laude"
-            }
-          }
-        }
-      }
-    },
-    "volunteer": {
-      "type": "array",
-      "additionalItems": false,
-      "items": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "organization": {
-            "type": "string",
-            "description": "e.g. Xyz "
-          },
-          "position": {
-            "type": "string",
-            "description": "e.g. Open Source Contributor - [Contribution type]"
-          },
-          "location": {
-            "type": "object",
-            "format": "location",
-            "description": "e.g. Germany - [Location for this activity]",
-            "properties": {
-              "lat": {
-                "type": "number"
-              },
-              "long": {
-                "type": "number"
-              }
-            }
-          },
-          "url": {
-            "type": "string",
-            "description": "e.g. http://xyz.example.com - [Related link to support volunteer experience]",
-            "format": "uri"
-          },
-          "startDate": {
-            "type": "string",
-            "description": "e.g. 2014-06-29 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "endDate": {
-            "type": "string",
-            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
-            "format": "date"
-          },
-          "summary": {
-            "type": "string",
-            "description": "Give an overview of your responsibilities at the company"
-          },
-          "highlights": {
-            "type": "array",
-            "description": "Specify accomplishments and achievements",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g Invited as a speaker in Xyzcon'17"
-            }
-          }
-        }
-      }
-    },
-    "publications": {
-      "type": "array",
-      "description": "Specify your publications",
-      "additionalItems": false,
-      "items": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "e.g. Deep learning and Artificial Intelligence"
-          },
-          "publisher": {
-            "type": "string",
-            "description": "e.g. XYZ, Computer Magazine"
-          },
-          "releaseDate": {
-            "type": "string",
-            "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]"
-          },
-          "resources": {
-            "type": "array",
-            "description": "Specify multiple resources with label",
-            "additionalItems": false,
-            "url": {
-              "type": "string",
-              "format": "uri",
-              "description": "e.g. http://www.example.com/my-example-slides/"
-            },
-            "label": {
-              "type": "string",
-              "description": "e.g Slides"
-            }
-          },
-          "url": {
-            "type": "string",
-            "format": "uri",
-            "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"
-          },
-          "summary": {
-            "type": "string",
-            "description": "e.g. Discussion of the advent of deep learning and artificial intelligence - [Short summary of publication]"
-          }
-        }
-      }
-    },
-    "legal": {
-      "type": "array",
-      "description": "Specify your labels",
-      "additionalItems": false,
-      "items": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "e.g. XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format - [Add document name]"
-          },
-          "legalType": {
-            "type": "string",
-            "description": "e.g. Patent, Trademark, Copyright - [Give the type of this document]"
-          },
-          "description": {
-            "type": "string",
-            "description": "Give a brief description about this document"
-          },
-          "applicationDate": {
-            "type": "string",
-            "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "grantDate": {
-            "type": "string",
-            "description": "e.g. 2016-09-01 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "endDate": {
-            "type": "string",
-            "description": "e.g. 2020-09-03 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "resources": {
-            "type": "array",
-            "description": "Specify multiple resources with label",
-            "additionalItems": false,
-            "url": {
-              "type": "string",
-              "format": "uri",
-              "description": "e.g. http://www.example.com/my-patent-slides/"
-            },
-            "label": {
-              "type": "string",
-              "description": "e.g Slides"
-            }
-          },
-          "idNumber": {
-            "type": "string",
-            "description": "e.g. JP2004369746A - [Add the application number or Id Number]  "
-          }
-        }
-      }
-    },
-    "skills": {
-      "type": "array",
-      "description": "List out your professional skill-set",
-      "additionalItems": false,
-      "items": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "e.g. Web Development"
-          },
-          "keyword": {
-            "type": "array",
-            "description": "List some keywords pertaining to the skill",
-            "additionalItems": false,
-            "items": {
-              "type": "object",
-              "additionalProperties": true,
-              "properties": {
-                "name": {
-                  "type": "string",
-                  "description": "e.g. HTML - [Add the skill name]"
-                },
-                "score": {
-                  "type": "number",
-                  "description": "e.g. 20 - [Score for the skill name]"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "awards": {
-      "type": "array",
-      "description": "Specify any awards you have received throughout your professional career",
       "additionalItems": false,
+      "description": "Specify any awards you have received throughout your professional career",
       "items": {
-        "type": "object",
         "additionalProperties": true,
         "properties": {
-          "title": {
-            "type": "string",
-            "description": "e.g. Awarded Software Process Achievement Award "
+          "awarder": {
+            "description": "e.g. IEEE",
+            "type": "string"
           },
           "date": {
-            "type": "string",
             "description": "e.g. 2016-06-12 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "awarder": {
-            "type": "string",
-            "description": "e.g. IEEE"
+            "format": "date",
+            "type": "string"
           },
           "summary": {
-            "type": "string",
-            "description": "e.g. Received for my work in Deep learning and AI"
+            "description": "e.g. Received for my work in Deep learning and AI",
+            "type": "string"
+          },
+          "title": {
+            "description": "e.g. Awarded Software Process Achievement Award ",
+            "type": "string"
           }
-        }
-      }
+        },
+        "type": "object"
+      },
+      "type": "array"
     },
-    "projects": {
-      "type": "array",
-      "description": "Specify career projects",
+    "certificate": {
       "additionalItems": false,
       "items": {
-        "type": "object",
-        "additionalProperties": true,
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "e.g. File Transfer application - [Name of the project]"
-          },
-          "location": {
-            "type": "object",
-            "format": "location",
-            "description": "e.g France - [Location for this activity]",
-            "properties": {
-              "lat": {
-                "type": "number"
-              },
-              "long": {
-                "type": "number"
-              }
-            }
-          },
-          "description": {
-            "type": "string",
-            "description": "e.g. Developed a client and server based application - [Short summary of project]"
-          },
-          "highlights": {
-            "type": "array",
-            "description": "Specify multiple features",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g. used Java AWT and Swing for client side userinterface"
-            }
-          },
-          "keywords": {
-            "type": "array",
-            "description": "Specify special elements involved",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g. Java"
-            }
-          },
-          "startDate": {
-            "type": "string",
-            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "endDate": {
-            "type": "string",
-            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
-            "format": "date"
-          },
-          "resources": {
-            "type": "array",
-            "description": "Specify multiple resources with label",
-            "additionalItems": false,
-            "url": {
-              "type": "string",
-              "format": "uri",
-              "description": "e.g. http://www.example.com/my-awesome-slides/"
-            },
-            "label": {
-              "type": "string",
-              "description": "e.g slides"
-            }
-          },
-          "url": {
-            "type": "string",
-            "format": "uri",
-            "description": "e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html"
-          },
-          "roles": {
-            "type": "array",
-            "description": "Specify your role on this project or in company",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g. Team Lead, Speaker, Writer"
-            }
-          },
-          "entity": {
-            "type": "string",
-            "description": "e.g. 'greenpeace', 'corporationXYZ' - [Relevant company/entity affiliations]"
-          },
-          "type": {
-            "type": "string",
-            "description": "e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"
-          }
-        }
-      }
-    },
-    "certificates": {
-      "type": "array",
-      "additionalItems": false,
-      "items": {
-        "type": "object",
         "additionalProperties": true,
         "properties": {
           "code": {
-            "type": "string",
-            "description": "e.g. 1Z0-062"
-          },
-          "name": {
-            "type": "string",
-            "description": "e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]"
-          },
-          "website": {
-            "type": "string",
-            "description": "Link to issuing authority's description of the certificate",
-            "format": "uri"
-          },
-          "verification": {
-            "type": "string",
-            "description": "External candidate verification URL",
-            "format": "uri"
-          },
-          "grantDate": {
-            "type": "string",
-            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
-            "format": "date"
-          },
-          "score": {
-            "type": "string",
-            "description": "e.g. 95% - [Exam result (PASS/FAIL, 100%, 100)]"
-          },
-          "endDate": {
-            "type": "string",
-            "description": "e.g. 2020-01-20",
-            "format": "date"
+            "description": "e.g. 1Z0-062",
+            "type": "string"
           },
           "doesNotExpire": {
-            "type": "boolean",
-            "format": "checkbox"
+            "format": "checkbox",
+            "type": "boolean"
+          },
+          "endDate": {
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "grantDate": {
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "name": {
+            "description": "e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]",
+            "type": "string"
+          },
+          "score": {
+            "additionalProperties": true,
+            "description": "Exam result (PASS/FAIL, 100%, 100)",
+            "properties": {
+              "type": {
+                "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                "type": "string"
+              },
+              "value": {
+                "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "verification": {
+            "description": "External candidate verification URL",
+            "format": "uri",
+            "type": "string"
+          },
+          "website": {
+            "description": "Link to issuing authority's description of the certificate",
+            "format": "uri",
+            "type": "string"
           }
-        }
-      }
+        },
+        "type": "object"
+      },
+      "type": "array"
     },
-    "references": {
-      "type": "array",
-      "description": "List references you have received",
+    "core": {
+      "additionalProperties": true,
+      "properties": {
+        "currentLocation": {
+          "additionalProperties": false,
+          "description": "Select the location where you currently live.",
+          "format": "location",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "long": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "email": {
+          "description": "e.g. lucas@example.com",
+          "format": "email",
+          "type": "string"
+        },
+        "image": {
+          "description": "e.g. example.com/Abcxyz - [URL (as per RFC 3986) to a image in JPEG or PNG format]",
+          "type": "string"
+        },
+        "name": {
+          "description": "e.g. John Doe",
+          "type": "string"
+        },
+        "permanentLocation": {
+          "additionalProperties": false,
+          "description": "Select the location where you permanently live.",
+          "format": "location",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "long": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "phone": {
+          "description": "e.g. 912-217-7923 - [Phone numbers are stored as strings so use any format you like]",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Write a short 2-3 sentence biography about yourself",
+          "type": "string"
+        },
+        "title": {
+          "description": "e.g. Software Engineer",
+          "type": "string"
+        },
+        "url": {
+          "description": "e.g. http://www.example.com/my-slides/",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "education": {
       "additionalItems": false,
       "items": {
-        "type": "object",
         "additionalProperties": true,
         "properties": {
-          "name": {
-            "type": "string",
-            "description": "e.g. Stephan Mark"
+          "area": {
+            "description": "e.g. Engineering",
+            "type": "string"
           },
-          "company": {
-            "type": "string",
-            "description": "e.g. Xyz"
+          "courses": {
+            "additionalItems": false,
+            "description": "List notable courses/subjects",
+            "items": {
+              "description": "e.g. CS302 - Introduction to Algorithms - [Add course name]",
+              "type": "string"
+            },
+            "type": "array"
           },
-          "position": {
-            "type": "string",
-            "description": "e.g. Senior Software Engineer"
+          "endDate": {
+            "description": "e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
           },
-          "reference": {
-            "type": "string",
-            "description": "e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
+          "honors": {
+            "additionalItems": false,
+            "description": "List education honours",
+            "items": {
+              "description": "e.g. Magna Cum Laude",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "institution": {
+            "description": "e.g. XYZ Institute of Technology - [Add institute name]",
+            "type": "string"
+          },
+          "location": {
+            "additionalProperties": false,
+            "description": "e.g. Germany - [Location for this institution]",
+            "format": "location",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            },
+            "type": "object"
+          },
+          "score": {
+            "additionalProperties": true,
+            "properties": {
+              "type": {
+                "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                "type": "string"
+              },
+              "value": {
+                "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "startDate": {
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "studyType": {
+            "description": "e.g. Bachelor",
+            "type": "string"
           }
-        }
-      }
+        },
+        "type": "object"
+      },
+      "type": "array"
     },
-    "languages": {
-      "type": "array",
-      "description": "List any other languages you speak",
+    "interests": {
       "additionalItems": false,
       "items": {
-        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "keywords": {
+            "additionalItems": false,
+            "description": "Specify keywords associated with the particular interest",
+            "items": {
+              "description": "e.g. Neural Networks, Convoluted Neural Networks",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "name": {
+            "description": "e.g. Machine Learning",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "languages": {
+      "additionalItems": false,
+      "description": "List any other languages you speak",
+      "items": {
         "additionalProperties": true,
         "properties": {
           "language": {
-            "type": "string",
-            "description": "e.g. English - [Name of language]"
+            "description": "e.g. English - [Name of language]",
+            "type": "string"
           },
           "score": {
-            "type": "number",
-            "description": "e.g. 20 - [Score for the language]"
+            "additionalProperties": true,
+            "description": "Score for the language",
+            "properties": {
+              "type": {
+                "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                "type": "string"
+              },
+              "value": {
+                "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                "type": "string"
+              }
+            },
+            "type": "object"
           }
-        }
-      }
+        },
+        "type": "object"
+      },
+      "type": "array"
     },
-    "interests": {
-      "type": "array",
+    "legal": {
       "additionalItems": false,
+      "description": "Specify your labels",
       "items": {
-        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "applicationDate": {
+            "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "description": {
+            "description": "Give a brief description about this document",
+            "type": "string"
+          },
+          "endDate": {
+            "description": "e.g. 2020-09-03 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "grantDate": {
+            "description": "e.g. 2016-09-01 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "idNumber": {
+            "description": "e.g. JP2004369746A - [Add the application number or Id Number]  ",
+            "type": "string"
+          },
+          "legalType": {
+            "description": "e.g. Patent, Trademark, Copyright - [Give the type of this document]",
+            "type": "string"
+          },
+          "name": {
+            "description": "e.g. XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format - [Add document name]",
+            "type": "string"
+          },
+          "resources": {
+            "additionalItems": false,
+            "description": "Specify multiple resources with label",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "description": "e.g Slides",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "e.g. http://www.example.com/my-patent-slides/",
+                  "format": "uri",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "meta": {
+      "additionalProperties": true,
+      "description": "The schema version and any other tooling configuration lives here",
+      "properties": {
+        "canonical": {
+          "description": "URL (as per RFC 3986) to latest version of this document",
+          "type": "string"
+        },
+        "lastModified": {
+          "description": "e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard]",
+          "format": "date",
+          "type": "string"
+        },
+        "version": {
+          "description": "e.g. v1.0.0 - [A version field which follows semver]",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "projects": {
+      "additionalItems": false,
+      "description": "Specify career projects",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "description": "e.g. Developed a client and server based application - [Short summary of project]",
+            "type": "string"
+          },
+          "endDate": {
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
+            "format": "date",
+            "type": "string"
+          },
+          "entity": {
+            "description": "e.g. 'greenpeace', 'corporationXYZ' - [Relevant company/entity affiliations]",
+            "type": "string"
+          },
+          "highlights": {
+            "additionalItems": false,
+            "description": "Specify multiple features",
+            "items": {
+              "description": "e.g. used Java AWT and Swing for client side userinterface",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "keywords": {
+            "additionalItems": false,
+            "description": "Specify special elements involved",
+            "items": {
+              "description": "e.g. Java",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "location": {
+            "additionalProperties": false,
+            "description": "e.g France - [Location for this activity]",
+            "format": "location",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            },
+            "type": "object"
+          },
+          "name": {
+            "description": "e.g. File Transfer application - [Name of the project]",
+            "type": "string"
+          },
+          "resources": {
+            "additionalItems": false,
+            "description": "Specify multiple resources with label",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "description": "e.g Slides",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "e.g. http://www.example.com/my-awesome-slides/",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "roles": {
+            "additionalItems": false,
+            "description": "Specify your role on this project or in company",
+            "items": {
+              "description": "e.g. Team Lead, Speaker, Writer",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "startDate": {
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "type": {
+            "description": "e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "publications": {
+      "additionalItems": false,
+      "description": "Specify your publications",
+      "items": {
         "additionalProperties": true,
         "properties": {
           "name": {
-            "type": "string",
-            "description": "e.g. Machine Learning"
-          }
-        },
-          "keywords": {
-            "type": "array",
-            "description": "Specify keywords associated with the particular interest",
+            "description": "e.g. Deep learning and Artificial Intelligence",
+            "type": "string"
+          },
+          "publisher": {
+            "description": "e.g. XYZ, Computer Magazine",
+            "type": "string"
+          },
+          "releaseDate": {
+            "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]",
+            "type": "string"
+          },
+          "resources": {
             "additionalItems": false,
+            "description": "Specify multiple resources with label",
             "items": {
-              "type": "string",
-              "description": "e.g. Neural Networks, Convoluted Neural Networks"
-            }
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "description": "e.g Slides",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "e.g. http://www.example.com/my-example-slides/",
+                  "format": "uri",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "summary": {
+            "description": "e.g. Discussion of the advent of deep learning and artificial intelligence - [Short summary of publication]",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html",
+            "format": "uri",
+            "type": "string"
           }
-        }
+        },
+        "type": "object"
       },
-    "meta": {
-      "type": "object",
-      "description": "The schema version and any other tooling configuration lives here",
-      "additionalProperties": true,
-      "properties": {
-        "canonical": {
-          "type": "string",
-          "description": "URL (as per RFC 3986) to latest version of this document"
+      "type": "array"
+    },
+    "references": {
+      "additionalItems": false,
+      "description": "List references you have received",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "company": {
+            "description": "e.g. Xyz",
+            "type": "string"
+          },
+          "name": {
+            "description": "e.g. Stephan Mark",
+            "type": "string"
+          },
+          "position": {
+            "description": "e.g. Senior Software Engineer",
+            "type": "string"
+          },
+          "reference": {
+            "description": "e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.",
+            "type": "string"
+          }
         },
-        "version": {
-          "type": "string",
-          "description": "e.g. v1.0.0 - [A version field which follows semver]"
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "skills": {
+      "additionalItems": false,
+      "description": "List out your professional skill-set",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "keyword": {
+            "additionalItems": false,
+            "description": "List some keywords pertaining to the skill",
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "name": {
+                  "description": "e.g. HTML - [Add the skill name]",
+                  "type": "string"
+                },
+                "score": {
+                  "additionalProperties": true,
+                  "description": "Score for the skill name",
+                  "properties": {
+                    "type": {
+                      "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                      "type": "string"
+                    },
+                    "value": {
+                      "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "name": {
+            "description": "e.g. Web Development",
+            "type": "string"
+          }
         },
-        "lastModified": {
-          "type": "string",
-          "description": "e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard]",
-          "format": "date"
-        }
-      }
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "volunteer": {
+      "additionalItems": false,
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "endDate": {
+            "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
+            "format": "date",
+            "type": "string"
+          },
+          "highlights": {
+            "additionalItems": false,
+            "description": "Specify accomplishments and achievements",
+            "items": {
+              "description": "e.g Invited as a speaker in Xyzcon'17",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "location": {
+            "additionalProperties": false,
+            "description": "e.g. Germany - [Location for this activity]",
+            "format": "location",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            },
+            "type": "object"
+          },
+          "organization": {
+            "description": "e.g. Xyz ",
+            "type": "string"
+          },
+          "position": {
+            "description": "e.g. Open Source Contributor - [Contribution type]",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "e.g. 2014-06-29 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "summary": {
+            "description": "Give an overview of your responsibilities at the company",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://xyz.example.com - [Related link to support volunteer experience]",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "work": {
+      "additionalItems": false,
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "description": "e.g. A social media company - [Description of the companies primary activity]",
+            "type": "string"
+          },
+          "endDate": {
+            "description": "e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "highlights": {
+            "additionalItems": false,
+            "description": "Specify multiple accomplishments",
+            "items": {
+              "description": "e.g. Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "location": {
+            "additionalProperties": false,
+            "description": "e.g. Germany - [Location for this activity]",
+            "format": "location",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "long": {
+                "type": "number"
+              }
+            },
+            "type": "object"
+          },
+          "name": {
+            "description": "e.g. XYZ Inc. - [Company name]",
+            "type": "string"
+          },
+          "position": {
+            "description": "e.g. Software Engineer - [Position at the company]",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard]",
+            "format": "date",
+            "type": "string"
+          },
+          "summary": {
+            "description": "Give an overview of your responsibilities at the company",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://xyz.example.com - [Related link to the company website]",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Resumic Schema",
+  "type": "object"
 }
