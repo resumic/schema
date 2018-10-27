@@ -86,7 +86,7 @@ func NewExample() Schema {
 	skill := skillSchema{
 		Name: "Web Development",
 		Keyword: []struct {
-			Name  string      `jsonschema:"name;description:e.g. HTML - [Add the skill name]"`
+			Name  string      `jsonschema:"name;description:Add the skill name"`
 			Score scoreSchema `jsonschema:"score;additionalProperties;description:Score for the skill name"`
 		}{
 			{
