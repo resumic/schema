@@ -63,7 +63,6 @@ func main() {
 		fmt.Println("subcommand is required")
 		os.Exit(1)
 	}
-	fmt.Println(*schemaFile, *exampleFile)
 	switch flag.Args()[0] {
 	case "validate":
 		validate.ValidateJSON(*doc)
