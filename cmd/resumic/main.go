@@ -34,9 +34,28 @@ func GenerateSchema(schemaFile string) {
 	log.Printf("Schema file created successfully: %s", file.Name())
 }
 
+func GenerateExample(exampleFile string) {
+	example := schema.NewExample()
+	json, err := json.MarshalIndent(example, "", "  ")
+	if err != nil {
+		log.Fatal("couldn't parse the example")
+	}
+	file, err := os.Create(exampleFile)
+	defer file.Close()
+	if err != nil {
+		log.Fatal("couldn't create the example file")
+	}
+	_, err = file.Write(json)
+	if err != nil {
+		log.Fatal("couldn't write the example content to given the schema file")
+	}
+	log.Printf("Example file created successfully: %s", file.Name())
+}
+
 func main() {
 	doc := flag.String("doc", "../../examples/invalid/invalid_email.json", "Example file")
 	schemaFile := flag.String("schema", "./schema.json", "Generate JSON Schema")
+	exampleFile := flag.String("example", "./example.json", "Generate example JSON")
 	flag.Parse()
 
 	// Verify that a subcommand has been provided
@@ -44,11 +63,14 @@ func main() {
 		fmt.Println("subcommand is required")
 		os.Exit(1)
 	}
+	fmt.Println(*schemaFile, *exampleFile)
 	switch flag.Args()[0] {
 	case "validate":
 		validate.ValidateJSON(*doc)
 	case "schema":
 		GenerateSchema(*schemaFile)
+	case "example":
+		GenerateExample(*exampleFile)
 	default:
 		log.Fatalf("Unsupported subcommands. Please check --help for commands list")
 	}
