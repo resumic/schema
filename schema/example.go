@@ -21,7 +21,7 @@ func NewExample() Schema {
 		Title:             "Software Engineer",
 		Image:             "example.com/Abcxyz",
 		Email:             "lucas@example.com",
-		Phone:             "http://www.example.com/my-slides/",
+		Phone:             "912-217-7923",
 		URL:               "http://www.example.com/",
 		Summary:           "The man who sold the world!",
 		CurrentLocation:   location,
@@ -33,7 +33,7 @@ func NewExample() Schema {
 		Description: "A social media company",
 		Position:    "Software Engineer",
 		Location:    location,
-		URL:         "http:/xyz.example.com",
+		URL:         "http://xyz.example.com",
 		StartDate:   "2017-12-29",
 		EndDate:     "2018-12-29",
 		Summary:     "Developing and maintaining the company website using syna",
@@ -41,7 +41,7 @@ func NewExample() Schema {
 	}
 
 	education := educationSchema{
-		Institution: "e.g. XYZ Institute of Technology",
+		Institution: "XYZ Institute of Technology",
 		Location:    location,
 		Area:        "Engineering",
 		StudyType:   "Bachelor",
@@ -85,15 +85,11 @@ func NewExample() Schema {
 
 	skill := skillSchema{
 		Name: "Web Development",
-		Keyword: []struct {
-			Name  string      `jsonschema:"name;description:e.g. HTML - [Add the skill name]"`
-			Score scoreSchema `jsonschema:"score;additionalProperties;description:Score for the skill name"`
-		}{
-			{
-				Name:  "HTML",
-				Score: score,
-			},
+		Score: scoreSchema{
+			Type:  "Percentage",
+			Value: "80",
 		},
+		Keyword: []string{"HTML"},
 	}
 
 	award := awardSchema{
@@ -138,7 +134,10 @@ func NewExample() Schema {
 
 	language := languageSchema{
 		Language: "English",
-		Score:    score,
+		Score: scoreSchema{
+			Type:  "objective",
+			Value: "fluent",
+		},
 	}
 
 	interest := interestSchema{

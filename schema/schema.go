@@ -20,7 +20,7 @@ type coreSchema struct {
 	Title             string         `jsonschema:"title;description:e.g. Software Engineer"`
 	Image             string         `jsonschema:"image;description:e.g. example.com/Abcxyz - [URL (as per RFC 3986) to a image in JPEG or PNG format]"`
 	Email             string         `jsonschema:"email;description:e.g. lucas@example.com;format:email"`
-	Phone             string         `jsonschema:"phone;description:e.g. 912-217-7923 - [Phone numbers are stored as strings so use any format you like]"`
+	Phone             string         `jsonschema:"phone;description:e.g. 912-217-7923 - [Phone number]"`
 	URL               string         `jsonschema:"url;description:e.g. http://www.example.com/my-slides/;format:uri"`
 	Summary           string         `jsonschema:"summary;description:Write a short 2-3 sentence biography about yourself"`
 	CurrentLocation   locationSchema `jsonschema:"currentLocation;description:Select the location where you currently live.;format:location"`
@@ -83,11 +83,9 @@ type legalSchema struct {
 }
 
 type skillSchema struct {
-	Name    string `jsonschema:"name;description:e.g. Web Development"`
-	Keyword []struct {
-		Name  string      `jsonschema:"name;description:e.g. HTML - [Add the skill name]"`
-		Score scoreSchema `jsonschema:"score;additionalProperties;description:Score for the skill name"`
-	} `jsonschema:"keyword;description:List some keywords pertaining to the skill;items_additionalProperties"`
+	Name    string      `jsonschema:"name;description:e.g. Web Development"`
+	Score   scoreSchema `jsonschema:"score;additionalProperties;description:Score for the skill name"`
+	Keyword []string    `jsonschema:"keyword;description:List some keywords pertaining to the skill;items_additionalProperties"`
 }
 
 type awardSchema struct {
