@@ -85,7 +85,7 @@ type legalSchema struct {
 type skillSchema struct {
 	Name    string      `jsonschema:"name;description:e.g. Web Development"`
 	Score   scoreSchema `jsonschema:"score;additionalProperties;description:Score for the skill name"`
-	Keyword []string    `jsonschema:"keyword;description:List some keywords pertaining to the skill;items_additionalProperties"`
+	Keyword []string    `jsonschema:"keyword;description:List some keywords pertaining to the skill"`
 }
 
 type awardSchema struct {
