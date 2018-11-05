@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 
-	"github.com/resumic/schema/cmd/resumic/validate"
 	"github.com/resumic/schema/jsonschema"
 	"github.com/resumic/schema/schema"
 	"github.com/xeipuuv/gojsonschema"
@@ -24,7 +24,13 @@ func ValidateResume(resumeFile string) {
 		log.Fatal("couldn't marshal the schema")
 	}
 	schemaLoader := gojsonschema.NewBytesLoader(schemaJSON)
-	resumeLoader := gojsonschema.NewReferenceLoader(resumeFile)
+
+	resumeJSON, err := ioutil.ReadFile(resumeFile)
+	if err != nil {
+		log.Fatalf("couldn't read the resume file: %s", err)
+	}
+	resumeLoader := gojsonschema.NewBytesLoader(resumeJSON)
+
 	result, err := gojsonschema.Validate(schemaLoader, resumeLoader)
 	if err != nil {
 		log.Fatalf("couldn't validate the resume: %s", err)
@@ -32,10 +38,10 @@ func ValidateResume(resumeFile string) {
 	if result.Valid() {
 		log.Printf("%s is a valid resume.", resumeFile)
 	} else {
-		log.Fatalf("%s is not a valid resume", resumeFile)
 		for _, desc := range result.Errors() {
-			log.Fatal(desc)
+			log.Println(desc)
 		}
+		log.Fatalf("%s is not a valid resume", resumeFile)
 	}
 }
 
@@ -81,7 +87,7 @@ func GenerateExample(exampleFile string) {
 }
 
 func main() {
-	resume := flag.String("resume", "", "Resume file")
+	resumeFile := flag.String("resume", "", "Resume file")
 	schemaFile := flag.String("schema", "./schema.json", "Generate JSON Schema")
 	exampleFile := flag.String("example", "./example.json", "Generate example JSON")
 	flag.Parse()
@@ -93,7 +99,7 @@ func main() {
 	}
 	switch flag.Args()[0] {
 	case "validate":
-		validate.ValidateJSON(*resume)
+		ValidateResume(*resumeFile)
 	case "schema":
 		GenerateSchema(*schemaFile)
 	case "example":
