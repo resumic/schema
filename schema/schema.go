@@ -11,7 +11,7 @@ type scoreSchema struct {
 }
 
 type resourceSchema struct {
-	URL   string `json:"url" jsonschema:"url;description:e.g. http://www.example.com/my-example-slides/;format:uri"`
+	URL   string `json:"url" jsonschema:"url;description:e.g. http://www.example.com/my-example-slides/;format:uri-reference"`
 	Label string `json:"label" jsonschema:"label;description:e.g Slides"`
 }
 
@@ -21,7 +21,7 @@ type coreSchema struct {
 	Image             string         `json:"image" jsonschema:"image;description:e.g. example.com/Abcxyz - [URL (as per RFC 3986) to a image in JPEG or PNG format]"`
 	Email             string         `json:"email" jsonschema:"email;description:e.g. lucas@example.com;format:email"`
 	Phone             string         `json:"phone" jsonschema:"phone;description:e.g. 912-217-7923 - [Phone number]"`
-	URL               string         `json:"url" jsonschema:"url;description:e.g. http://www.example.com/my-slides/;format:uri"`
+	URL               string         `json:"url" jsonschema:"url;description:e.g. http://www.example.com/my-slides/;format:uri-reference"`
 	Summary           string         `json:"summary" jsonschema:"summary;description:Write a short 2-3 sentence biography about yourself"`
 	CurrentLocation   locationSchema `json:"currentLocation" jsonschema:"currentLocation;description:Select the location where you currently live.;format:location"`
 	PermanentLocation locationSchema `json:"permanentLocation" jsonschema:"permanentLocation;description:Select the location where you permanently live.;format:location"`
@@ -32,7 +32,7 @@ type workSchema struct {
 	Description string         `json:"description" jsonschema:"description;description:e.g. A social media company - [Description of the companies primary activity]"`
 	Position    string         `json:"position" jsonschema:"position;description:e.g. Software Engineer - [Position at the company]"`
 	Location    locationSchema `json:"location" jsonschema:"location;description:e.g. Germany - [Location for this activity];format:location"`
-	URL         string         `json:"url" jsonschema:"url;description:e.g. http://xyz.example.com - [Related link to the company website];format:uri"`
+	URL         string         `json:"url" jsonschema:"url;description:e.g. http://xyz.example.com - [Related link to the company website];format:uri-reference"`
 	StartDate   string         `json:"startDate" jsonschema:"startDate;description:e.g. 2017-06-28 - [resume.json uses the ISO 8601 date standard];format:date"`
 	EndDate     string         `json:"endDate" jsonschema:"endDate;description:e.g. 2018-12-29 - [resume.json uses the ISO 8601 date standard];format:date"`
 	Summary     string         `json:"summary" jsonschema:"summary;description:Give an overview of your responsibilities at the company"`
@@ -55,7 +55,7 @@ type volunteerSchema struct {
 	Organization string         `json:"organization" jsonschema:"organization;description:e.g. Xyz "`
 	Position     string         `json:"position" jsonschema:"position;description:e.g. Open Source Contributor - [Contribution type]"`
 	Location     locationSchema `json:"location" jsonschema:"location;description:e.g. Germany - [Location for this activity];format:location"`
-	URL          string         `json:"url" jsonschema:"url;description:e.g. http://xyz.example.com - [Related link to support volunteer experience];format:uri"`
+	URL          string         `json:"url" jsonschema:"url;description:e.g. http://xyz.example.com - [Related link to support volunteer experience];format:uri-reference"`
 	StartDate    string         `json:"startDate" jsonschema:"startDate;description:e.g. 2014-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
 	EndDate      string         `json:"endDate" jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ;format:date"`
 	Summary      string         `json:"summary" jsonschema:"summary;description:Give an overview of your responsibilities at the company"`
@@ -67,7 +67,7 @@ type publicationSchema struct {
 	Publisher   string           `json:"publisher" jsonschema:"publisher;description:e.g. XYZ, Computer Magazine"`
 	ReleaseDate string           `json:"releaseDate" jsonschema:"releaseDate;description:e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]"`
 	Resources   []resourceSchema `json:"resources" jsonschema:"resources;description:Specify multiple resources with label"`
-	URL         string           `json:"url" jsonschema:"url;description:e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html;format:uri"`
+	URL         string           `json:"url" jsonschema:"url;description:e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html;format:uri-reference"`
 	Summary     string           `json:"summary" jsonschema:"summary;description:e.g. Discussion of the advent of deep learning and artificial intelligence - [Short summary of publication]"`
 }
 
@@ -104,7 +104,7 @@ type projectSchema struct {
 	StartDate   string           `json:"startDate" jsonschema:"startDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
 	EndDate     string           `json:"endDate" jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ;format:date"`
 	Resources   []resourceSchema `json:"resources" jsonschema:"resources;description:Specify multiple resources with label"`
-	URL         string           `json:"url" jsonschema:"url;description:e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html;format:uri"`
+	URL         string           `json:"url" jsonschema:"url;description:e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html;format:uri-reference"`
 	Roles       []string         `json:"roles" jsonschema:"roles;description:Specify your role on this project or in company;items_description:e.g. Team Lead, Speaker, Writer"`
 	Entity      string           `json:"entity" jsonschema:"entity;description:e.g. 'greenpeace', 'corporationXYZ' - [Relevant company/entity affiliations]"`
 	Type        string           `json:"type" jsonschema:"type;description:e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'"`
@@ -113,8 +113,8 @@ type projectSchema struct {
 type certificateSchema struct {
 	Code          string      `json:"code" jsonschema:"code;description:e.g. 1Z0-062"`
 	Name          string      `json:"name" jsonschema:"name;description:e.g. XYZ Certified Application Specialist (MCAS) - [Add the certificate name]"`
-	Website       string      `json:"website" jsonschema:"website;description:Link to issuing authority's description of the certificate;format:uri"`
-	Verification  string      `json:"verification" jsonschema:"verification;description:External candidate verification URL;format:uri"`
+	Website       string      `json:"website" jsonschema:"website;description:Link to issuing authority's description of the certificate;format:uri-reference"`
+	Verification  string      `json:"verification" jsonschema:"verification;description:External candidate verification URL;format:uri-reference"`
 	GrantDate     string      `json:"grantDate" jsonschema:"grantDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
 	Score         scoreSchema `json:"score" jsonschema:"score;additionalProperties;description:Exam result (PASS/FAIL, 100%, 100)"`
 	EndDate       string      `json:"endDate" jsonschema:"endDate;description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date"`
@@ -141,7 +141,7 @@ type interestSchema struct {
 type metaSchema struct {
 	Canonical    string `json:"canonical" jsonschema:"canonical;description:URL (as per RFC 3986) to latest version of this document"`
 	Version      string `json:"version" jsonschema:"version;description:e.g. v1.0.0 - [A version field which follows semver]"`
-	LastModified string `json:"lastModified" jsonschema:"lastModified;description:e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard];format:date"`
+	LastModified string `json:"lastModified" jsonschema:"lastModified;description:e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard];format:date-time"`
 }
 
 type Schema struct {
