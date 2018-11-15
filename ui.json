@@ -1,0 +1,108 @@
+{
+    "ui:order": ["core", "work", "education", "volunteer", "publications", "legal", "skills", "awards", "projects", "certificate", "references", "languages", "interests", "meta"],
+    "core": {
+        "ui:order": ["name", "title", "image", "email", "phone", "url", "summary", "currentLocation", "permanentLocation"],
+        "currentLocation": {
+            "ui:order": ["lat", "long"]
+        }
+    },
+    "work": {
+        "items": {
+            "ui:order": ["name", "description", "position", "location", "url", "startDate", "endDate", "summary", "highlights"],
+            "location": {
+                "ui:order": ["lat", "long"]
+            }
+        }
+    },
+    "education": {
+        "items": {
+            "ui:order": ["institution", "location", "area", "studyType", "startDate", "endDate", "score", "courses", "honors"],
+            "score": {
+                "ui:order": ["type", "value"]
+            }
+        }
+    },
+    "volunteer": {
+        "items": {
+            "ui:order": ["organication", "position", "location", "url", "startDate", "endDate", "summary", "highlights"],
+            "location": {
+                "ui:order": ["lat", "long"]
+            }
+        }
+    },
+    "publications": {
+        "items": {
+            "ui:order": ["name", "publisher", "releaseDate", "resources", "url", "summary"],
+            "resources": {
+                "items": {
+                    "ui:order": ["label", "url"]
+                }
+            }
+        }
+    },
+    "legal": {
+        "items": {
+            "ui:order": ["name", "legalType", "description", "applicationDate", "grantDate", "endDate", "resources", "idNumber"],
+            "resources": {
+                "items": {
+                    "ui:order": ["label", "url"]
+                }
+            }
+        }
+    },
+    "skills": {
+        "items": {
+            "ui:order": ["name", "score", "keyword"],
+            "score": {
+                "ui:order": ["type", "value"]
+            }
+        }
+    },
+    "awards": {
+        "items": {
+            "ui:order": ["title", "date", "awarder", "summary"]
+        }
+    },
+    "projects": {
+        "items": {
+            "ui:order": ["name", "location", "description", "highlights", "keywords", "startDate", "endDate", "resources", "url", "roles", "entity", "type"],
+            "location": {
+                "ui:order": ["lat", "long"]
+            },
+            "resources": {
+                "items": {
+                    "ui:order": ["label", "url"]
+                }
+            }
+        }
+    },
+    "certificate": {
+        "items": {
+            "ui:order": ["code", "name", "website", "verification", "grantDate", "score", "endDate", "doesNotExpire"],
+            "score": {
+                "ui:order": ["type", "value"]
+            }
+        }
+    },
+    "references": {
+        "items": {
+            "ui:order": ["name", "company", "position", "reference"]
+        }
+    },
+    "languages": {
+        "items": {
+            "ui:order": ["language", "score"],
+            "score": {
+                "ui:order": ["type", "value"]
+            }
+        }
+    },
+    "interests": {
+        "items": {
+            "ui:order": ["name", "keywords"]
+        }
+    },
+    "meta": {
+        "ui:order": ["canonical", "version", "lastModified"]
+    }
+}
