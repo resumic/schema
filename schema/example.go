@@ -148,7 +148,7 @@ func NewExample() Schema {
 	meta := metaSchema{
 		Canonical:    "",
 		Version:      "v1.0.0",
-		LastModified: "2017-06-29T15:53:01",
+		LastModified: "2017-06-29T15:53:01+01:00",
 	}
 
 	schema := Schema{

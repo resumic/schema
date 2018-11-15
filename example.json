@@ -96,7 +96,7 @@
       "description": "Some legal document!",
       "applicationDate": "2015-08-01",
       "grantDate": "2016-09-01",
-      "endDate": "2020-09-3",
+      "endDate": "2020-09-03",
       "resources": [
         {
           "url": "http://www.example.com/my-example-slides/",
@@ -201,6 +201,6 @@
   "meta": {
     "canonical": "",
     "version": "v1.0.0",
-    "lastModified": "2017-06-29T15:53:01"
+    "lastModified": "2017-06-29T15:53:01+01:00"
   }
 }

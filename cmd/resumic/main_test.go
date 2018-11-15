@@ -49,9 +49,6 @@ func TestGenerateSchemaValid(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not generate schema, %s", err)
 	}
-	if err != nil {
-		t.Fatalf("Could not read schema.json, %s", err)
-	}
 	r, err := compareJSONFiles("../../schema.json", tempFile.Name())
 	if err != nil {
 		t.Fatalf("could not compare schema.json and generated schema: %s", err)
@@ -70,9 +67,6 @@ func TestGenerateExampleValid(t *testing.T) {
 	err = GenerateExample(tempFile.Name())
 	if err != nil {
 		t.Fatalf("Could not generate example, %s", err)
-	}
-	if err != nil {
-		t.Fatalf("Could not read example.json, %s", err)
 	}
 	r, err := compareJSONFiles("../../example.json", tempFile.Name())
 	if err != nil {
