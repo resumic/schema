@@ -74,12 +74,12 @@
           },
           "verification": {
             "description": "External candidate verification URL",
-            "format": "uri",
+            "format": "uri-reference",
             "type": "string"
           },
           "website": {
             "description": "Link to issuing authority's description of the certificate",
-            "format": "uri",
+            "format": "uri-reference",
             "type": "string"
           }
         },
@@ -132,7 +132,7 @@
           "type": "object"
         },
         "phone": {
-          "description": "e.g. 912-217-7923 - [Phone numbers are stored as strings so use any format you like]",
+          "description": "e.g. 912-217-7923 - [Phone number]",
           "type": "string"
         },
         "summary": {
@@ -145,7 +145,7 @@
         },
         "url": {
           "description": "e.g. http://www.example.com/my-slides/",
-          "format": "uri",
+          "format": "uri-reference",
           "type": "string"
         }
       },
@@ -330,8 +330,8 @@
                   "type": "string"
                 },
                 "url": {
-                  "description": "e.g. http://www.example.com/my-patent-slides/",
-                  "format": "uri",
+                  "description": "e.g. http://www.example.com/my-example-slides/",
+                  "format": "uri-reference",
                   "type": "string"
                 }
               },
@@ -354,7 +354,7 @@
         },
         "lastModified": {
           "description": "e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard]",
-          "format": "date",
+          "format": "date-time",
           "type": "string"
         },
         "version": {
@@ -430,7 +430,8 @@
                   "type": "string"
                 },
                 "url": {
-                  "description": "e.g. http://www.example.com/my-awesome-slides/",
+                  "description": "e.g. http://www.example.com/my-example-slides/",
+                  "format": "uri-reference",
                   "type": "string"
                 }
               },
@@ -458,7 +459,7 @@
           },
           "url": {
             "description": "e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html",
-            "format": "uri",
+            "format": "uri-reference",
             "type": "string"
           }
         },
@@ -496,7 +497,7 @@
                 },
                 "url": {
                   "description": "e.g. http://www.example.com/my-example-slides/",
-                  "format": "uri",
+                  "format": "uri-reference",
                   "type": "string"
                 }
               },
@@ -510,7 +511,7 @@
           },
           "url": {
             "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html",
-            "format": "uri",
+            "format": "uri-reference",
             "type": "string"
           }
         },
@@ -555,35 +556,28 @@
             "additionalItems": false,
             "description": "List some keywords pertaining to the skill",
             "items": {
-              "additionalProperties": true,
-              "properties": {
-                "name": {
-                  "description": "e.g. HTML - [Add the skill name]",
-                  "type": "string"
-                },
-                "score": {
-                  "additionalProperties": true,
-                  "description": "Score for the skill name",
-                  "properties": {
-                    "type": {
-                      "description": "eg. GPA or PERCENTAGE - [Add score type]",
-                      "type": "string"
-                    },
-                    "value": {
-                      "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              },
-              "type": "object"
+              "type": "string"
             },
             "type": "array"
           },
           "name": {
             "description": "e.g. Web Development",
             "type": "string"
+          },
+          "score": {
+            "additionalProperties": true,
+            "description": "Score for the skill name",
+            "properties": {
+              "type": {
+                "description": "eg. GPA or PERCENTAGE - [Add score type]",
+                "type": "string"
+              },
+              "value": {
+                "description": "eg. 3.4/4.0 - [Add obtained score/total score]",
+                "type": "string"
+              }
+            },
+            "type": "object"
           }
         },
         "type": "object"
@@ -642,7 +636,7 @@
           },
           "url": {
             "description": "e.g. http://xyz.example.com - [Related link to support volunteer experience]",
-            "format": "uri",
+            "format": "uri-reference",
             "type": "string"
           }
         },
@@ -706,7 +700,7 @@
           },
           "url": {
             "description": "e.g. http://xyz.example.com - [Related link to the company website]",
-            "format": "uri",
+            "format": "uri-reference",
             "type": "string"
           }
         },

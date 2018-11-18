@@ -4,56 +4,90 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 
-	"github.com/resumic/schema/cmd/resumic/validate"
 	"github.com/resumic/schema/jsonschema"
 	"github.com/resumic/schema/schema"
+	"github.com/xeipuuv/gojsonschema"
 )
 
-// GenerateSchema generates the schema.json file
-func GenerateSchema(schemaFile string) {
+// ValidateResume validate a resume file
+func ValidateResume(resumeFile string) error {
 	schema, err := jsonschema.NewSchema(schema.Schema{}, "", "Resumic Schema")
 	if err != nil {
-		log.Fatalf("Couldn't get the schema struct: %s", err)
+		return fmt.Errorf("couldn't get the schema struct: %s", err)
+	}
+	schemaJSON, err := json.MarshalIndent(schema, "", "  ")
+	if err != nil {
+		return fmt.Errorf("couldn't marshal the schema")
+	}
+	schemaLoader := gojsonschema.NewBytesLoader(schemaJSON)
+
+	resumeJSON, err := ioutil.ReadFile(resumeFile)
+	if err != nil {
+		return fmt.Errorf("couldn't read the resume file: %s", err)
+	}
+	resumeLoader := gojsonschema.NewBytesLoader(resumeJSON)
+
+	result, err := gojsonschema.Validate(schemaLoader, resumeLoader)
+	if err != nil {
+		return fmt.Errorf("couldn't validate the resume: %s", err)
+	}
+	if !result.Valid() {
+		errors := ""
+		for _, err := range result.Errors() {
+			errors += "\n" + err.String()
+		}
+		log.Fatalf("%s is not a valid resume:%s", resumeFile, errors)
+	}
+	return nil
+}
+
+// GenerateSchema generates the schema.json file
+func GenerateSchema(schemaFile string) error {
+	schema, err := jsonschema.NewSchema(schema.Schema{}, "", "Resumic Schema")
+	if err != nil {
+		return fmt.Errorf("couldn't get the schema struct: %s", err)
 	}
 	json, err := json.MarshalIndent(schema, "", "  ")
 	if err != nil {
-		log.Fatal("couldn't parse the schema")
+		return fmt.Errorf("couldn't marshal the schema")
 	}
 	file, err := os.Create(schemaFile)
 	defer file.Close()
 	if err != nil {
-		log.Fatal("couldn't create the schema file")
+		return fmt.Errorf("couldn't create the schema file")
 	}
 	_, err = file.Write(json)
 	if err != nil {
-		log.Fatal("couldn't write the schema content to given the schema file")
+		return fmt.Errorf("couldn't write the schema content to given the schema file")
 	}
-	log.Printf("Schema file created successfully: %s", file.Name())
+	return nil
 }
 
-func GenerateExample(exampleFile string) {
+// GenerateExample generate the example file
+func GenerateExample(exampleFile string) error {
 	example := schema.NewExample()
 	json, err := json.MarshalIndent(example, "", "  ")
 	if err != nil {
-		log.Fatal("couldn't parse the example")
+		return fmt.Errorf("couldn't parse the example")
 	}
 	file, err := os.Create(exampleFile)
 	defer file.Close()
 	if err != nil {
-		log.Fatal("couldn't create the example file")
+		return fmt.Errorf("couldn't create the example file")
 	}
 	_, err = file.Write(json)
 	if err != nil {
-		log.Fatal("couldn't write the example content to given the schema file")
+		return fmt.Errorf("couldn't write the example content to given the schema file")
 	}
-	log.Printf("Example file created successfully: %s", file.Name())
+	return nil
 }
 
 func main() {
-	doc := flag.String("doc", "../../examples/invalid/invalid_email.json", "Example file")
+	resumeFile := flag.String("resume", "", "Resume file")
 	schemaFile := flag.String("schema", "./schema.json", "Generate JSON Schema")
 	exampleFile := flag.String("example", "./example.json", "Generate example JSON")
 	flag.Parse()
@@ -65,12 +99,24 @@ func main() {
 	}
 	switch flag.Args()[0] {
 	case "validate":
-		validate.ValidateJSON(*doc)
+		err := ValidateResume(*resumeFile)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		log.Println("resume is valid.")
 	case "schema":
-		GenerateSchema(*schemaFile)
+		err := GenerateSchema(*schemaFile)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		log.Println("Schema file created successfully")
 	case "example":
-		GenerateExample(*exampleFile)
+		err := GenerateExample(*exampleFile)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		log.Println("Example file created successfully")
 	default:
-		log.Fatalf("Unsupported subcommands. Please check --help for commands list")
+		log.Fatalln("Unsupported subcommands. Please check --help for commands list")
 	}
 }

@@ -78,7 +78,7 @@ func NewExample() Schema {
 		Description:     "Some legal document!",
 		ApplicationDate: "2015-08-01",
 		GrantDate:       "2016-09-01",
-		EndDate:         "2020-09-3",
+		EndDate:         "2020-09-03",
 		Resources:       []resourceSchema{resource},
 		IDNumber:        "JP2004369746A",
 	}
@@ -148,7 +148,7 @@ func NewExample() Schema {
 	meta := metaSchema{
 		Canonical:    "",
 		Version:      "v1.0.0",
-		LastModified: "2017-06-29T15:53:01",
+		LastModified: "2017-06-29T15:53:01+01:00",
 	}
 
 	schema := Schema{
