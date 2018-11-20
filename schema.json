@@ -74,12 +74,12 @@
           },
           "verification": {
             "description": "External candidate verification URL",
-            "format": "uri-reference",
+            "format": "uri",
             "type": "string"
           },
           "website": {
             "description": "Link to issuing authority's description of the certificate",
-            "format": "uri-reference",
+            "format": "uri",
             "type": "string"
           }
         },
@@ -145,7 +145,7 @@
         },
         "url": {
           "description": "e.g. http://www.example.com/my-slides/",
-          "format": "uri-reference",
+          "format": "uri",
           "type": "string"
         }
       },
@@ -331,7 +331,7 @@
                 },
                 "url": {
                   "description": "e.g. http://www.example.com/my-example-slides/",
-                  "format": "uri-reference",
+                  "format": "uri",
                   "type": "string"
                 }
               },
@@ -431,7 +431,7 @@
                 },
                 "url": {
                   "description": "e.g. http://www.example.com/my-example-slides/",
-                  "format": "uri-reference",
+                  "format": "uri",
                   "type": "string"
                 }
               },
@@ -459,7 +459,7 @@
           },
           "url": {
             "description": "e.g. http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html",
-            "format": "uri-reference",
+            "format": "uri",
             "type": "string"
           }
         },
@@ -497,7 +497,7 @@
                 },
                 "url": {
                   "description": "e.g. http://www.example.com/my-example-slides/",
-                  "format": "uri-reference",
+                  "format": "uri",
                   "type": "string"
                 }
               },
@@ -511,7 +511,7 @@
           },
           "url": {
             "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html",
-            "format": "uri-reference",
+            "format": "uri",
             "type": "string"
           }
         },
@@ -636,7 +636,7 @@
           },
           "url": {
             "description": "e.g. http://xyz.example.com - [Related link to support volunteer experience]",
-            "format": "uri-reference",
+            "format": "uri",
             "type": "string"
           }
         },
@@ -700,7 +700,7 @@
           },
           "url": {
             "description": "e.g. http://xyz.example.com - [Related link to the company website]",
-            "format": "uri-reference",
+            "format": "uri",
             "type": "string"
           }
         },
