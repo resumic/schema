@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/resumic/schema/hugo"
 	"github.com/resumic/schema/jsonschema"
 	"github.com/resumic/schema/schema"
 	"github.com/xeipuuv/gojsonschema"
@@ -86,6 +87,13 @@ func GenerateExample(exampleFile string) error {
 	return nil
 }
 
+func RenderResume() error {
+	hugo, err := hugo.New("/home/arman/test-resumic/site")
+	example, err := json.MarshalIndent(schema.NewExample(), "", "  ")
+	hugo.NewResume(example)
+	return err
+}
+
 func main() {
 	resumeFile := flag.String("resume", "", "Resume file")
 	schemaFile := flag.String("schema", "./schema.json", "Generate JSON Schema")
@@ -116,6 +124,12 @@ func main() {
 			log.Fatalln(err)
 		}
 		log.Println("Example file created successfully")
+	case "render":
+		err := RenderResume()
+		if err != nil {
+			log.Fatalln(err)
+		}
+		log.Println("Resume HTML rendered successfully")
 	default:
 		log.Fatalln("Unsupported subcommands. Please check --help for commands list")
 	}
