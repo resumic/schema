@@ -87,10 +87,25 @@ func GenerateExample(exampleFile string) error {
 	return nil
 }
 
-func RenderResume() error {
+func RenderResume(resumeJSON, resumeHTML string) error {
+	resume, err := ioutil.ReadFile(resumeJSON)
+	if err != nil {
+		return err
+	}
+
 	hugo, err := hugo.New("/home/arman/test-resumic/site")
-	example, err := json.MarshalIndent(schema.NewExample(), "", "  ")
-	hugo.NewResume(example)
+	if err != nil {
+		return err
+	}
+	code, err := hugo.NewResume(resume)
+	if err != nil {
+		return err
+	}
+	html, err := hugo.GetResumeHtml(code)
+	if err != nil {
+		return err
+	}
+	err = ioutil.WriteFile(resumeHTML, html, 0600)
 	return err
 }
 
@@ -98,6 +113,7 @@ func main() {
 	resumeFile := flag.String("resume", "", "Resume file")
 	schemaFile := flag.String("schema", "./schema.json", "Generate JSON Schema")
 	exampleFile := flag.String("example", "./example.json", "Generate example JSON")
+	htmlFile := flag.String("html", "", "Resume html file")
 	flag.Parse()
 
 	// Verify that a subcommand has been provided
@@ -125,7 +141,7 @@ func main() {
 		}
 		log.Println("Example file created successfully")
 	case "render":
-		err := RenderResume()
+		err := RenderResume(*resumeFile, *htmlFile)
 		if err != nil {
 			log.Fatalln(err)
 		}

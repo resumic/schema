@@ -4,6 +4,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"path"
 
 	"github.com/gobuffalo/packd"
@@ -47,6 +48,16 @@ func (h *Hugo) resumeJSONPath(code string) string {
 	return path.Join(h.root, "data", "resume", code+".json")
 }
 
+func (h *Hugo) resumeHTMLPath(code string) string {
+	return path.Join(h.root, "public", "resume", code, "index.html")
+}
+
+func (h *Hugo) build() error {
+	cmd := exec.Command("hugo")
+	cmd.Dir = h.root
+	return cmd.Run()
+}
+
 func (h *Hugo) resumeExist(code string) bool {
 	p := h.resumeContentPath(code)
 	if _, err := os.Stat(p); os.IsNotExist(err) {
@@ -55,7 +66,7 @@ func (h *Hugo) resumeExist(code string) bool {
 	return true
 }
 
-func (h *Hugo) NewResume(resume []byte) (string, error) {
+func (h *Hugo) newResume(resume []byte) (string, error) {
 	code := randomString(RESUME_CODE_LENGTH)
 	for h.resumeExist(code) {
 		code = randomString(RESUME_CODE_LENGTH)
@@ -71,4 +82,18 @@ func (h *Hugo) NewResume(resume []byte) (string, error) {
 		return "", err
 	}
 	return code, nil
+}
+
+func (h *Hugo) NewResume(resume []byte) (string, error) {
+	code, err := h.newResume(resume)
+	if err != nil {
+		return "", err
+	}
+	err = h.build()
+	return code, err
+}
+
+func (h *Hugo) GetResumeHtml(code string) ([]byte, error) {
+	p := h.resumeHTMLPath(code)
+	return ioutil.ReadFile(p)
 }
