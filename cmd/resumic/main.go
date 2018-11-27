@@ -8,8 +8,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/resumic/schema/hugo"
 	"github.com/resumic/schema/jsonschema"
+	"github.com/resumic/schema/render"
 	"github.com/resumic/schema/schema"
 	"github.com/xeipuuv/gojsonschema"
 )
@@ -87,33 +87,28 @@ func GenerateExample(exampleFile string) error {
 	return nil
 }
 
-func RenderResume(resumeJSON, resumeHTML string) error {
-	resume, err := ioutil.ReadFile(resumeJSON)
+func RenderResume(resumeFile, htmlFile, themeName string) error {
+	resume, err := ioutil.ReadFile(resumeFile)
 	if err != nil {
-		return err
+		return fmt.Errorf("couldn't read the resume %s", err)
 	}
-
-	hugo, err := hugo.New("/home/arman/test-resumic/site")
+	html, err := render.RenderHTML(resume, themeName)
 	if err != nil {
-		return err
+		return fmt.Errorf("couldn't render the resume: %s", err)
 	}
-	code, err := hugo.NewResume(resume)
+	err = ioutil.WriteFile(htmlFile, html, 0600)
 	if err != nil {
-		return err
+		return fmt.Errorf("couldn't write the html output: %s", err)
 	}
-	html, err := hugo.GetResumeHtml(code)
-	if err != nil {
-		return err
-	}
-	err = ioutil.WriteFile(resumeHTML, html, 0600)
-	return err
+	return nil
 }
 
 func main() {
 	resumeFile := flag.String("resume", "", "Resume file")
 	schemaFile := flag.String("schema", "./schema.json", "Generate JSON Schema")
 	exampleFile := flag.String("example", "./example.json", "Generate example JSON")
-	htmlFile := flag.String("html", "", "Resume html file")
+	htmlFile := flag.String("html", "", "html output file")
+	themeName := flag.String("theme", "", "theme name")
 	flag.Parse()
 
 	// Verify that a subcommand has been provided
@@ -141,7 +136,7 @@ func main() {
 		}
 		log.Println("Example file created successfully")
 	case "render":
-		err := RenderResume(*resumeFile, *htmlFile)
+		err := RenderResume(*resumeFile, *htmlFile, *themeName)
 		if err != nil {
 			log.Fatalln(err)
 		}
