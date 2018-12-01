@@ -4,14 +4,14 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
-	"os/exec"
 	"path"
+
+	"github.com/gohugoio/hugo/commands"
 )
 
 func build(root string) error {
-	cmd := exec.Command("hugo")
-	cmd.Dir = root
-	return cmd.Run()
+	resp := commands.Execute([]string{"-s", root})
+	return resp.Err
 }
 
 func RenderHTML(resume []byte, theme string) ([]byte, error) {
