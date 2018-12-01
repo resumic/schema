@@ -9,6 +9,7 @@ import (
 	"os"
 
 	"github.com/resumic/schema/jsonschema"
+	"github.com/resumic/schema/render"
 	"github.com/resumic/schema/schema"
 	"github.com/xeipuuv/gojsonschema"
 )
@@ -86,10 +87,28 @@ func GenerateExample(exampleFile string) error {
 	return nil
 }
 
+func RenderResume(resumeFile, htmlFile, themeName string) error {
+	resume, err := ioutil.ReadFile(resumeFile)
+	if err != nil {
+		return fmt.Errorf("couldn't read the resume %s", err)
+	}
+	html, err := render.RenderHTML(resume, themeName)
+	if err != nil {
+		return fmt.Errorf("couldn't render the resume: %s", err)
+	}
+	err = ioutil.WriteFile(htmlFile, html, 0600)
+	if err != nil {
+		return fmt.Errorf("couldn't write the html output: %s", err)
+	}
+	return nil
+}
+
 func main() {
 	resumeFile := flag.String("resume", "", "Resume file")
 	schemaFile := flag.String("schema", "./schema.json", "Generate JSON Schema")
 	exampleFile := flag.String("example", "./example.json", "Generate example JSON")
+	htmlFile := flag.String("html", "", "html output file")
+	themeName := flag.String("theme", "", "theme name")
 	flag.Parse()
 
 	// Verify that a subcommand has been provided
@@ -116,6 +135,12 @@ func main() {
 			log.Fatalln(err)
 		}
 		log.Println("Example file created successfully")
+	case "render":
+		err := RenderResume(*resumeFile, *htmlFile, *themeName)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		log.Println("Resume HTML rendered successfully")
 	default:
 		log.Fatalln("Unsupported subcommands. Please check --help for commands list")
 	}
