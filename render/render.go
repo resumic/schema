@@ -19,7 +19,7 @@ type frontmatter struct {
 }
 
 func build(root string) error {
-	resp := commands.Execute([]string{"-s", root})
+	resp := commands.Execute([]string{"--quiet", "-s", root})
 	return resp.Err
 }
 
