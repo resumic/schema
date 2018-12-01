@@ -9,6 +9,15 @@ import (
 	"github.com/gohugoio/hugo/commands"
 )
 
+type siteConfig struct {
+	DisableKinds []string `json:"disableKinds"`
+	Theme        string   `json:"theme"`
+}
+
+type frontmatter struct {
+	Layout string `json:"layout"`
+}
+
 func build(root string) error {
 	resp := commands.Execute([]string{"-s", root})
 	return resp.Err
@@ -27,9 +36,10 @@ func RenderHTML(resume []byte, theme string) ([]byte, error) {
 		return nil, err
 	}
 
-	config := map[string]string{
-		"theme": theme,
-	}
+	config := siteConfig{}
+	config.Theme = theme
+	config.DisableKinds = []string{"taxonomy", "taxonomyTerm", "category", "sitemap", "RSS", "404", "robotsTXT", "home", "section"}
+
 	configJSON, err := json.MarshalIndent(config, "", "  ")
 	if err != nil {
 		return nil, err
@@ -40,7 +50,7 @@ func RenderHTML(resume []byte, theme string) ([]byte, error) {
 		return nil, err
 	}
 
-	dataPath := path.Join(sitePath, "data", "resume", "resume.json")
+	dataPath := path.Join(sitePath, "data", "resumic", "resume.json")
 	err = os.MkdirAll(path.Dir(dataPath), 0700)
 	if err != nil {
 		return nil, err
@@ -50,12 +60,19 @@ func RenderHTML(resume []byte, theme string) ([]byte, error) {
 		return nil, err
 	}
 
-	contentPath := path.Join(sitePath, "content", "resume", "resume.md")
+	content := frontmatter{}
+	content.Layout = "resumic"
+
+	contentJSON, err := json.MarshalIndent(content, "", "  ")
+	if err != nil {
+		return nil, err
+	}
+	contentPath := path.Join(sitePath, "content", "resumic", "resume.md")
 	err = os.MkdirAll(path.Dir(contentPath), 0700)
 	if err != nil {
 		return nil, err
 	}
-	err = ioutil.WriteFile(contentPath, []byte{}, 0600)
+	err = ioutil.WriteFile(contentPath, contentJSON, 0600)
 	if err != nil {
 		return nil, err
 	}
@@ -65,6 +82,6 @@ func RenderHTML(resume []byte, theme string) ([]byte, error) {
 		return nil, err
 	}
 
-	htmlPath := path.Join(sitePath, "public", "resume", "resume", "index.html")
+	htmlPath := path.Join(sitePath, "public", "resumic", "resume", "index.html")
 	return ioutil.ReadFile(htmlPath)
 }
