@@ -26,7 +26,7 @@ func extractTheme(root, theme string) error {
 		return &InvalidThemeError{name: theme}
 	}
 
-	box := packr.New("themes", "./render/themes")
+	box := packr.New("themes", "../render/themes")
 	return box.WalkPrefix(theme+"/", func(name string, file packd.File) error {
 		p := path.Join(root, name)
 		os.MkdirAll(path.Dir(p), 0777)
