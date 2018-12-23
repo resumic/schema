@@ -40,7 +40,7 @@ func validateRun(cmd *cobra.Command, args []string) error {
 		}
 		return fmt.Errorf("%s is not a valid resume:%s", resumePath, errors)
 	}
-	fmt.Printf("%s is a valid resume json", resumePath)
+	fmt.Printf("%s is valid and conforming with the resumic schema", resumePath)
 	return nil
 }
 
