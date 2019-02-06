@@ -13,16 +13,27 @@ func (e *ThemeNotFoundError) Error() string {
 	return "theme: " + e.name + " could not be found."
 }
 
-func UpdateCache(cachePath string) error {
-	defaultPath := getDefaultThemesPath(cachePath)
-	return extractDefaultThemes(defaultPath)
+func UpdateCache(cacheDir string) error {
+	defaultThemesDir := getDefaultThemesDir(cacheDir)
+	err := extractDefaultThemes(defaultThemesDir)
+	if err != nil {
+		return err
+	}
+	officialThemesDir := getOfficialThemesDir(cacheDir)
+	return pullOfficialThemes(officialThemesDir)
 }
 
-func GetThemesPath(themesName, cachePath string) (string, error) {
-	defaultPath := getDefaultThemesPath(cachePath)
-	themesPath := path.Join(defaultPath, themesName)
-	if _, err := os.Stat(themesPath); os.IsNotExist(err) {
-		return "", &ThemeNotFoundError{name: themesName}
+func GetThemesDir(themesName, cacheDir string) (string, error) {
+	defaultThemesDir := getDefaultThemesDir(cacheDir)
+	themesDir := path.Join(defaultThemesDir, themesName)
+	if _, err := os.Stat(themesDir); !os.IsNotExist(err) {
+		return themesDir, err
 	}
-	return themesPath, nil
+
+	officialThemesDir := getOfficialThemesDir(cacheDir)
+	themesDir = path.Join(officialThemesDir, themesName)
+	if _, err := os.Stat(themesDir); !os.IsNotExist(err) {
+		return themesDir, err
+	}
+	return "", &ThemeNotFoundError{name: themesName}
 }

@@ -9,8 +9,8 @@ import (
 	packr "github.com/gobuffalo/packr/v2"
 )
 
-func getDefaultThemesPath(cachePath string) string {
-	return path.Join(cachePath, "default_themes")
+func getDefaultThemesDir(cacheDir string) string {
+	return path.Join(cacheDir, "default_themes")
 }
 
 func extractDefaultThemes(root string) error {

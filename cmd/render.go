@@ -27,7 +27,7 @@ func renderRun(cmd *cobra.Command, args []string) error {
 
 	if themesDir == "" {
 		theme.UpdateCache(cacheDir)
-		themesDir, err = theme.GetThemesPath(themesName, cacheDir)
+		themesDir, err = theme.GetThemesDir(themesName, cacheDir)
 		if err != nil {
 			return err
 		}
