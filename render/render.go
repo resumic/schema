@@ -18,26 +18,19 @@ type frontmatter struct {
 	Layout string `json:"layout"`
 }
 
-func build(root string) error {
-	resp := commands.Execute([]string{"--quiet", "-s", root})
+func build(root, themePath string) error {
+	resp := commands.Execute([]string{"--quiet", "-s", root, "--themesDir", themePath})
 	return resp.Err
 }
 
-func RenderHTML(resume []byte, theme string) ([]byte, error) {
+func RenderHTML(resume []byte, themePath string) ([]byte, error) {
 	sitePath, err := ioutil.TempDir(os.TempDir(), "resumic")
 	if err != nil {
 		return nil, err
 	}
 	defer os.RemoveAll(sitePath)
 
-	themePath := path.Join(sitePath, "themes")
-	err = extractTheme(themePath, theme)
-	if err != nil {
-		return nil, err
-	}
-
 	config := siteConfig{}
-	config.Theme = theme
 	config.DisableKinds = []string{"taxonomy", "taxonomyTerm", "category", "sitemap", "RSS", "404", "robotsTXT", "home", "section"}
 
 	configJSON, err := json.MarshalIndent(config, "", "  ")
@@ -77,7 +70,7 @@ func RenderHTML(resume []byte, theme string) ([]byte, error) {
 		return nil, err
 	}
 
-	err = build(sitePath)
+	err = build(sitePath, themePath)
 	if err != nil {
 		return nil, err
 	}
