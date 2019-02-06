@@ -1,7 +1,11 @@
 package main
 
-import "github.com/resumic/schema/cmd"
+import (
+	"os"
+
+	"github.com/resumic/schema/cmd"
+)
 
 func main() {
-	cmd.Execute()
+	cmd.Execute(os.Args[1:])
 }

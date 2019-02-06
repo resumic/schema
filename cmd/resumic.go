@@ -21,6 +21,7 @@ func init() {
 	rootCmd.PersistentFlags().String("cacheDir", cacheDir, "Filesystem path to cache directory.")
 }
 
-func Execute() {
-	rootCmd.Execute()
+func Execute(args []string) error {
+	rootCmd.SetArgs(args)
+	return rootCmd.Execute()
 }
