@@ -7,7 +7,7 @@ import (
 	git "gopkg.in/src-d/go-git.v4"
 )
 
-const officialThemesRepo = "https://github.com/ArmanMazdaee/test-resumic-themes.git"
+const officialThemesRepo = "https://github.com/resumic/themes.git"
 
 func pullOfficialRepo(repoDir string) error {
 	if _, err := os.Stat(repoDir); os.IsNotExist(err) {
