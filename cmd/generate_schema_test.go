@@ -12,7 +12,7 @@ func TestGenerateSchemaRunValid(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not generate temp file: %s", err)
 	}
-	err = generateSchemaRun(generateSchemaCmd, []string{tempFile.Name()})
+	err = Execute([]string{"generate", "schema", tempFile.Name()})
 	if err != nil {
 		t.Fatalf("Could not generate schema, %s", err)
 	}
