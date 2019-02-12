@@ -1,11 +1,9 @@
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 
-	"github.com/resumic/schema/jsonschema"
 	"github.com/resumic/schema/schema"
 	"github.com/spf13/cobra"
 	"github.com/xeipuuv/gojsonschema"
@@ -13,15 +11,11 @@ import (
 
 func validateRun(cmd *cobra.Command, args []string) error {
 	resumePath := args[0]
-	schema, err := jsonschema.NewSchema(schema.Schema{}, "", "Resumic Schema")
+	schema, err := schema.GenerateJSONSchema()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate schema: %s", err)
 	}
-	schemaJSON, err := json.MarshalIndent(schema, "", "  ")
-	if err != nil {
-		return fmt.Errorf("Couldn't marshal the schema to json: %s", err)
-	}
-	schemaLoader := gojsonschema.NewBytesLoader(schemaJSON)
+	schemaLoader := gojsonschema.NewBytesLoader(schema)
 
 	resumeJSON, err := ioutil.ReadFile(resumePath)
 	if err != nil {

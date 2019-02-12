@@ -6,13 +6,13 @@ import (
 	"testing"
 )
 
-func TestGenerateSchemaRunValid(t *testing.T) {
+func TestGenerateJSONSchemaRunValid(t *testing.T) {
 	tempFile, err := ioutil.TempFile(os.TempDir(), "resumic-schema-*.json")
 	defer os.Remove(tempFile.Name())
 	if err != nil {
 		t.Fatalf("Could not generate temp file: %s", err)
 	}
-	err = Execute([]string{"generate", "schema", tempFile.Name()})
+	err = Execute([]string{"generate", "jsonschema", tempFile.Name()})
 	if err != nil {
 		t.Fatalf("Could not generate schema, %s", err)
 	}
