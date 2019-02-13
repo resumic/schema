@@ -47,7 +47,7 @@ type educationSchema struct {
 	StartDate   string         `json:"startDate" schema:"description:e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard];format:date;placeholder:2017-06-28"`
 	EndDate     string         `json:"endDate" schema:"description:e.g. 2013-06-29 - [resume.json uses the ISO 8601 date standard];format:date;placeholder:2013-06-28"`
 	Score       scoreSchema    `json:"score"`
-	Courses     []string       `json:"courses" schema:"description:List notable courses/subjects;items_description:e.g. CS302 - Introduction to Algorithms - [Add course name];items_placeholder:CS302 - Introduction to Algorithms "`
+	Courses     []string       `json:"courses" schema:"description:List notable courses/subjects;items_description:e.g. CS302 - Introduction to Algorithms - [Add course name];items_placeholder:CS302 - Introduction to Algorithms"`
 	Honors      []string       `json:"honors" schema:"description:List education honours;items_description:e.g. Magna Cum Laude;items_placeholder:Magna Cum Laude"`
 }
 

@@ -102,7 +102,7 @@ func generateJSONSchema(typ reflect.Type, tags schemaTags) (map[string]interface
 
 func GenerateJSONSchema() ([]byte, error) {
 	typ := reflect.TypeOf(Schema{})
-	schema, err := generateJSONSchema(typ, map[string]string{})
+	schema, err := generateJSONSchema(typ, schemaTags{})
 	if err != nil {
 		return nil, err
 	}
