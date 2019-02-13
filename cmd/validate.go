@@ -5,34 +5,23 @@ import (
 	"io/ioutil"
 
 	"github.com/resumic/schema/schema"
+
 	"github.com/spf13/cobra"
-	"github.com/xeipuuv/gojsonschema"
 )
 
 func validateRun(cmd *cobra.Command, args []string) error {
 	resumePath := args[0]
-	schema, err := schema.GenerateJSONSchema()
-	if err != nil {
-		return fmt.Errorf("Couldn't generate schema: %s", err)
-	}
-	schemaLoader := gojsonschema.NewBytesLoader(schema)
 
-	resumeJSON, err := ioutil.ReadFile(resumePath)
+	resume, err := ioutil.ReadFile(resumePath)
 	if err != nil {
 		return fmt.Errorf("Couldn't read the resume json file from %s: %s", resumePath, err)
 	}
-	resumeLoader := gojsonschema.NewBytesLoader(resumeJSON)
 
-	result, err := gojsonschema.Validate(schemaLoader, resumeLoader)
-	if err != nil {
-		return fmt.Errorf("Couldn't validate the resume: %s", err)
-	}
-	if !result.Valid() {
-		errors := ""
-		for _, err := range result.Errors() {
-			errors += "\n\t" + err.String()
+	if err := schema.ValidateResume(resume); err != nil {
+		if _, ok := err.(*schema.InvalidResumeError); ok {
+			return err
 		}
-		return fmt.Errorf("%s is not a valid resume:%s", resumePath, errors)
+		return fmt.Errorf("Couldn't validate the resume: %s", err)
 	}
 	fmt.Printf("%s is valid and conforming with the resumic schema", resumePath)
 	return nil
