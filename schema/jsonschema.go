@@ -5,14 +5,6 @@ import (
 	"reflect"
 )
 
-type UnsupportedKindError struct {
-	kind reflect.Kind
-}
-
-func (e *UnsupportedKindError) Error() string {
-	return "schema: schema could not containe kind " + e.kind.String()
-}
-
 func generateNumberJSONSchema(tags schemaTags) (map[string]interface{}, error) {
 	schema := map[string]interface{}{
 		"type": "number",
@@ -99,9 +91,9 @@ func generateJSONSchema(typ reflect.Type, tags schemaTags) (map[string]interface
 		return generateStringJSONSchema(tags)
 	case reflect.Bool:
 		return generateBooleanJSONSchema(tags)
-	case reflect.Array, reflect.Slice:
+	case reflect.Slice:
 		return generateArrayJSONSchema(typ, tags)
-	case reflect.Map, reflect.Struct:
+	case reflect.Struct:
 		return generateObjectJSONSchema(typ, tags)
 	default:
 		return nil, &UnsupportedKindError{kind: kind}

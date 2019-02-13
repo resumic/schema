@@ -5,6 +5,14 @@ import (
 	"strings"
 )
 
+type UnsupportedKindError struct {
+	kind reflect.Kind
+}
+
+func (e *UnsupportedKindError) Error() string {
+	return "schema: schema could not containe kind " + e.kind.String()
+}
+
 func getJSONName(field reflect.StructField) string {
 	tag := field.Tag.Get("json")
 	if tag == "" {

@@ -85,7 +85,7 @@
           "label": "Slides"
         }
       ],
-      "url": "http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html;format:uri",
+      "url": "http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html",
       "summary": "Discussion of the advent of deep learning and artificial intelligence"
     }
   ],
@@ -110,8 +110,8 @@
     {
       "name": "Web Development",
       "score": {
-        "type": "Percentage",
-        "value": "80"
+        "type": "GPA",
+        "value": "3.4"
       },
       "keyword": [
         "HTML"
@@ -150,9 +150,7 @@
       ],
       "url": "http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html",
       "roles": [
-        "Team Lead",
-        "Speaker",
-        "Writer"
+        "Team Lead"
       ],
       "entity": "greenpeace",
       "type": "volunteering"
@@ -185,8 +183,8 @@
     {
       "language": "English",
       "score": {
-        "type": "objective",
-        "value": "fluent"
+        "type": "GPA",
+        "value": "3.4"
       }
     }
   ],
