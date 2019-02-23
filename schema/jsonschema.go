@@ -5,6 +5,16 @@ import (
 	"reflect"
 )
 
+func generateIntegerJSONSchema(tags schemaTags) (map[string]interface{}, error) {
+	schema := map[string]interface{}{
+		"type": "integer",
+	}
+	if value, ok := tags["description"]; ok {
+		schema["description"] = value
+	}
+	return schema, nil
+}
+
 func generateNumberJSONSchema(tags schemaTags) (map[string]interface{}, error) {
 	schema := map[string]interface{}{
 		"type": "number",
@@ -84,8 +94,9 @@ func generateJSONSchema(typ reflect.Type, tags schemaTags) (map[string]interface
 	kind := typ.Kind()
 	switch kind {
 	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64,
-		reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64,
-		reflect.Float32, reflect.Float64:
+		reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
+		return generateIntegerJSONSchema(tags)
+	case reflect.Float32, reflect.Float64:
 		return generateNumberJSONSchema(tags)
 	case reflect.String:
 		return generateStringJSONSchema(tags)
