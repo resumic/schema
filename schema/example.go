@@ -53,7 +53,7 @@ func generateFloatExample(typ reflect.Type, tags schemaTags) (*reflect.Value, er
 	return &example, nil
 }
 
-func generateStirngExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) {
+func generateStringExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) {
 	example := reflect.New(typ).Elem()
 	placeholder, ok := tags["placeholder"]
 	if !ok {
@@ -116,7 +116,7 @@ func generateExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) 
 	case reflect.Float32, reflect.Float64:
 		return generateFloatExample(typ, tags)
 	case reflect.String:
-		return generateStirngExample(typ, tags)
+		return generateStringExample(typ, tags)
 	case reflect.Bool:
 		return generateBoolExample(typ, tags)
 	case reflect.Slice:
