@@ -10,7 +10,7 @@ type UnsupportedKindError struct {
 }
 
 func (e *UnsupportedKindError) Error() string {
-	return "schema: schema could not containe kind " + e.kind.String()
+	return "schema: schema cannot contain kind " + e.kind.String()
 }
 
 func getJSONName(field reflect.StructField) string {
