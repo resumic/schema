@@ -144,6 +144,10 @@ type metaSchema struct {
 	LastModified string `json:"lastModified" schema:"description:e.g. 2017-06-29T15:53:00 - [resume.json uses the ISO 8601 date standard];format:date-time;placeholder:2017-06-29T15:53:01+01:00"`
 }
 
+// Schema is the struct which jsonschema, uischema, and example are generated from.
+// This package will use `schema` tags to generate this information. Also, it
+// is important to note the `ui:order` in uischema is generated based on the
+// properties order in the struct.
 type Schema struct {
 	Core         coreSchema          `json:"core"`
 	Work         []workSchema        `json:"work"`
