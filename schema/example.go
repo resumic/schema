@@ -7,13 +7,13 @@ import (
 
 func generateIntExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) {
 	example := reflect.New(typ).Elem()
-	placeholder, ok := tags["placeholder"]
+	exampleTag, ok := tags["example"]
 	if !ok {
 		return &example, nil
 	}
 
 	bits := example.Type().Bits()
-	value, err := strconv.ParseInt(placeholder, 0, bits)
+	value, err := strconv.ParseInt(exampleTag, 0, bits)
 	if err != nil {
 		return nil, err
 	}
@@ -23,13 +23,13 @@ func generateIntExample(typ reflect.Type, tags schemaTags) (*reflect.Value, erro
 
 func generateUintExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) {
 	example := reflect.New(typ).Elem()
-	placeholder, ok := tags["placeholder"]
+	exampleTag, ok := tags["example"]
 	if !ok {
 		return &example, nil
 	}
 
 	bits := example.Type().Bits()
-	value, err := strconv.ParseUint(placeholder, 0, bits)
+	value, err := strconv.ParseUint(exampleTag, 0, bits)
 	if err != nil {
 		return nil, err
 	}
@@ -39,13 +39,13 @@ func generateUintExample(typ reflect.Type, tags schemaTags) (*reflect.Value, err
 
 func generateFloatExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) {
 	example := reflect.New(typ).Elem()
-	placeholder, ok := tags["placeholder"]
+	exampleTag, ok := tags["example"]
 	if !ok {
 		return &example, nil
 	}
 
 	bits := example.Type().Bits()
-	value, err := strconv.ParseFloat(placeholder, bits)
+	value, err := strconv.ParseFloat(exampleTag, bits)
 	if err != nil {
 		return nil, err
 	}
@@ -55,23 +55,23 @@ func generateFloatExample(typ reflect.Type, tags schemaTags) (*reflect.Value, er
 
 func generateStringExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) {
 	example := reflect.New(typ).Elem()
-	placeholder, ok := tags["placeholder"]
+	exampleTag, ok := tags["example"]
 	if !ok {
 		return &example, nil
 	}
 
-	example.SetString(placeholder)
+	example.SetString(exampleTag)
 	return &example, nil
 }
 
 func generateBoolExample(typ reflect.Type, tags schemaTags) (*reflect.Value, error) {
 	example := reflect.New(typ).Elem()
-	placeholder, ok := tags["placeholder"]
+	exampleTag, ok := tags["example"]
 	if !ok {
 		return &example, nil
 	}
 
-	value, err := strconv.ParseBool(placeholder)
+	value, err := strconv.ParseBool(exampleTag)
 	if err != nil {
 		return nil, err
 	}

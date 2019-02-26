@@ -7,8 +7,8 @@ import (
 
 func generateFieldUISchema(typ reflect.Type, tags schemaTags) (map[string]interface{}, error) {
 	schema := map[string]interface{}{}
-	if placeholder, ok := tags["placeholder"]; ok {
-		schema["ui:placeholder"] = placeholder
+	if example, ok := tags["example"]; ok {
+		schema["ui:placeholder"] = example
 	}
 	return schema, nil
 }
