@@ -11,7 +11,10 @@ import (
 
 func generateExampleRun(cmd *cobra.Command, args []string) error {
 	examplePath := args[0]
-	example := schema.NewExample()
+	example, err := schema.GenerateExample()
+	if err != nil {
+		return fmt.Errorf("Couldn't generate the example: %s", err)
+	}
 	exampleJSON, err := json.MarshalIndent(example, "", "  ")
 	if err != nil {
 		return fmt.Errorf("Couldn't marshal the example to json: %s", err)

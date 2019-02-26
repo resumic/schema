@@ -1,4 +1,469 @@
 {
+  "awards": {
+    "items": {
+      "awarder": {
+        "ui:placeholder": "IEEE"
+      },
+      "date": {
+        "ui:placeholder": "2016-06-12"
+      },
+      "summary": {
+        "ui:placeholder": "Received for my work in Deep learning and AI"
+      },
+      "title": {
+        "ui:placeholder": "Awarded Software Process Achievement Award"
+      },
+      "ui:order": [
+        "title",
+        "date",
+        "awarder",
+        "summary"
+      ]
+    }
+  },
+  "certificate": {
+    "items": {
+      "code": {
+        "ui:placeholder": "1Z0-062"
+      },
+      "doesNotExpire": {
+        "ui:placeholder": "true"
+      },
+      "endDate": {
+        "ui:placeholder": "2017-06-29"
+      },
+      "grantDate": {
+        "ui:placeholder": "2017-06-29"
+      },
+      "name": {
+        "ui:placeholder": "XYZ Certified Application Specialist (MCAS)"
+      },
+      "score": {
+        "type": {
+          "ui:placeholder": "GPA"
+        },
+        "ui:order": [
+          "type",
+          "value"
+        ],
+        "value": {
+          "ui:placeholder": "3.4"
+        }
+      },
+      "ui:order": [
+        "code",
+        "name",
+        "website",
+        "verification",
+        "grantDate",
+        "score",
+        "endDate",
+        "doesNotExpire"
+      ],
+      "verification": {
+        "ui:placeholder": "http://www.example.org"
+      },
+      "website": {
+        "ui:placeholder": "http://www.example.org"
+      }
+    }
+  },
+  "core": {
+    "currentLocation": {
+      "lat": {
+        "ui:placeholder": "35.712758"
+      },
+      "long": {
+        "ui:placeholder": "51.392114"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "email": {
+      "ui:placeholder": "lucas@example.com"
+    },
+    "image": {
+      "ui:placeholder": "example.com/Abcxyz"
+    },
+    "name": {
+      "ui:placeholder": "John Doe"
+    },
+    "permanentLocation": {
+      "lat": {
+        "ui:placeholder": "35.712758"
+      },
+      "long": {
+        "ui:placeholder": "51.392114"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "phone": {
+      "ui:placeholder": "912-217-7923"
+    },
+    "summary": {
+      "ui:placeholder": "The man who sold the world!"
+    },
+    "title": {
+      "ui:placeholder": "Software Engineer"
+    },
+    "ui:order": [
+      "name",
+      "title",
+      "image",
+      "email",
+      "phone",
+      "url",
+      "summary",
+      "currentLocation",
+      "permanentLocation"
+    ],
+    "url": {
+      "ui:placeholder": "http://www.example.com/"
+    }
+  },
+  "education": {
+    "items": {
+      "area": {
+        "ui:placeholder": "Engineering"
+      },
+      "courses": {
+        "items": {
+          "ui:placeholder": "CS302 - Introduction to Algorithms"
+        }
+      },
+      "endDate": {
+        "ui:placeholder": "2013-06-28"
+      },
+      "honors": {
+        "items": {
+          "ui:placeholder": "Magna Cum Laude"
+        }
+      },
+      "institution": {
+        "ui:placeholder": "XYZ Institute of Technology"
+      },
+      "location": {
+        "lat": {
+          "ui:placeholder": "35.712758"
+        },
+        "long": {
+          "ui:placeholder": "51.392114"
+        },
+        "ui:order": [
+          "lat",
+          "long"
+        ]
+      },
+      "score": {
+        "type": {
+          "ui:placeholder": "GPA"
+        },
+        "ui:order": [
+          "type",
+          "value"
+        ],
+        "value": {
+          "ui:placeholder": "3.4"
+        }
+      },
+      "startDate": {
+        "ui:placeholder": "2017-06-28"
+      },
+      "studyType": {
+        "ui:placeholder": "Bachelor"
+      },
+      "ui:order": [
+        "institution",
+        "location",
+        "area",
+        "studyType",
+        "startDate",
+        "endDate",
+        "score",
+        "courses",
+        "honors"
+      ]
+    }
+  },
+  "interests": {
+    "items": {
+      "keywords": {
+        "items": {
+          "ui:placeholder": "Neural Networks"
+        }
+      },
+      "name": {
+        "ui:placeholder": "Machine Learning"
+      },
+      "ui:order": [
+        "name",
+        "keywords"
+      ]
+    }
+  },
+  "languages": {
+    "items": {
+      "language": {
+        "ui:placeholder": "English"
+      },
+      "score": {
+        "type": {
+          "ui:placeholder": "GPA"
+        },
+        "ui:order": [
+          "type",
+          "value"
+        ],
+        "value": {
+          "ui:placeholder": "3.4"
+        }
+      },
+      "ui:order": [
+        "language",
+        "score"
+      ]
+    }
+  },
+  "legal": {
+    "items": {
+      "applicationDate": {
+        "ui:placeholder": "2015-08-01"
+      },
+      "description": {
+        "ui:placeholder": "Some legal document!"
+      },
+      "endDate": {
+        "ui:placeholder": "2020-09-03"
+      },
+      "grantDate": {
+        "ui:placeholder": "2016-09-01"
+      },
+      "idNumber": {
+        "ui:placeholder": "JP2004369746A"
+      },
+      "legalType": {
+        "ui:placeholder": "Patent, Trademark, Copyright"
+      },
+      "name": {
+        "ui:placeholder": "XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format"
+      },
+      "resources": {
+        "items": {
+          "label": {
+            "ui:placeholder": "Slides"
+          },
+          "ui:order": [
+            "url",
+            "label"
+          ],
+          "url": {
+            "ui:placeholder": "http://www.example.com/my-example-slides/"
+          }
+        }
+      },
+      "ui:order": [
+        "name",
+        "legalType",
+        "description",
+        "applicationDate",
+        "grantDate",
+        "endDate",
+        "resources",
+        "idNumber"
+      ]
+    }
+  },
+  "meta": {
+    "canonical": {},
+    "lastModified": {
+      "ui:placeholder": "2017-06-29T15:53:01+01:00"
+    },
+    "ui:order": [
+      "canonical",
+      "version",
+      "lastModified"
+    ],
+    "version": {
+      "ui:placeholder": "v1.0.0"
+    }
+  },
+  "projects": {
+    "items": {
+      "description": {
+        "ui:placeholder": "Developed a client and server based application"
+      },
+      "endDate": {
+        "ui:placeholder": "2017-03-02"
+      },
+      "entity": {
+        "ui:placeholder": "greenpeace"
+      },
+      "highlights": {
+        "items": {
+          "ui:placeholder": "used Java AWT and Swing for client side userinterface"
+        }
+      },
+      "keywords": {
+        "items": {
+          "ui:placeholder": "Java"
+        }
+      },
+      "location": {
+        "lat": {
+          "ui:placeholder": "35.712758"
+        },
+        "long": {
+          "ui:placeholder": "51.392114"
+        },
+        "ui:order": [
+          "lat",
+          "long"
+        ]
+      },
+      "name": {
+        "ui:placeholder": "File Transfer application"
+      },
+      "resources": {
+        "items": {
+          "label": {
+            "ui:placeholder": "Slides"
+          },
+          "ui:order": [
+            "url",
+            "label"
+          ],
+          "url": {
+            "ui:placeholder": "http://www.example.com/my-example-slides/"
+          }
+        }
+      },
+      "roles": {
+        "items": {
+          "ui:placeholder": "Team Lead"
+        }
+      },
+      "startDate": {
+        "ui:placeholder": "2016-06-29"
+      },
+      "type": {
+        "ui:placeholder": "volunteering"
+      },
+      "ui:order": [
+        "name",
+        "location",
+        "description",
+        "highlights",
+        "keywords",
+        "startDate",
+        "endDate",
+        "resources",
+        "url",
+        "roles",
+        "entity",
+        "type"
+      ],
+      "url": {
+        "ui:placeholder": "http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html"
+      }
+    }
+  },
+  "publications": {
+    "items": {
+      "name": {
+        "ui:placeholder": "Deep learning and Artificial Intelligence"
+      },
+      "publisher": {
+        "ui:placeholder": "XYZ, Computer Magazine"
+      },
+      "releaseDate": {
+        "ui:placeholder": "2015-08-01"
+      },
+      "resources": {
+        "items": {
+          "label": {
+            "ui:placeholder": "Slides"
+          },
+          "ui:order": [
+            "url",
+            "label"
+          ],
+          "url": {
+            "ui:placeholder": "http://www.example.com/my-example-slides/"
+          }
+        }
+      },
+      "summary": {
+        "ui:placeholder": "Discussion of the advent of deep learning and artificial intelligence"
+      },
+      "ui:order": [
+        "name",
+        "publisher",
+        "releaseDate",
+        "resources",
+        "url",
+        "summary"
+      ],
+      "url": {
+        "ui:placeholder": "http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"
+      }
+    }
+  },
+  "references": {
+    "items": {
+      "company": {
+        "ui:placeholder": "Xyz"
+      },
+      "name": {
+        "ui:placeholder": "Stephan Mark"
+      },
+      "position": {
+        "ui:placeholder": "Senior Software Engineer"
+      },
+      "reference": {
+        "ui:placeholder": "Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
+      },
+      "ui:order": [
+        "name",
+        "company",
+        "position",
+        "reference"
+      ]
+    }
+  },
+  "skills": {
+    "items": {
+      "keyword": {
+        "items": {
+          "ui:placeholder": "HTML"
+        }
+      },
+      "name": {
+        "ui:placeholder": "Web Development"
+      },
+      "score": {
+        "type": {
+          "ui:placeholder": "GPA"
+        },
+        "ui:order": [
+          "type",
+          "value"
+        ],
+        "value": {
+          "ui:placeholder": "3.4"
+        }
+      },
+      "ui:order": [
+        "name",
+        "score",
+        "keyword"
+      ]
+    }
+  },
   "ui:order": [
     "core",
     "work",
@@ -15,171 +480,40 @@
     "interests",
     "meta"
   ],
-  "core": {
-    "ui:order": [
-      "name",
-      "title",
-      "image",
-      "email",
-      "phone",
-      "url",
-      "summary",
-      "currentLocation",
-      "permanentLocation"
-    ],
-    "name": {
-      "ui:placeholder": "John Doe"
-    },
-    "title": {
-      "ui:placeholder": "Software Engineer"
-    },
-    "image": {
-      "ui:placeholder": "example.com/Abcxyz"
-    },
-    "email": {
-      "ui:placeholder": "lucas@example.com"
-    },
-    "phone": {
-      "ui:placeholder": "912-217-7923"
-    },
-    "url": {
-      "ui:placeholder": "http://www.example.com/"
-    },
-    "summary": {
-      "ui:placeholder": "The man who sold the world!"
-    },
-    "currentLocation": {
-      "ui:order": [
-        "lat",
-        "long"
-      ],
-      "lat": {
-        "ui:placeholder": "35.712758"
-      },
-      "long": {
-        "ui:placeholder": "51.392114"
-      }
-    },
-    "permanentLocation": {
-      "ui:order": [
-        "lat",
-        "long"
-      ],
-      "lat": {
-        "ui:placeholder": "35.712758"
-      },
-      "long": {
-        "ui:placeholder": "51.392114"
-      }
-    }
-  },
-  "work": {
+  "volunteer": {
     "items": {
-      "ui:order": [
-        "name",
-        "description",
-        "position",
-        "location",
-        "url",
-        "startDate",
-        "endDate",
-        "summary",
-        "highlights"
-      ],
-      "name": {
-        "ui:placeholder": "XYZ Inc"
-      },
-      "description": {
-        "ui:placeholder": "A social media company"
-      },
-      "position": {
-        "ui:placeholder": "Software Engineer"
-      },
-      "location": {
-        "ui:order": [
-          "lat",
-          "long"
-        ],
-        "lat": {
-          "ui:placeholder": "35.712758"
-        },
-        "long": {
-          "ui:placeholder": "51.392114"
-        }
-      },
-      "url": {
-        "ui:placeholder": "http://xyz.example.com"
-      },
-      "summary": {
-        "ui:placeholder": "Developing and maintaining the company website using syna"
+      "endDate": {
+        "ui:placeholder": "2017-06-29"
       },
       "highlights": {
         "items": {
-          "ui:placeholder": "Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers"
+          "ui:placeholder": "Invited as a speaker in Xyzcon'17"
         }
-      }
-    }
-  },
-  "education": {
-    "items": {
-      "ui:order": [
-        "institution",
-        "location",
-        "area",
-        "studyType",
-        "startDate",
-        "endDate",
-        "score",
-        "courses",
-        "honors"
-      ],
-      "institution": {
-        "ui:placeholder": "XYZ Institute of Technology"
       },
       "location": {
-        "ui:order": [
-          "lat",
-          "long"
-        ],
         "lat": {
           "ui:placeholder": "35.712758"
         },
         "long": {
           "ui:placeholder": "51.392114"
-        }
-      },
-      "area": {
-        "ui:placeholder": "Engineering"
-      },
-      "studyType": {
-        "ui:placeholder": "Bachelor"
-      },
-      "score": {
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "type": {
-          "ui:placeholder": "GPA"
         },
-        "value": {
-          "ui:placeholder": "3.4"
-        }
+        "ui:order": [
+          "lat",
+          "long"
+        ]
       },
-      "courses": {
-        "items": {
-          "ui:placeholder": "CS302 - Introduction to Algorithms"
-        }
+      "organization": {
+        "ui:placeholder": "Xyz"
       },
-      "honors": {
-        "items": {
-          "ui:placeholder": "Magna Cum Laude"
-        }
-      }
-    }
-  },
-  "volunteer": {
-    "items": {
+      "position": {
+        "ui:placeholder": "Open Source Contributor"
+      },
+      "startDate": {
+        "ui:placeholder": "2014-06-29"
+      },
+      "summary": {
+        "ui:placeholder": "Frontend developer"
+      },
       "ui:order": [
         "organization",
         "position",
@@ -190,347 +524,62 @@
         "summary",
         "highlights"
       ],
-      "organization": {
-        "ui:placeholder": "Xyz"
-      },
-      "position": {
-        "ui:placeholder": "Open Source Contributor"
-      },
-      "location": {
-        "ui:order": [
-          "lat",
-          "long"
-        ],
-        "lat": {
-          "ui:placeholder": "35.712758"
-        },
-        "long": {
-          "ui:placeholder": "51.392114"
-        }
-      },
       "url": {
         "ui:placeholder": "http://xyz.example.com"
+      }
+    }
+  },
+  "work": {
+    "items": {
+      "description": {
+        "ui:placeholder": "A social media company"
       },
-      "summary": {
-        "ui:placeholder": "Frontend developer"
+      "endDate": {
+        "ui:placeholder": "2018-12-29"
       },
       "highlights": {
         "items": {
-          "ui:placeholder": "Invited as a speaker in Xyzcon'17"
+          "ui:placeholder": "Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers"
         }
-      }
-    }
-  },
-  "publications": {
-    "items": {
-      "ui:order": [
-        "name",
-        "publisher",
-        "releaseDate",
-        "resources",
-        "url",
-        "summary"
-      ],
-      "name": {
-        "ui:placeholder": "Deep learning and Artificial Intelligence"
-      },
-      "publisher": {
-        "ui:placeholder": "XYZ, Computer Magazine"
-      },
-      "resources": {
-        "items": {
-          "ui:order": [
-            "label",
-            "url"
-          ],
-          "label": {
-            "ui:placeholder": "http://www.example.com/my-example-slides/"
-          },
-          "url": {
-            "ui:placeholder": "Slides"
-          }
-        }
-      },
-      "url": {
-        "ui:placeholder": "http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html;format:uri"
-      },
-      "summary": {
-        "ui:placeholder": "Discussion of the advent of deep learning and artificial intelligence"
-      }
-    }
-  },
-  "legal": {
-    "items": {
-      "ui:order": [
-        "name",
-        "legalType",
-        "description",
-        "applicationDate",
-        "grantDate",
-        "endDate",
-        "resources",
-        "idNumber"
-      ],
-      "name": {
-        "ui:placeholder": "XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format"
-      },
-      "legalType": {
-        "ui:placeholder": "Patent, Trademark, Copyright"
-      },
-      "description": {
-        "ui:placeholder": "Some legal document!"
-      },
-      "resources": {
-        "items": {
-          "ui:order": [
-            "label",
-            "url"
-          ],
-          "label": {
-            "ui:placeholder": "http://www.example.com/my-example-slides/"
-          },
-          "url": {
-            "ui:placeholder": "Slides"
-          }
-        }
-      },
-      "idNumber": {
-        "ui:placeholder": "JP2004369746A"
-      }
-    }
-  },
-  "skills": {
-    "items": {
-      "ui:order": [
-        "name",
-        "score",
-        "keyword"
-      ],
-      "name": {
-        "ui:placeholder": "Web Development"
-      },
-      "score": {
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "type": {
-          "ui:placeholder": "GPA"
-        },
-        "value": {
-          "ui:placeholder": "3.4"
-        }
-      },
-      "keyword": {
-        "items": {
-          "ui:placeholder": "HTML"
-        }
-      }
-    }
-  },
-  "awards": {
-    "items": {
-      "ui:order": [
-        "title",
-        "date",
-        "awarder",
-        "summary"
-      ],
-      "title": {
-        "ui:placeholder": "Awarded Software Process Achievement Award"
-      },
-      "awarder": {
-        "ui:placeholder": "IEEE"
-      },
-      "summary": {
-        "ui:placeholder": "Received for my work in Deep learning and AI"
-      }
-    }
-  },
-  "projects": {
-    "items": {
-      "ui:order": [
-        "name",
-        "location",
-        "description",
-        "highlights",
-        "keywords",
-        "startDate",
-        "endDate",
-        "resources",
-        "url",
-        "roles",
-        "entity",
-        "type"
-      ],
-      "name": {
-        "ui:placeholder": "File Transfer application"
       },
       "location": {
-        "ui:order": [
-          "lat",
-          "long"
-        ],
         "lat": {
           "ui:placeholder": "35.712758"
         },
         "long": {
           "ui:placeholder": "51.392114"
-        }
-      },
-      "description": {
-        "ui:placeholder": "Developed a client and server based application"
-      },
-      "highlights": {
-        "items": {
-          "ui:placeholder": "used Java AWT and Swing for client side userinterface"
-        }
-      },
-      "keywords": {
-        "items": {
-          "ui:placeholder": "Java"
-        }
-      },
-      "resources": {
-        "items": {
-          "ui:order": [
-            "label",
-            "url"
-          ],
-          "label": {
-            "ui:placeholder": "http://www.example.com/my-example-slides/"
-          },
-          "url": {
-            "ui:placeholder": "Slides"
-          }
-        }
-      },
-      "url": {
-        "ui:placeholder": "http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html"
-      },
-      "roles": {
-        "items": {
-          "ui:placeholder": "Team Lead"
-        }
-      },
-      "entity": {
-        "ui:placeholder": "greenpeace"
-      },
-      "type": {
-        "ui:placeholder": "volunteering"
-      }
-    }
-  },
-  "certificate": {
-    "items": {
-      "ui:order": [
-        "code",
-        "name",
-        "website",
-        "verification",
-        "grantDate",
-        "score",
-        "endDate",
-        "doesNotExpire"
-      ],
-      "code": {
-        "ui:placeholder": "1Z0-062"
-      },
-      "name": {
-        "ui:placeholder": "XYZ Certified Application Specialist (MCAS)"
-      },
-      "website": {
-        "ui:placeholder": "http://www.example.org"
-      },
-      "verification": {
-        "ui:placeholder": "http://www.example.org"
-      },
-      "score": {
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "type": {
-          "ui:placeholder": "GPA"
         },
-        "value": {
-          "ui:placeholder": "3.4"
-        }
-      }
-    }
-  },
-  "references": {
-    "items": {
-      "ui:order": [
-        "name",
-        "company",
-        "position",
-        "reference"
-      ],
-      "name": {
-        "ui:placeholder": "Stephan Mark"
+        "ui:order": [
+          "lat",
+          "long"
+        ]
       },
-      "company": {
-        "ui:placeholder": "Xyz"
+      "name": {
+        "ui:placeholder": "XYZ Inc"
       },
       "position": {
-        "ui:placeholder": "Senior Software Engineer"
+        "ui:placeholder": "Software Engineer"
       },
-      "reference": {
-        "ui:placeholder": "Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
-      }
-    }
-  },
-  "languages": {
-    "items": {
-      "ui:order": [
-        "language",
-        "score"
-      ],
-      "language": {
-        "ui:placeholder": "English"
+      "startDate": {
+        "ui:placeholder": "2017-12-29"
       },
-      "score": {
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "type": {
-          "ui:placeholder": "objective"
-        },
-        "value": {
-          "ui:placeholder": "fluent"
-        }
-      }
-    }
-  },
-  "interests": {
-    "items": {
+      "summary": {
+        "ui:placeholder": "Developing and maintaining the company website using syna"
+      },
       "ui:order": [
         "name",
-        "keywords"
+        "description",
+        "position",
+        "location",
+        "url",
+        "startDate",
+        "endDate",
+        "summary",
+        "highlights"
       ],
-      "name": {
-        "ui:placeholder": "Machine Learning"
-      },
-      "keywords": {
-        "items": {
-          "ui:placeholder": "Neural Networks"
-        }
+      "url": {
+        "ui:placeholder": "http://xyz.example.com"
       }
-    }
-  },
-  "meta": {
-    "ui:order": [
-      "canonical",
-      "version",
-      "lastModified"
-    ],
-    "version": {
-      "ui:placeholder": "v1.0.0"
-    },
-    "lastModified": {
-      "ui:placeholder": "2017-06-29T15:53:01"
     }
   }
 }

@@ -1,12 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "awards": {
-      "additionalItems": false,
       "description": "Specify any awards you have received throughout your professional career",
       "items": {
-        "additionalProperties": true,
         "properties": {
           "awarder": {
             "description": "e.g. IEEE",
@@ -31,16 +28,13 @@
       "type": "array"
     },
     "certificate": {
-      "additionalItems": false,
       "items": {
-        "additionalProperties": true,
         "properties": {
           "code": {
             "description": "e.g. 1Z0-062",
             "type": "string"
           },
           "doesNotExpire": {
-            "format": "checkbox",
             "type": "boolean"
           },
           "endDate": {
@@ -58,7 +52,6 @@
             "type": "string"
           },
           "score": {
-            "additionalProperties": true,
             "description": "Exam result (PASS/FAIL, 100%, 100)",
             "properties": {
               "type": {
@@ -88,12 +81,9 @@
       "type": "array"
     },
     "core": {
-      "additionalProperties": true,
       "properties": {
         "currentLocation": {
-          "additionalProperties": false,
           "description": "Select the location where you currently live.",
-          "format": "location",
           "properties": {
             "lat": {
               "type": "number"
@@ -118,9 +108,7 @@
           "type": "string"
         },
         "permanentLocation": {
-          "additionalProperties": false,
           "description": "Select the location where you permanently live.",
-          "format": "location",
           "properties": {
             "lat": {
               "type": "number"
@@ -152,16 +140,13 @@
       "type": "object"
     },
     "education": {
-      "additionalItems": false,
       "items": {
-        "additionalProperties": true,
         "properties": {
           "area": {
             "description": "e.g. Engineering",
             "type": "string"
           },
           "courses": {
-            "additionalItems": false,
             "description": "List notable courses/subjects",
             "items": {
               "description": "e.g. CS302 - Introduction to Algorithms - [Add course name]",
@@ -175,7 +160,6 @@
             "type": "string"
           },
           "honors": {
-            "additionalItems": false,
             "description": "List education honours",
             "items": {
               "description": "e.g. Magna Cum Laude",
@@ -188,9 +172,7 @@
             "type": "string"
           },
           "location": {
-            "additionalProperties": false,
             "description": "e.g. Germany - [Location for this institution]",
-            "format": "location",
             "properties": {
               "lat": {
                 "type": "number"
@@ -202,7 +184,6 @@
             "type": "object"
           },
           "score": {
-            "additionalProperties": true,
             "properties": {
               "type": {
                 "description": "eg. GPA or PERCENTAGE - [Add score type]",
@@ -230,12 +211,9 @@
       "type": "array"
     },
     "interests": {
-      "additionalItems": false,
       "items": {
-        "additionalProperties": true,
         "properties": {
           "keywords": {
-            "additionalItems": false,
             "description": "Specify keywords associated with the particular interest",
             "items": {
               "description": "e.g. Neural Networks, Convoluted Neural Networks",
@@ -253,17 +231,14 @@
       "type": "array"
     },
     "languages": {
-      "additionalItems": false,
       "description": "List any other languages you speak",
       "items": {
-        "additionalProperties": true,
         "properties": {
           "language": {
             "description": "e.g. English - [Name of language]",
             "type": "string"
           },
           "score": {
-            "additionalProperties": true,
             "description": "Score for the language",
             "properties": {
               "type": {
@@ -283,10 +258,8 @@
       "type": "array"
     },
     "legal": {
-      "additionalItems": false,
       "description": "Specify your labels",
       "items": {
-        "additionalProperties": true,
         "properties": {
           "applicationDate": {
             "description": "e.g. 2015-08-01 - [resume.json uses the ISO 8601 date standard]",
@@ -320,10 +293,8 @@
             "type": "string"
           },
           "resources": {
-            "additionalItems": false,
             "description": "Specify multiple resources with label",
             "items": {
-              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "e.g Slides",
@@ -345,7 +316,6 @@
       "type": "array"
     },
     "meta": {
-      "additionalProperties": true,
       "description": "The schema version and any other tooling configuration lives here",
       "properties": {
         "canonical": {
@@ -365,10 +335,8 @@
       "type": "object"
     },
     "projects": {
-      "additionalItems": false,
       "description": "Specify career projects",
       "items": {
-        "additionalProperties": true,
         "properties": {
           "description": {
             "description": "e.g. Developed a client and server based application - [Short summary of project]",
@@ -384,7 +352,6 @@
             "type": "string"
           },
           "highlights": {
-            "additionalItems": false,
             "description": "Specify multiple features",
             "items": {
               "description": "e.g. used Java AWT and Swing for client side userinterface",
@@ -393,7 +360,6 @@
             "type": "array"
           },
           "keywords": {
-            "additionalItems": false,
             "description": "Specify special elements involved",
             "items": {
               "description": "e.g. Java",
@@ -402,9 +368,7 @@
             "type": "array"
           },
           "location": {
-            "additionalProperties": false,
             "description": "e.g France - [Location for this activity]",
-            "format": "location",
             "properties": {
               "lat": {
                 "type": "number"
@@ -420,10 +384,8 @@
             "type": "string"
           },
           "resources": {
-            "additionalItems": false,
             "description": "Specify multiple resources with label",
             "items": {
-              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "e.g Slides",
@@ -440,7 +402,6 @@
             "type": "array"
           },
           "roles": {
-            "additionalItems": false,
             "description": "Specify your role on this project or in company",
             "items": {
               "description": "e.g. Team Lead, Speaker, Writer",
@@ -468,10 +429,8 @@
       "type": "array"
     },
     "publications": {
-      "additionalItems": false,
       "description": "Specify your publications",
       "items": {
-        "additionalProperties": true,
         "properties": {
           "name": {
             "description": "e.g. Deep learning and Artificial Intelligence",
@@ -486,10 +445,8 @@
             "type": "string"
           },
           "resources": {
-            "additionalItems": false,
             "description": "Specify multiple resources with label",
             "items": {
-              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "e.g Slides",
@@ -520,10 +477,8 @@
       "type": "array"
     },
     "references": {
-      "additionalItems": false,
       "description": "List references you have received",
       "items": {
-        "additionalProperties": true,
         "properties": {
           "company": {
             "description": "e.g. Xyz",
@@ -547,13 +502,10 @@
       "type": "array"
     },
     "skills": {
-      "additionalItems": false,
       "description": "List out your professional skill-set",
       "items": {
-        "additionalProperties": true,
         "properties": {
           "keyword": {
-            "additionalItems": false,
             "description": "List some keywords pertaining to the skill",
             "items": {
               "type": "string"
@@ -565,7 +517,6 @@
             "type": "string"
           },
           "score": {
-            "additionalProperties": true,
             "description": "Score for the skill name",
             "properties": {
               "type": {
@@ -585,9 +536,7 @@
       "type": "array"
     },
     "volunteer": {
-      "additionalItems": false,
       "items": {
-        "additionalProperties": true,
         "properties": {
           "endDate": {
             "description": "e.g. 2017-06-29 - [resume.json uses the ISO 8601 date standard] ",
@@ -595,7 +544,6 @@
             "type": "string"
           },
           "highlights": {
-            "additionalItems": false,
             "description": "Specify accomplishments and achievements",
             "items": {
               "description": "e.g Invited as a speaker in Xyzcon'17",
@@ -604,9 +552,7 @@
             "type": "array"
           },
           "location": {
-            "additionalProperties": false,
             "description": "e.g. Germany - [Location for this activity]",
-            "format": "location",
             "properties": {
               "lat": {
                 "type": "number"
@@ -645,9 +591,7 @@
       "type": "array"
     },
     "work": {
-      "additionalItems": false,
       "items": {
-        "additionalProperties": true,
         "properties": {
           "description": {
             "description": "e.g. A social media company - [Description of the companies primary activity]",
@@ -659,7 +603,6 @@
             "type": "string"
           },
           "highlights": {
-            "additionalItems": false,
             "description": "Specify multiple accomplishments",
             "items": {
               "description": "e.g. Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers",
@@ -668,9 +611,7 @@
             "type": "array"
           },
           "location": {
-            "additionalProperties": false,
             "description": "e.g. Germany - [Location for this activity]",
-            "format": "location",
             "properties": {
               "lat": {
                 "type": "number"
@@ -709,6 +650,6 @@
       "type": "array"
     }
   },
-  "title": "Resumic Schema",
+  "title": "Resumic resume Schema",
   "type": "object"
 }
