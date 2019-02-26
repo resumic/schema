@@ -15,7 +15,7 @@ type resourceSchema struct {
 	Label string `json:"label" schema:"description:label of the resource;example:Slides;example:Slides"`
 }
 
-type coreSchema struct {
+type personalSchema struct {
 	Name              string         `json:"name" schema:"description:full name;example:John Doe"`
 	Title             string         `json:"title" schema:"description:job title;example:Software Engineer"`
 	Image             string         `json:"image" schema:"description:url of the personal photo;example:example.com/Abcxyz"`
@@ -149,7 +149,7 @@ type metaSchema struct {
 // is important to note the `ui:order` in uischema is generated based on the
 // properties order in the struct.
 type Schema struct {
-	Core         coreSchema          `json:"core"`
+	Personal     personalSchema      `json:"personal"`
 	Work         []workSchema        `json:"work"`
 	Education    []educationSchema   `json:"education"`
 	Volunteer    []volunteerSchema   `json:"volunteer"`

@@ -68,64 +68,6 @@
       }
     }
   },
-  "core": {
-    "currentLocation": {
-      "lat": {
-        "ui:placeholder": "35.712758"
-      },
-      "long": {
-        "ui:placeholder": "51.392114"
-      },
-      "ui:order": [
-        "lat",
-        "long"
-      ]
-    },
-    "email": {
-      "ui:placeholder": "lucas@example.com"
-    },
-    "image": {
-      "ui:placeholder": "example.com/Abcxyz"
-    },
-    "name": {
-      "ui:placeholder": "John Doe"
-    },
-    "permanentLocation": {
-      "lat": {
-        "ui:placeholder": "35.712758"
-      },
-      "long": {
-        "ui:placeholder": "51.392114"
-      },
-      "ui:order": [
-        "lat",
-        "long"
-      ]
-    },
-    "phone": {
-      "ui:placeholder": "912-217-7923"
-    },
-    "summary": {
-      "ui:placeholder": "The man who sold the world!"
-    },
-    "title": {
-      "ui:placeholder": "Software Engineer"
-    },
-    "ui:order": [
-      "name",
-      "title",
-      "image",
-      "email",
-      "phone",
-      "url",
-      "summary",
-      "currentLocation",
-      "permanentLocation"
-    ],
-    "url": {
-      "ui:placeholder": "http://www.example.com/"
-    }
-  },
   "education": {
     "items": {
       "area": {
@@ -290,6 +232,64 @@
     ],
     "version": {
       "ui:placeholder": "v1.0.0"
+    }
+  },
+  "personal": {
+    "currentLocation": {
+      "lat": {
+        "ui:placeholder": "35.712758"
+      },
+      "long": {
+        "ui:placeholder": "51.392114"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "email": {
+      "ui:placeholder": "lucas@example.com"
+    },
+    "image": {
+      "ui:placeholder": "example.com/Abcxyz"
+    },
+    "name": {
+      "ui:placeholder": "John Doe"
+    },
+    "permanentLocation": {
+      "lat": {
+        "ui:placeholder": "35.712758"
+      },
+      "long": {
+        "ui:placeholder": "51.392114"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "phone": {
+      "ui:placeholder": "912-217-7923"
+    },
+    "summary": {
+      "ui:placeholder": "The man who sold the world!"
+    },
+    "title": {
+      "ui:placeholder": "Software Engineer"
+    },
+    "ui:order": [
+      "name",
+      "title",
+      "image",
+      "email",
+      "phone",
+      "url",
+      "summary",
+      "currentLocation",
+      "permanentLocation"
+    ],
+    "url": {
+      "ui:placeholder": "http://www.example.com/"
     }
   },
   "projects": {
@@ -465,7 +465,7 @@
     }
   },
   "ui:order": [
-    "core",
+    "personal",
     "work",
     "education",
     "volunteer",
