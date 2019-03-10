@@ -16,8 +16,11 @@ type resourceSchema struct {
 }
 
 type coreSchema struct {
+	Title string `json:"title" schema:"description:job title;example:Software Engineer"`
+}
+
+type personalSchema struct {
 	Name              string         `json:"name" schema:"description:full name;example:John Doe"`
-	Title             string         `json:"title" schema:"description:job title;example:Software Engineer"`
 	Image             string         `json:"image" schema:"description:url of the personal photo;example:example.com/Abcxyz"`
 	Email             string         `json:"email" schema:"description:email address;format:email;example:lucas@example.com"`
 	Phone             string         `json:"phone" schema:"description:phone number;example:912-217-7923"`
@@ -150,6 +153,7 @@ type metaSchema struct {
 // properties order in the struct.
 type Schema struct {
 	Core         coreSchema          `json:"core"`
+	Personal     personalSchema      `json:"personal" schema:"description:sensitive informations"`
 	Work         []workSchema        `json:"work"`
 	Education    []educationSchema   `json:"education"`
 	Volunteer    []volunteerSchema   `json:"volunteer"`

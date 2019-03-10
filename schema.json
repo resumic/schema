@@ -82,58 +82,8 @@
     },
     "core": {
       "properties": {
-        "currentLocation": {
-          "description": "living location",
-          "properties": {
-            "lat": {
-              "type": "number"
-            },
-            "long": {
-              "type": "number"
-            }
-          },
-          "type": "object"
-        },
-        "email": {
-          "description": "email address",
-          "format": "email",
-          "type": "string"
-        },
-        "image": {
-          "description": "url of the personal photo",
-          "type": "string"
-        },
-        "name": {
-          "description": "full name",
-          "type": "string"
-        },
-        "permanentLocation": {
-          "description": "permanently living location",
-          "properties": {
-            "lat": {
-              "type": "number"
-            },
-            "long": {
-              "type": "number"
-            }
-          },
-          "type": "object"
-        },
-        "phone": {
-          "description": "phone number",
-          "type": "string"
-        },
-        "summary": {
-          "description": "a short sentence about yourself",
-          "type": "string"
-        },
         "title": {
           "description": "job title",
-          "type": "string"
-        },
-        "url": {
-          "description": "homepage url",
-          "format": "uri",
           "type": "string"
         }
       },
@@ -325,6 +275,62 @@
         },
         "version": {
           "description": "version field which follows semver",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "personal": {
+      "description": "sensitive informations",
+      "properties": {
+        "currentLocation": {
+          "description": "living location",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "long": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "email": {
+          "description": "email address",
+          "format": "email",
+          "type": "string"
+        },
+        "image": {
+          "description": "url of the personal photo",
+          "type": "string"
+        },
+        "name": {
+          "description": "full name",
+          "type": "string"
+        },
+        "permanentLocation": {
+          "description": "permanently living location",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "long": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "phone": {
+          "description": "phone number",
+          "type": "string"
+        },
+        "summary": {
+          "description": "a short sentence about yourself",
+          "type": "string"
+        },
+        "url": {
+          "description": "homepage url",
+          "format": "uri",
           "type": "string"
         }
       },

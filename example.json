@@ -1,7 +1,9 @@
 {
   "core": {
+    "title": "Software Engineer"
+  },
+  "personal": {
     "name": "John Doe",
-    "title": "Software Engineer",
     "image": "example.com/Abcxyz",
     "email": "lucas@example.com",
     "phone": "912-217-7923",
