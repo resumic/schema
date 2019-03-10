@@ -66,6 +66,7 @@ type educationSchema struct {
 	Score       scoreSchema    `json:"score"`
 	Courses     []string       `json:"courses" schema:"description:notable courses/subjects;items_example:CS302 - Introduction to Algorithms"`
 	Honors      []string       `json:"honors" schema:"description:some education honours;items_example:Magna Cum Laude"`
+	Highlights  []string       `json:"highlights" schema:"description:some of accomplishments;items_example:Live abroad within a new culture"`
 }
 
 type volunteerSchema struct {

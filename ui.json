@@ -97,6 +97,11 @@
       "endDate": {
         "ui:placeholder": "2013-06-28"
       },
+      "highlights": {
+        "items": {
+          "ui:placeholder": "Live abroad within a new culture"
+        }
+      },
       "honors": {
         "items": {
           "ui:placeholder": "Magna Cum Laude"
@@ -144,7 +149,8 @@
         "endDate",
         "score",
         "courses",
-        "honors"
+        "honors",
+        "highlights"
       ]
     }
   },

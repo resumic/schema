@@ -116,6 +116,13 @@
             "format": "date",
             "type": "string"
           },
+          "highlights": {
+            "description": "some of accomplishments",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
           "honors": {
             "description": "some education honours",
             "items": {
