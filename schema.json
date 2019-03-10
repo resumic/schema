@@ -337,6 +337,28 @@
           "description": "phone number",
           "type": "string"
         },
+        "profiles": {
+          "description": "list of social networks",
+          "items": {
+            "properties": {
+              "network": {
+                "description": "name of the network",
+                "type": "string"
+              },
+              "url": {
+                "description": "url of the profile",
+                "format": "uri",
+                "type": "string"
+              },
+              "username": {
+                "description": "username in the network",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
         "summary": {
           "description": "a short sentence about yourself",
           "type": "string"

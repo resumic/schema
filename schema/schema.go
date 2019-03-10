@@ -15,22 +15,29 @@ type resourceSchema struct {
 	Label string `json:"label" schema:"description:label of the resource;example:Slides;example:Slides"`
 }
 
+type profileSchema struct {
+	Network  string `json:"network" schema:"description:name of the network;example:github"`
+	Username string `json:"username" schema:"description:username in the network;example:john_doe"`
+	URL      string `json:"url" schema:"description:url of the profile;format:uri;example:https://github.com/john_doe"`
+}
+
 type coreSchema struct {
 	Title    string `json:"title" schema:"description:job title;example:Software Engineer"`
 	WorkArea string `json:"workArea" schema:"description:work area which could be city or country or even worldwide;example:Munich Citycenter + 20kms"`
 }
 
 type personalSchema struct {
-	Name              string         `json:"name" schema:"description:full name;example:John Doe"`
-	Image             string         `json:"image" schema:"description:url of the personal photo;example:example.com/Abcxyz"`
-	Email             string         `json:"email" schema:"description:email address;format:idn-email;example:lucas@example.com"`
-	Phone             string         `json:"phone" schema:"description:phone number;example:912-217-7923"`
-	URL               string         `json:"url" schema:"description:homepage url;format:uri;example:http://www.example.com/"`
-	Summary           string         `json:"summary" schema:"description:a short sentence about yourself;example:The man who sold the world!"`
-	CurrentLocation   locationSchema `json:"currentLocation" schema:"description:living location"`
-	PermanentLocation locationSchema `json:"permanentLocation" schema:"description:permanently living location"`
-	Birthday          string         `json:"birthday" schema:"description:birthday date;format:date;example:1995-02-14"`
-	HomeTown          string         `json:"homeTown" schema:"description:city of birth;example:Munich"`
+	Name              string          `json:"name" schema:"description:full name;example:John Doe"`
+	Image             string          `json:"image" schema:"description:url of the personal photo;example:example.com/Abcxyz"`
+	Email             string          `json:"email" schema:"description:email address;format:idn-email;example:lucas@example.com"`
+	Phone             string          `json:"phone" schema:"description:phone number;example:912-217-7923"`
+	URL               string          `json:"url" schema:"description:homepage url;format:uri;example:http://www.example.com/"`
+	Summary           string          `json:"summary" schema:"description:a short sentence about yourself;example:The man who sold the world!"`
+	CurrentLocation   locationSchema  `json:"currentLocation" schema:"description:living location"`
+	PermanentLocation locationSchema  `json:"permanentLocation" schema:"description:permanently living location"`
+	Birthday          string          `json:"birthday" schema:"description:birthday date;format:date;example:1995-02-14"`
+	HomeTown          string          `json:"homeTown" schema:"description:city of birth;example:Munich"`
+	Profiles          []profileSchema `json:"profiles" schema:"description:list of social networks"`
 }
 
 type workSchema struct {

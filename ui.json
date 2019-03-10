@@ -289,6 +289,24 @@
     "phone": {
       "ui:placeholder": "912-217-7923"
     },
+    "profiles": {
+      "items": {
+        "network": {
+          "ui:placeholder": "github"
+        },
+        "ui:order": [
+          "network",
+          "username",
+          "url"
+        ],
+        "url": {
+          "ui:placeholder": "https://github.com/john_doe"
+        },
+        "username": {
+          "ui:placeholder": "john_doe"
+        }
+      }
+    },
     "summary": {
       "ui:placeholder": "The man who sold the world!"
     },
@@ -302,7 +320,8 @@
       "currentLocation",
       "permanentLocation",
       "birthday",
-      "homeTown"
+      "homeTown",
+      "profiles"
     ],
     "url": {
       "ui:placeholder": "http://www.example.com/"

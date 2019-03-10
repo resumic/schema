@@ -19,7 +19,14 @@
       "long": 51.392114
     },
     "birthday": "1995-02-14",
-    "homeTown": "Munich"
+    "homeTown": "Munich",
+    "profiles": [
+      {
+        "network": "github",
+        "username": "john_doe",
+        "url": "https://github.com/john_doe"
+      }
+    ]
   },
   "work": [
     {
