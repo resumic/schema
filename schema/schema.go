@@ -22,7 +22,7 @@ type coreSchema struct {
 type personalSchema struct {
 	Name              string         `json:"name" schema:"description:full name;example:John Doe"`
 	Image             string         `json:"image" schema:"description:url of the personal photo;example:example.com/Abcxyz"`
-	Email             string         `json:"email" schema:"description:email address;format:email;example:lucas@example.com"`
+	Email             string         `json:"email" schema:"description:email address;format:idn-email;example:lucas@example.com"`
 	Phone             string         `json:"phone" schema:"description:phone number;example:912-217-7923"`
 	URL               string         `json:"url" schema:"description:homepage url;format:uri;example:http://www.example.com/"`
 	Summary           string         `json:"summary" schema:"description:a short sentence about yourself;example:The man who sold the world!"`
