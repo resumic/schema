@@ -28,6 +28,8 @@ type personalSchema struct {
 	Summary           string         `json:"summary" schema:"description:a short sentence about yourself;example:The man who sold the world!"`
 	CurrentLocation   locationSchema `json:"currentLocation" schema:"description:living location"`
 	PermanentLocation locationSchema `json:"permanentLocation" schema:"description:permanently living location"`
+	Birthday          string         `json:"birthday" schema:"description:birthday date;format:date;example:1995-02-14"`
+	HomeTown          string         `json:"homeTown" schema:"description:city of birth;example:Munich"`
 }
 
 type workSchema struct {

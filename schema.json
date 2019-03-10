@@ -283,6 +283,11 @@
     "personal": {
       "description": "sensitive informations",
       "properties": {
+        "birthday": {
+          "description": "birthday date",
+          "format": "date",
+          "type": "string"
+        },
         "currentLocation": {
           "description": "living location",
           "properties": {
@@ -298,6 +303,10 @@
         "email": {
           "description": "email address",
           "format": "email",
+          "type": "string"
+        },
+        "homeTown": {
+          "description": "city of birth",
           "type": "string"
         },
         "image": {

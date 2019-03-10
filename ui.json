@@ -243,6 +243,9 @@
     }
   },
   "personal": {
+    "birthday": {
+      "ui:placeholder": "1995-02-14"
+    },
     "currentLocation": {
       "lat": {
         "ui:placeholder": "35.712758"
@@ -257,6 +260,9 @@
     },
     "email": {
       "ui:placeholder": "lucas@example.com"
+    },
+    "homeTown": {
+      "ui:placeholder": "Munich"
     },
     "image": {
       "ui:placeholder": "example.com/Abcxyz"
@@ -290,7 +296,9 @@
       "url",
       "summary",
       "currentLocation",
-      "permanentLocation"
+      "permanentLocation",
+      "birthday",
+      "homeTown"
     ],
     "url": {
       "ui:placeholder": "http://www.example.com/"
