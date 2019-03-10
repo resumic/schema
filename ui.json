@@ -73,8 +73,12 @@
       "ui:placeholder": "Software Engineer"
     },
     "ui:order": [
-      "title"
-    ]
+      "title",
+      "workArea"
+    ],
+    "workArea": {
+      "ui:placeholder": "Munich Citycenter + 20kms"
+    }
   },
   "education": {
     "items": {

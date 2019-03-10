@@ -16,7 +16,8 @@ type resourceSchema struct {
 }
 
 type coreSchema struct {
-	Title string `json:"title" schema:"description:job title;example:Software Engineer"`
+	Title    string `json:"title" schema:"description:job title;example:Software Engineer"`
+	WorkArea string `json:"workArea" schema:"description:work area which could be city or country or even worldwide;example:Munich Citycenter + 20kms"`
 }
 
 type personalSchema struct {

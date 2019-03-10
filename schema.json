@@ -85,6 +85,10 @@
         "title": {
           "description": "job title",
           "type": "string"
+        },
+        "workArea": {
+          "description": "work area which could be city or country or even worldwide",
+          "type": "string"
         }
       },
       "type": "object"
