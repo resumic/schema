@@ -82,12 +82,16 @@
     },
     "core": {
       "properties": {
+        "livingArea": {
+          "description": "living area which could be city or country or even continent",
+          "type": "string"
+        },
         "title": {
           "description": "job title",
           "type": "string"
         },
         "workArea": {
-          "description": "work area which could be city or country or even worldwide",
+          "description": "work area which could be city or country or even remote",
           "type": "string"
         }
       },
@@ -287,6 +291,10 @@
     "personal": {
       "description": "sensitive informations",
       "properties": {
+        "birthPlace": {
+          "description": "place of birth",
+          "type": "string"
+        },
         "birthday": {
           "description": "birthday date",
           "format": "date",
@@ -309,8 +317,7 @@
           "format": "idn-email",
           "type": "string"
         },
-        "homeTown": {
-          "description": "city of birth",
+        "gender": {
           "type": "string"
         },
         "image": {
@@ -337,6 +344,9 @@
           "description": "phone number",
           "type": "string"
         },
+        "postalAddress": {
+          "type": "string"
+        },
         "profiles": {
           "description": "list of social networks",
           "items": {
@@ -358,6 +368,10 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "relationshipStatus": {
+          "description": "civil status",
+          "type": "string"
         },
         "summary": {
           "description": "a short sentence about yourself",

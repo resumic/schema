@@ -1,10 +1,12 @@
 {
   "core": {
     "title": "Software Engineer",
-    "workArea": "Munich Citycenter + 20kms"
+    "workArea": "Munich Citycenter + 20kms",
+    "livingArea": "Germany"
   },
   "personal": {
     "name": "John Doe",
+    "gender": "male",
     "image": "example.com/Abcxyz",
     "email": "lucas@example.com",
     "phone": "912-217-7923",
@@ -19,14 +21,16 @@
       "long": 51.392114
     },
     "birthday": "1995-02-14",
-    "homeTown": "Munich",
+    "birthPlace": "Munich",
     "profiles": [
       {
         "network": "github",
         "username": "john_doe",
         "url": "https://github.com/john_doe"
       }
-    ]
+    ],
+    "relationshipStatus": "married",
+    "postalAddress": "John Doe, Wittekindshof, Schulstrasse 4, 32547 Bad Oyenhausen, Germany"
   },
   "work": [
     {

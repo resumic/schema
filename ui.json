@@ -69,12 +69,16 @@
     }
   },
   "core": {
+    "livingArea": {
+      "ui:placeholder": "Germany"
+    },
     "title": {
       "ui:placeholder": "Software Engineer"
     },
     "ui:order": [
       "title",
-      "workArea"
+      "workArea",
+      "livingArea"
     ],
     "workArea": {
       "ui:placeholder": "Munich Citycenter + 20kms"
@@ -247,6 +251,9 @@
     }
   },
   "personal": {
+    "birthPlace": {
+      "ui:placeholder": "Munich"
+    },
     "birthday": {
       "ui:placeholder": "1995-02-14"
     },
@@ -265,8 +272,8 @@
     "email": {
       "ui:placeholder": "lucas@example.com"
     },
-    "homeTown": {
-      "ui:placeholder": "Munich"
+    "gender": {
+      "ui:placeholder": "male"
     },
     "image": {
       "ui:placeholder": "example.com/Abcxyz"
@@ -289,6 +296,9 @@
     "phone": {
       "ui:placeholder": "912-217-7923"
     },
+    "postalAddress": {
+      "ui:placeholder": "John Doe, Wittekindshof, Schulstrasse 4, 32547 Bad Oyenhausen, Germany"
+    },
     "profiles": {
       "items": {
         "network": {
@@ -307,11 +317,15 @@
         }
       }
     },
+    "relationshipStatus": {
+      "ui:placeholder": "married"
+    },
     "summary": {
       "ui:placeholder": "The man who sold the world!"
     },
     "ui:order": [
       "name",
+      "gender",
       "image",
       "email",
       "phone",
@@ -320,8 +334,10 @@
       "currentLocation",
       "permanentLocation",
       "birthday",
-      "homeTown",
-      "profiles"
+      "birthPlace",
+      "profiles",
+      "relationshipStatus",
+      "postalAddress"
     ],
     "url": {
       "ui:placeholder": "http://www.example.com/"
