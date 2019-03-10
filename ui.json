@@ -449,7 +449,7 @@
   },
   "skills": {
     "items": {
-      "keyword": {
+      "keywords": {
         "items": {
           "ui:placeholder": "HTML"
         }
@@ -472,7 +472,7 @@
       "ui:order": [
         "name",
         "score",
-        "keyword"
+        "keywords"
       ]
     }
   },

@@ -512,7 +512,7 @@
       "description": "list of professional skill-sets",
       "items": {
         "properties": {
-          "keyword": {
+          "keywords": {
             "description": "some keywords pertaining to the skill",
             "items": {
               "type": "string"
