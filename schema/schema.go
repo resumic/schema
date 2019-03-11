@@ -105,9 +105,9 @@ type legalSchema struct {
 }
 
 type skillSchema struct {
-	Name     string      `json:"name" schema:"description:name of the skill;example:Web Development"`
-	Score    scoreSchema `json:"score" schema:"description:score of the skill"`
-	Keywords []string    `json:"keywords" schema:"description:some keywords pertaining to the skill;items_example:HTML"`
+	Name        string   `json:"name" schema:"description:name of the skill;example:Web Development"`
+	Proficiency string   `json:"proficiency" schema:"description:proficiency level of the skill;enum:beginner,early,competent,advanced,expert;example:advanced"`
+	Keywords    []string `json:"keywords" schema:"description:some keywords pertaining to the skill;items_example:HTML"`
 }
 
 type awardSchema struct {
@@ -151,8 +151,8 @@ type referenceSchema struct {
 }
 
 type languageSchema struct {
-	Language string      `json:"language" schema:"description:name of language;example:English"`
-	Score    scoreSchema `json:"score" schema:"description:score for the language"`
+	Language string `json:"language" schema:"description:name of language;example:English"`
+	Level    string `json:"level" schema:"description:proficiency level for the language;enum:basic,conversational,fluent,native;example:fluent"`
 }
 
 type interestSchema struct {

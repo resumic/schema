@@ -199,19 +199,15 @@
             "description": "name of language",
             "type": "string"
           },
-          "score": {
-            "description": "score for the language",
-            "properties": {
-              "type": {
-                "description": "type of the score",
-                "type": "string"
-              },
-              "value": {
-                "description": "value of the score",
-                "type": "string"
-              }
-            },
-            "type": "object"
+          "level": {
+            "description": "proficiency level for the language",
+            "enum": [
+              "basic",
+              "conversational",
+              "fluent",
+              "native"
+            ],
+            "type": "string"
           }
         },
         "type": "object"
@@ -586,19 +582,16 @@
             "description": "name of the skill",
             "type": "string"
           },
-          "score": {
-            "description": "score of the skill",
-            "properties": {
-              "type": {
-                "description": "type of the score",
-                "type": "string"
-              },
-              "value": {
-                "description": "value of the score",
-                "type": "string"
-              }
-            },
-            "type": "object"
+          "proficiency": {
+            "description": "proficiency level of the skill",
+            "enum": [
+              "beginner",
+              "early",
+              "competent",
+              "advanced",
+              "expert"
+            ],
+            "type": "string"
           }
         },
         "type": "object"

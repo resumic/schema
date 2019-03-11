@@ -132,10 +132,7 @@
   "skills": [
     {
       "name": "Web Development",
-      "score": {
-        "type": "GPA",
-        "value": "3.4"
-      },
+      "proficiency": "advanced",
       "keywords": [
         "HTML"
       ]
@@ -205,10 +202,7 @@
   "languages": [
     {
       "language": "English",
-      "score": {
-        "type": "GPA",
-        "value": "3.4"
-      }
+      "level": "fluent"
     }
   ],
   "interests": [

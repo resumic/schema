@@ -175,21 +175,12 @@
       "language": {
         "ui:placeholder": "English"
       },
-      "score": {
-        "type": {
-          "ui:placeholder": "GPA"
-        },
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "value": {
-          "ui:placeholder": "3.4"
-        }
+      "level": {
+        "ui:placeholder": "fluent"
       },
       "ui:order": [
         "language",
-        "score"
+        "level"
       ]
     }
   },
@@ -522,21 +513,12 @@
       "name": {
         "ui:placeholder": "Web Development"
       },
-      "score": {
-        "type": {
-          "ui:placeholder": "GPA"
-        },
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "value": {
-          "ui:placeholder": "3.4"
-        }
+      "proficiency": {
+        "ui:placeholder": "advanced"
       },
       "ui:order": [
         "name",
-        "score",
+        "proficiency",
         "keywords"
       ]
     }

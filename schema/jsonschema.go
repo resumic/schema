@@ -3,6 +3,7 @@ package schema
 import (
 	"encoding/json"
 	"reflect"
+	"strings"
 )
 
 func generateIntegerJSONSchema(tags schemaTags) (map[string]interface{}, error) {
@@ -34,6 +35,9 @@ func generateStringJSONSchema(tags schemaTags) (map[string]interface{}, error) {
 	}
 	if value, ok := tags["format"]; ok {
 		schema["format"] = value
+	}
+	if value, ok := tags["enum"]; ok {
+		schema["enum"] = strings.Split(value, ",")
 	}
 	return schema, nil
 }
