@@ -1,7 +1,12 @@
 {
   "core": {
-    "name": "John Doe",
     "title": "Software Engineer",
+    "workArea": "Munich Citycenter + 20kms",
+    "livingArea": "Germany"
+  },
+  "personal": {
+    "name": "John Doe",
+    "gender": "male",
     "image": "example.com/Abcxyz",
     "email": "lucas@example.com",
     "phone": "912-217-7923",
@@ -14,7 +19,18 @@
     "permanentLocation": {
       "lat": 35.712758,
       "long": 51.392114
-    }
+    },
+    "birthday": "1995-02-14",
+    "birthPlace": "Munich",
+    "profiles": [
+      {
+        "network": "github",
+        "username": "john_doe",
+        "url": "https://github.com/john_doe"
+      }
+    ],
+    "relationshipStatus": "married",
+    "postalAddress": "John Doe, Wittekindshof, Schulstrasse 4, 32547 Bad Oyenhausen, Germany"
   },
   "work": [
     {
@@ -47,13 +63,18 @@
       "endDate": "2013-06-28",
       "score": {
         "type": "GPA",
-        "value": "3.4"
+        "value": "3.4",
+        "best": "4",
+        "worst": "0"
       },
       "courses": [
         "CS302 - Introduction to Algorithms"
       ],
       "honors": [
         "Magna Cum Laude"
+      ],
+      "highlights": [
+        "Live abroad within a new culture"
       ]
     }
   ],
@@ -103,17 +124,18 @@
           "label": "Slides"
         }
       ],
-      "idNumber": "JP2004369746A"
+      "idNumber": "JP2004369746A",
+      "currentAssignee": "John Doe",
+      "previousAssignee": "John Doe",
+      "author": "John Doe",
+      "coAuthors": "John Doe"
     }
   ],
   "skills": [
     {
       "name": "Web Development",
-      "score": {
-        "type": "GPA",
-        "value": "3.4"
-      },
-      "keyword": [
+      "proficiency": "advanced",
+      "keywords": [
         "HTML"
       ]
     }
@@ -165,7 +187,9 @@
       "grantDate": "2017-06-29",
       "score": {
         "type": "GPA",
-        "value": "3.4"
+        "value": "3.4",
+        "best": "4",
+        "worst": "0"
       },
       "endDate": "2017-06-29",
       "doesNotExpire": true
@@ -182,10 +206,7 @@
   "languages": [
     {
       "language": "English",
-      "score": {
-        "type": "GPA",
-        "value": "3.4"
-      }
+      "level": "fluent"
     }
   ],
   "interests": [
@@ -199,6 +220,7 @@
   "meta": {
     "canonical": "",
     "version": "v1.0.0",
-    "lastModified": "2017-06-29T15:53:01+01:00"
+    "lastModified": "2017-06-29T15:53:01+01:00",
+    "uuid": "078c39ce-23ee-4970-9637-c07379132dce"
   }
 }

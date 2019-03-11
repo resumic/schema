@@ -39,15 +39,23 @@
         "ui:placeholder": "XYZ Certified Application Specialist (MCAS)"
       },
       "score": {
+        "best": {
+          "ui:placeholder": "4"
+        },
         "type": {
           "ui:placeholder": "GPA"
         },
         "ui:order": [
           "type",
-          "value"
+          "value",
+          "best",
+          "worst"
         ],
         "value": {
           "ui:placeholder": "3.4"
+        },
+        "worst": {
+          "ui:placeholder": "0"
         }
       },
       "ui:order": [
@@ -69,61 +77,19 @@
     }
   },
   "core": {
-    "currentLocation": {
-      "lat": {
-        "ui:placeholder": "35.712758"
-      },
-      "long": {
-        "ui:placeholder": "51.392114"
-      },
-      "ui:order": [
-        "lat",
-        "long"
-      ]
-    },
-    "email": {
-      "ui:placeholder": "lucas@example.com"
-    },
-    "image": {
-      "ui:placeholder": "example.com/Abcxyz"
-    },
-    "name": {
-      "ui:placeholder": "John Doe"
-    },
-    "permanentLocation": {
-      "lat": {
-        "ui:placeholder": "35.712758"
-      },
-      "long": {
-        "ui:placeholder": "51.392114"
-      },
-      "ui:order": [
-        "lat",
-        "long"
-      ]
-    },
-    "phone": {
-      "ui:placeholder": "912-217-7923"
-    },
-    "summary": {
-      "ui:placeholder": "The man who sold the world!"
+    "livingArea": {
+      "ui:placeholder": "Germany"
     },
     "title": {
       "ui:placeholder": "Software Engineer"
     },
     "ui:order": [
-      "name",
       "title",
-      "image",
-      "email",
-      "phone",
-      "url",
-      "summary",
-      "currentLocation",
-      "permanentLocation"
+      "workArea",
+      "livingArea"
     ],
-    "url": {
-      "ui:placeholder": "http://www.example.com/"
+    "workArea": {
+      "ui:placeholder": "Munich Citycenter + 20kms"
     }
   },
   "education": {
@@ -138,6 +104,11 @@
       },
       "endDate": {
         "ui:placeholder": "2013-06-28"
+      },
+      "highlights": {
+        "items": {
+          "ui:placeholder": "Live abroad within a new culture"
+        }
       },
       "honors": {
         "items": {
@@ -160,15 +131,23 @@
         ]
       },
       "score": {
+        "best": {
+          "ui:placeholder": "4"
+        },
         "type": {
           "ui:placeholder": "GPA"
         },
         "ui:order": [
           "type",
-          "value"
+          "value",
+          "best",
+          "worst"
         ],
         "value": {
           "ui:placeholder": "3.4"
+        },
+        "worst": {
+          "ui:placeholder": "0"
         }
       },
       "startDate": {
@@ -186,7 +165,8 @@
         "endDate",
         "score",
         "courses",
-        "honors"
+        "honors",
+        "highlights"
       ]
     }
   },
@@ -211,21 +191,12 @@
       "language": {
         "ui:placeholder": "English"
       },
-      "score": {
-        "type": {
-          "ui:placeholder": "GPA"
-        },
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "value": {
-          "ui:placeholder": "3.4"
-        }
+      "level": {
+        "ui:placeholder": "fluent"
       },
       "ui:order": [
         "language",
-        "score"
+        "level"
       ]
     }
   },
@@ -233,6 +204,15 @@
     "items": {
       "applicationDate": {
         "ui:placeholder": "2015-08-01"
+      },
+      "author": {
+        "ui:placeholder": "John Doe"
+      },
+      "coAuthors": {
+        "ui:placeholder": "John Doe"
+      },
+      "currentAssignee": {
+        "ui:placeholder": "John Doe"
       },
       "description": {
         "ui:placeholder": "Some legal document!"
@@ -251,6 +231,9 @@
       },
       "name": {
         "ui:placeholder": "XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format"
+      },
+      "previousAssignee": {
+        "ui:placeholder": "John Doe"
       },
       "resources": {
         "items": {
@@ -274,7 +257,11 @@
         "grantDate",
         "endDate",
         "resources",
-        "idNumber"
+        "idNumber",
+        "currentAssignee",
+        "previousAssignee",
+        "author",
+        "coAuthors"
       ]
     }
   },
@@ -286,10 +273,107 @@
     "ui:order": [
       "canonical",
       "version",
-      "lastModified"
+      "lastModified",
+      "uuid"
     ],
+    "uuid": {
+      "ui:placeholder": "078c39ce-23ee-4970-9637-c07379132dce"
+    },
     "version": {
       "ui:placeholder": "v1.0.0"
+    }
+  },
+  "personal": {
+    "birthPlace": {
+      "ui:placeholder": "Munich"
+    },
+    "birthday": {
+      "ui:placeholder": "1995-02-14"
+    },
+    "currentLocation": {
+      "lat": {
+        "ui:placeholder": "35.712758"
+      },
+      "long": {
+        "ui:placeholder": "51.392114"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "email": {
+      "ui:placeholder": "lucas@example.com"
+    },
+    "gender": {
+      "ui:placeholder": "male"
+    },
+    "image": {
+      "ui:placeholder": "example.com/Abcxyz"
+    },
+    "name": {
+      "ui:placeholder": "John Doe"
+    },
+    "permanentLocation": {
+      "lat": {
+        "ui:placeholder": "35.712758"
+      },
+      "long": {
+        "ui:placeholder": "51.392114"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "phone": {
+      "ui:placeholder": "912-217-7923"
+    },
+    "postalAddress": {
+      "ui:placeholder": "John Doe, Wittekindshof, Schulstrasse 4, 32547 Bad Oyenhausen, Germany"
+    },
+    "profiles": {
+      "items": {
+        "network": {
+          "ui:placeholder": "github"
+        },
+        "ui:order": [
+          "network",
+          "username",
+          "url"
+        ],
+        "url": {
+          "ui:placeholder": "https://github.com/john_doe"
+        },
+        "username": {
+          "ui:placeholder": "john_doe"
+        }
+      }
+    },
+    "relationshipStatus": {
+      "ui:placeholder": "married"
+    },
+    "summary": {
+      "ui:placeholder": "The man who sold the world!"
+    },
+    "ui:order": [
+      "name",
+      "gender",
+      "image",
+      "email",
+      "phone",
+      "url",
+      "summary",
+      "currentLocation",
+      "permanentLocation",
+      "birthday",
+      "birthPlace",
+      "profiles",
+      "relationshipStatus",
+      "postalAddress"
+    ],
+    "url": {
+      "ui:placeholder": "http://www.example.com/"
     }
   },
   "projects": {
@@ -437,7 +521,7 @@
   },
   "skills": {
     "items": {
-      "keyword": {
+      "keywords": {
         "items": {
           "ui:placeholder": "HTML"
         }
@@ -445,27 +529,19 @@
       "name": {
         "ui:placeholder": "Web Development"
       },
-      "score": {
-        "type": {
-          "ui:placeholder": "GPA"
-        },
-        "ui:order": [
-          "type",
-          "value"
-        ],
-        "value": {
-          "ui:placeholder": "3.4"
-        }
+      "proficiency": {
+        "ui:placeholder": "advanced"
       },
       "ui:order": [
         "name",
-        "score",
-        "keyword"
+        "proficiency",
+        "keywords"
       ]
     }
   },
   "ui:order": [
     "core",
+    "personal",
     "work",
     "education",
     "volunteer",
