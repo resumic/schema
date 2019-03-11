@@ -198,6 +198,15 @@
       "applicationDate": {
         "ui:placeholder": "2015-08-01"
       },
+      "author": {
+        "ui:placeholder": "John Doe"
+      },
+      "coAuthors": {
+        "ui:placeholder": "John Doe"
+      },
+      "currentAssignee": {
+        "ui:placeholder": "John Doe"
+      },
       "description": {
         "ui:placeholder": "Some legal document!"
       },
@@ -215,6 +224,9 @@
       },
       "name": {
         "ui:placeholder": "XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format"
+      },
+      "previousAssignee": {
+        "ui:placeholder": "John Doe"
       },
       "resources": {
         "items": {
@@ -238,7 +250,11 @@
         "grantDate",
         "endDate",
         "resources",
-        "idNumber"
+        "idNumber",
+        "currentAssignee",
+        "previousAssignee",
+        "author",
+        "coAuthors"
       ]
     }
   },

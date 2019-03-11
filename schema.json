@@ -227,6 +227,15 @@
             "format": "date",
             "type": "string"
           },
+          "author": {
+            "type": "string"
+          },
+          "coAuthors": {
+            "type": "string"
+          },
+          "currentAssignee": {
+            "type": "string"
+          },
           "description": {
             "description": "a brief description about the document",
             "type": "string"
@@ -251,6 +260,9 @@
           },
           "name": {
             "description": "name of the document",
+            "type": "string"
+          },
+          "previousAssignee": {
             "type": "string"
           },
           "resources": {

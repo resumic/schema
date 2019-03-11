@@ -90,14 +90,18 @@ type publicationSchema struct {
 }
 
 type legalSchema struct {
-	Name            string           `json:"name" schema:"description:name of the document;example:XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format"`
-	LegalType       string           `json:"legalType" schema:"description:type of the document;example:Patent, Trademark, Copyright"`
-	Description     string           `json:"description" schema:"description:a brief description about the document;example:Some legal document!"`
-	ApplicationDate string           `json:"applicationDate" schema:"description:date of the application;format:date;example:2015-08-01"`
-	GrantDate       string           `json:"grantDate" schema:"description:date of the grant;format:date;example:2016-09-01"`
-	EndDate         string           `json:"endDate" schema:"description:end date;format:date;example:2020-09-03"`
-	Resources       []resourceSchema `json:"resources" schema:"description:multiple resources with label"`
-	IDNumber        string           `json:"idNumber" schema:"description:application number or Id Number;example:JP2004369746A"`
+	Name             string           `json:"name" schema:"description:name of the document;example:XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format"`
+	LegalType        string           `json:"legalType" schema:"description:type of the document;example:Patent, Trademark, Copyright"`
+	Description      string           `json:"description" schema:"description:a brief description about the document;example:Some legal document!"`
+	ApplicationDate  string           `json:"applicationDate" schema:"description:date of the application;format:date;example:2015-08-01"`
+	GrantDate        string           `json:"grantDate" schema:"description:date of the grant;format:date;example:2016-09-01"`
+	EndDate          string           `json:"endDate" schema:"description:end date;format:date;example:2020-09-03"`
+	Resources        []resourceSchema `json:"resources" schema:"description:multiple resources with label"`
+	IDNumber         string           `json:"idNumber" schema:"description:application number or Id Number;example:JP2004369746A"`
+	CurrentAssignee  string           `json:"currentAssignee" schema:"example:John Doe"`
+	PreviousAssignee string           `json:"previousAssignee" schema:"example:John Doe"`
+	Author           string           `json:"author" schema:"example:John Doe"`
+	CoAuthors        string           `json:"coAuthors" schema:"example:John Doe"`
 }
 
 type skillSchema struct {

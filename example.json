@@ -122,7 +122,11 @@
           "label": "Slides"
         }
       ],
-      "idNumber": "JP2004369746A"
+      "idNumber": "JP2004369746A",
+      "currentAssignee": "John Doe",
+      "previousAssignee": "John Doe",
+      "author": "John Doe",
+      "coAuthors": "John Doe"
     }
   ],
   "skills": [
