@@ -63,7 +63,9 @@
       "endDate": "2013-06-28",
       "score": {
         "type": "GPA",
-        "value": "3.4"
+        "value": "3.4",
+        "best": "4",
+        "worst": "0"
       },
       "courses": [
         "CS302 - Introduction to Algorithms"
@@ -185,7 +187,9 @@
       "grantDate": "2017-06-29",
       "score": {
         "type": "GPA",
-        "value": "3.4"
+        "value": "3.4",
+        "best": "4",
+        "worst": "0"
       },
       "endDate": "2017-06-29",
       "doesNotExpire": true

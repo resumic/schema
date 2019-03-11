@@ -8,6 +8,8 @@ type locationSchema struct {
 type scoreSchema struct {
 	Type  string `json:"type" schema:"description:type of the score;example:GPA"`
 	Value string `json:"value" schema:"description:value of the score;example:3.4"`
+	Best  string `json:"best" schema:"description:best possible score;example:4"`
+	Worst string `json:"worst" schema:"description:worst possible score;example:0"`
 }
 
 type resourceSchema struct {

@@ -39,15 +39,23 @@
         "ui:placeholder": "XYZ Certified Application Specialist (MCAS)"
       },
       "score": {
+        "best": {
+          "ui:placeholder": "4"
+        },
         "type": {
           "ui:placeholder": "GPA"
         },
         "ui:order": [
           "type",
-          "value"
+          "value",
+          "best",
+          "worst"
         ],
         "value": {
           "ui:placeholder": "3.4"
+        },
+        "worst": {
+          "ui:placeholder": "0"
         }
       },
       "ui:order": [
@@ -123,15 +131,23 @@
         ]
       },
       "score": {
+        "best": {
+          "ui:placeholder": "4"
+        },
         "type": {
           "ui:placeholder": "GPA"
         },
         "ui:order": [
           "type",
-          "value"
+          "value",
+          "best",
+          "worst"
         ],
         "value": {
           "ui:placeholder": "3.4"
+        },
+        "worst": {
+          "ui:placeholder": "0"
         }
       },
       "startDate": {

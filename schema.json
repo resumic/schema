@@ -54,12 +54,20 @@
           "score": {
             "description": "exam score",
             "properties": {
+              "best": {
+                "description": "best possible score",
+                "type": "string"
+              },
               "type": {
                 "description": "type of the score",
                 "type": "string"
               },
               "value": {
                 "description": "value of the score",
+                "type": "string"
+              },
+              "worst": {
+                "description": "worst possible score",
                 "type": "string"
               }
             },
@@ -147,12 +155,20 @@
           },
           "score": {
             "properties": {
+              "best": {
+                "description": "best possible score",
+                "type": "string"
+              },
               "type": {
                 "description": "type of the score",
                 "type": "string"
               },
               "value": {
                 "description": "value of the score",
+                "type": "string"
+              },
+              "worst": {
+                "description": "worst possible score",
                 "type": "string"
               }
             },
