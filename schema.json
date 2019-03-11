@@ -288,6 +288,10 @@
           "format": "date-time",
           "type": "string"
         },
+        "uuid": {
+          "description": "uuid v4 of the resume",
+          "type": "string"
+        },
         "version": {
           "description": "version field which follows semver",
           "type": "string"

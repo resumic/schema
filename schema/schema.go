@@ -160,6 +160,7 @@ type metaSchema struct {
 	Canonical    string `json:"canonical" schema:"description:URL (as per RFC 3986) to latest version of this document"`
 	Version      string `json:"version" schema:"description:version field which follows semver;example:v1.0.0"`
 	LastModified string `json:"lastModified" schema:"description:date-time of last modified;format:date-time;example:2017-06-29T15:53:01+01:00"`
+	UUID         string `json:"uuid" schema:"description:uuid v4 of the resume;example:078c39ce-23ee-4970-9637-c07379132dce"`
 }
 
 // Schema is the struct which jsonschema, uischema, and example are generated from.

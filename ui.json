@@ -250,8 +250,12 @@
     "ui:order": [
       "canonical",
       "version",
-      "lastModified"
+      "lastModified",
+      "uuid"
     ],
+    "uuid": {
+      "ui:placeholder": "078c39ce-23ee-4970-9637-c07379132dce"
+    },
     "version": {
       "ui:placeholder": "v1.0.0"
     }
