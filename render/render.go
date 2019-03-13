@@ -18,18 +18,23 @@ func RenderHTML(resumeJSON []byte, themeDir string) ([]byte, error) {
 	}
 	defer os.RemoveAll(siteDir)
 
-	if err := hugoInitSite(siteDir); err != nil {
+	site, err := initHugoSite(siteDir)
+	if err != nil {
 		return nil, err
 	}
 
 	resumeName := "resume"
-	if err := hugoWriteResumeJSON(resumeJSON, resumeName, siteDir); err != nil {
+	if err := site.writeResumeJSON(resumeJSON, resumeName); err != nil {
 		return nil, err
 	}
 
-	if err := hugoBuild(themeDir, siteDir); err != nil {
+	if err := site.build(themeDir); err != nil {
 		return nil, err
 	}
 
-	return hugoReadResumeHTML(resumeName, siteDir)
+	resumeURL, err := site.getResumeURL(resumeName)
+	if err != nil {
+		return nil, err
+	}
+	return site.readPublic(resumeURL)
 }
