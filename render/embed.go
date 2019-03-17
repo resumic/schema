@@ -2,7 +2,10 @@ package render
 
 import (
 	"bytes"
+	"encoding/base64"
+	"mime"
 	"net/url"
+	"path"
 
 	"golang.org/x/net/html/atom"
 
@@ -88,6 +91,33 @@ func embedScriptNode(node *html.Node, baseURL *url.URL, site hugoSite) error {
 	return nil
 }
 
+func embedImgNode(node *html.Node, baseURL *url.URL, site hugoSite) error {
+	srcAttrIndex := findAttributeIndex(node.Attr, "src")
+	if srcAttrIndex == -1 {
+		return nil
+	}
+	srcAttr := node.Attr[srcAttrIndex]
+	imageURL, err := baseURL.Parse(srcAttr.Val)
+	if err != nil {
+		return err
+	}
+	if imageURL.Host != baseURL.Host {
+		return nil
+	}
+
+	imageExt := path.Ext(imageURL.Path)
+	imageMime := mime.TypeByExtension(imageExt)
+
+	imageData, err := site.readPublic(imageURL)
+	if err != nil {
+		return err
+	}
+	imageBase64 := base64.StdEncoding.EncodeToString(imageData)
+
+	node.Attr[srcAttrIndex].Val = "data:" + imageMime + ";base64," + imageBase64
+	return nil
+}
+
 func embedNode(node *html.Node, baseURL *url.URL, site hugoSite) error {
 	var err error
 	switch node.DataAtom {
@@ -105,6 +135,9 @@ func embedNode(node *html.Node, baseURL *url.URL, site hugoSite) error {
 
 	case atom.Script:
 		err = embedScriptNode(node, baseURL, site)
+
+	case atom.Img:
+		err = embedImgNode(node, baseURL, site)
 	}
 
 	if err != nil {
