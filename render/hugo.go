@@ -11,6 +11,15 @@ import (
 	"github.com/gohugoio/hugo/commands"
 )
 
+type CouldNotReadPublicError struct {
+	url *url.URL
+	dir string
+}
+
+func (e *CouldNotReadPublicError) Error() string {
+	return "Could not find " + e.url.String() + " in " + e.dir
+}
+
 type contentFrontmatter struct {
 	Layout string `json:"layout"`
 }
@@ -101,6 +110,9 @@ func (s hugoSite) readPublic(u *url.URL) ([]byte, error) {
 	response, err := client.Get(u.String())
 	if err != nil {
 		return nil, err
+	}
+	if response.StatusCode != http.StatusOK {
+		return nil, &CouldNotReadPublicError{url: u, dir: s.dir}
 	}
 	defer response.Body.Close()
 
