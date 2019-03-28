@@ -36,5 +36,11 @@ func RenderHTML(resumeJSON []byte, themeDir string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	return embedHTML(resumeURL, site)
+
+	resumeHTML, err := site.readPublic(resumeURL)
+	if err != nil {
+		return nil, err
+	}
+
+	return embedHTML(resumeHTML, resumeURL, site)
 }
