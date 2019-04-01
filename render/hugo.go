@@ -3,7 +3,6 @@ package render
 import (
 	"encoding/json"
 	"io/ioutil"
-	"net/http"
 	"net/url"
 	"os"
 	"path"
@@ -89,32 +88,11 @@ func (s hugoSite) writeResumeJSON(resumeJSON []byte, resumeName string) error {
 	return ioutil.WriteFile(contentPath, contentJSON, 0600)
 }
 
-func (s hugoSite) getResumeURL(resumeName string) (*url.URL, error) {
-	baseURL, err := url.Parse(s.config.BaseURL)
-	if err != nil {
-		return nil, err
-	}
-	return baseURL.Parse("/resumic/" + resumeName)
+func (s hugoSite) getResumeURL(resumeName string) (string, error) {
+	return absURL(s.config.BaseURL, "/resumic/"+resumeName)
 }
 
 func (s hugoSite) build(themeDir string) error {
 	resp := commands.Execute([]string{"--quiet", "--source", s.dir, "--themesDir", themeDir})
 	return resp.Err
-}
-
-func (s hugoSite) readPublic(u *url.URL) ([]byte, error) {
-	publicDir := path.Join(s.dir, "public")
-	client := &http.Client{}
-	client.Transport = http.NewFileTransport(http.Dir(publicDir))
-
-	response, err := client.Get(u.String())
-	if err != nil {
-		return nil, err
-	}
-	if response.StatusCode != http.StatusOK {
-		return nil, &CouldNotReadPublicError{url: u, dir: s.dir}
-	}
-	defer response.Body.Close()
-
-	return ioutil.ReadAll(response.Body)
 }

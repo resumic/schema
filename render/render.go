@@ -17,7 +17,6 @@ func RenderHTML(resumeJSON []byte, themeDir string) ([]byte, error) {
 		return nil, err
 	}
 	defer os.RemoveAll(siteDir)
-
 	site, err := initHugoSite(siteDir)
 	if err != nil {
 		return nil, err
@@ -27,20 +26,27 @@ func RenderHTML(resumeJSON []byte, themeDir string) ([]byte, error) {
 	if err := site.writeResumeJSON(resumeJSON, resumeName); err != nil {
 		return nil, err
 	}
-
-	if err := site.build(themeDir); err != nil {
-		return nil, err
-	}
-
 	resumeURL, err := site.getResumeURL(resumeName)
 	if err != nil {
 		return nil, err
 	}
 
-	resumeHTML, err := site.readPublic(resumeURL)
+	if err := site.build(themeDir); err != nil {
+		return nil, err
+	}
+
+	client, err := newClient(site)
+	if err != nil {
+		return nil, err
+	}
+	response, err := client.Get(resumeURL)
+	if err != nil {
+		return nil, err
+	}
+	resumeHTML, err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		return nil, err
 	}
 
-	return embedHTML(resumeHTML, resumeURL, site)
+	return embedHTML(resumeHTML, resumeURL, client)
 }

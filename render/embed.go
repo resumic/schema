@@ -3,45 +3,52 @@ package render
 import (
 	"bytes"
 	"encoding/base64"
-	"mime"
-	"net/url"
-	"path"
+	"io/ioutil"
+	"net/http"
 
 	"golang.org/x/net/html"
 )
 
-func makeDataURL(resourceURL *url.URL, site hugoSite) (string, error) {
-	resourceContent, err := site.readPublic(resourceURL)
+func makeDataURL(resourceURL string, client *http.Client) (string, error) {
+	response, err := client.Get(resourceURL)
 	if err != nil {
 		return "", err
 	}
-	resourceBase64 := base64.StdEncoding.EncodeToString(resourceContent)
-	resourceExt := path.Ext(resourceURL.Path)
-	resourceMime := mime.TypeByExtension(resourceExt)
-	return "data:" + resourceMime + ";base64," + resourceBase64, nil
+
+	contentType := response.Header.Get("Content-type")
+	if contentType == "" {
+		contentType = "application/octet-stream"
+	}
+
+	content, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		return "", err
+	}
+	contentBase64 := base64.StdEncoding.EncodeToString(content)
+
+	dataURL := "data:" + contentType + ";base64," + contentBase64
+	return dataURL, nil
 }
 
-func embedHTMLNode(node *html.Node, baseURL *url.URL, site hugoSite) error {
+func embedHTMLNode(node *html.Node, baseURL string, client *http.Client) error {
 	if node.Type == html.ElementNode {
 		for index, attr := range node.Attr {
 			if attr.Key == "href" || attr.Key == "src" {
-				resourceURL, err := baseURL.Parse(attr.Val)
+				resourceURL, err := absURL(baseURL, attr.Val)
+				if err != nil {
+					return nil
+				}
+				dataURL, err := makeDataURL(resourceURL, client)
 				if err != nil {
 					return err
 				}
-				if baseURL.Host == resourceURL.Host {
-					dataURL, err := makeDataURL(resourceURL, site)
-					if err != nil {
-						return err
-					}
-					node.Attr[index].Val = dataURL
-				}
+				node.Attr[index].Val = dataURL
 			}
 		}
 	}
 
 	for child := node.FirstChild; child != nil; child = child.NextSibling {
-		if err := embedHTMLNode(child, baseURL, site); err != nil {
+		if err := embedHTMLNode(child, baseURL, client); err != nil {
 			return err
 		}
 	}
@@ -49,13 +56,13 @@ func embedHTMLNode(node *html.Node, baseURL *url.URL, site hugoSite) error {
 	return nil
 }
 
-func embedHTML(pageHTML []byte, pageURL *url.URL, site hugoSite) ([]byte, error) {
+func embedHTML(pageHTML []byte, pageURL string, client *http.Client) ([]byte, error) {
 	node, err := html.Parse(bytes.NewReader(pageHTML))
 	if err != nil {
 		return nil, err
 	}
 
-	if err := embedHTMLNode(node, pageURL, site); err != nil {
+	if err := embedHTMLNode(node, pageURL, client); err != nil {
 		return nil, err
 	}
 
