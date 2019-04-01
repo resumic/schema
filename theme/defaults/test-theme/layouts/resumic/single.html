@@ -1,6 +1,15 @@
 <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
     <body>
         {{ $resume := index $.Site.Data.resumic .File.BaseFileName }}
         {{ $resume.personal.name }} - {{ $resume.core.title }}
+
+        <div>
+            <p> Powerd By <a href="https://github.com/resumic/schema">resumic</a></p>
+            <img src="/resumic.jpg" />
+        </div>
+        <script src="/script.js"></script>
     </body>
 </html>

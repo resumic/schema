@@ -1,80 +1,52 @@
 package render
 
 import (
-	"encoding/json"
 	"io/ioutil"
 	"os"
-	"path"
 
-	"github.com/gohugoio/hugo/commands"
+	"github.com/resumic/schema/schema"
 )
 
-type siteConfig struct {
-	DisableKinds []string `json:"disableKinds"`
-	Theme        string   `json:"theme"`
-}
+func RenderHTML(resumeJSON []byte, themeDir string) ([]byte, error) {
+	if err := schema.ValidateResume(resumeJSON); err != nil {
+		return nil, err
+	}
 
-type frontmatter struct {
-	Layout string `json:"layout"`
-}
-
-func build(root, themePath string) error {
-	resp := commands.Execute([]string{"--quiet", "-s", root, "--themesDir", themePath})
-	return resp.Err
-}
-
-func RenderHTML(resume []byte, themePath string) ([]byte, error) {
-	sitePath, err := ioutil.TempDir(os.TempDir(), "resumic")
+	siteDir, err := ioutil.TempDir(os.TempDir(), "resumic")
 	if err != nil {
 		return nil, err
 	}
-	defer os.RemoveAll(sitePath)
-
-	config := siteConfig{}
-	config.DisableKinds = []string{"taxonomy", "taxonomyTerm", "category", "sitemap", "RSS", "404", "robotsTXT", "home", "section"}
-
-	configJSON, err := json.MarshalIndent(config, "", "  ")
-	if err != nil {
-		return nil, err
-	}
-	configPath := path.Join(sitePath, "config.json")
-	err = ioutil.WriteFile(configPath, configJSON, 0600)
+	defer os.RemoveAll(siteDir)
+	site, err := initHugoSite(siteDir)
 	if err != nil {
 		return nil, err
 	}
 
-	dataPath := path.Join(sitePath, "data", "resumic", "resume.json")
-	err = os.MkdirAll(path.Dir(dataPath), 0700)
-	if err != nil {
+	resumeName := "resume"
+	if err := site.writeResumeJSON(resumeJSON, resumeName); err != nil {
 		return nil, err
 	}
-	err = ioutil.WriteFile(dataPath, resume, 0600)
-	if err != nil {
-		return nil, err
-	}
-
-	content := frontmatter{}
-	content.Layout = "resumic"
-
-	contentJSON, err := json.MarshalIndent(content, "", "  ")
-	if err != nil {
-		return nil, err
-	}
-	contentPath := path.Join(sitePath, "content", "resumic", "resume.md")
-	err = os.MkdirAll(path.Dir(contentPath), 0700)
-	if err != nil {
-		return nil, err
-	}
-	err = ioutil.WriteFile(contentPath, contentJSON, 0600)
+	resumeURL, err := site.getResumeURL(resumeName)
 	if err != nil {
 		return nil, err
 	}
 
-	err = build(sitePath, themePath)
+	if err := site.build(themeDir); err != nil {
+		return nil, err
+	}
+
+	client, err := newClient(site)
+	if err != nil {
+		return nil, err
+	}
+	response, err := client.Get(resumeURL)
+	if err != nil {
+		return nil, err
+	}
+	resumeHTML, err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		return nil, err
 	}
 
-	htmlPath := path.Join(sitePath, "public", "resumic", "resume", "index.html")
-	return ioutil.ReadFile(htmlPath)
+	return embedHTML(resumeHTML, resumeURL, client)
 }
