@@ -9,6 +9,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const packageName string = "Resumic"
+
 func check(e error) bool {
 	return e != nil
 }
@@ -19,6 +21,7 @@ func versionFunc(cmd *cobra.Command, args []string) error {
 	if check(err) {
 		return err
 	}
+	fmt.Println(packageName)
 	fmt.Print(string(dat))
 	return nil
 }
