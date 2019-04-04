@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"runtime"
 
 	"github.com/spf13/cobra"
 )
@@ -23,10 +24,11 @@ func versionFunc(cmd *cobra.Command, args []string) error {
 	}
 	fmt.Println(packageName)
 	fmt.Print(string(dat))
+	fmt.Print(runtime.GOOS, runtime.Version())
 	return nil
 }
 
-var versionCmd *cobra.Command = &cobra.Command{
+var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Show version information for this build of Schema",
 	Args:  cobra.ExactArgs(0),
