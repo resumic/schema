@@ -1,2 +1,4 @@
-build-version: ./cmd/version.go
-	go build -o resumic
+FILE=./VERSION
+RESUMIC_VERSION = `cat $(FILE)`
+build: ./cmd/version.go
+	go build -ldflags "-X github.com/resumic/schema/cmd.Version=$(RESUMIC_VERSION)" -o resumic

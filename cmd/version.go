@@ -2,12 +2,14 @@ package cmd
 
 import (
 	"fmt"
-	"io/ioutil"
-	"os"
-	"path/filepath"
 	"runtime"
 
 	"github.com/spf13/cobra"
+)
+
+var (
+	Version string
+	commit  = "none"
 )
 
 const packageName string = "Resumic"
@@ -17,14 +19,14 @@ func check(e error) bool {
 }
 
 func versionFunc(cmd *cobra.Command, args []string) error {
-	pwd, err := os.Getwd()
-	dat, err := ioutil.ReadFile(filepath.Join(pwd, `VERSION`))
-	if check(err) {
-		return err
-	}
-	fmt.Println(packageName)
-	fmt.Print(string(dat))
-	fmt.Print(runtime.GOOS, runtime.Version())
+	// pwd, err := os.Getwd()
+	// dat, err := ioutil.ReadFile(filepath.Join(pwd, `VERSION`))
+	// if check(err) {
+	// 	return err
+	// }
+	fmt.Println(packageName + ", " + Version)
+	fmt.Println("running on...")
+	fmt.Println(runtime.GOOS + ", " + runtime.Version())
 	return nil
 }
 
