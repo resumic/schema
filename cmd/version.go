@@ -8,8 +8,9 @@ import (
 )
 
 var (
-	Version string
-	commit  = "none"
+	Version   string
+	GitCommit string
+	commit    = "none"
 )
 
 const packageName string = "Resumic"
@@ -27,6 +28,7 @@ func versionFunc(cmd *cobra.Command, args []string) error {
 	fmt.Println(packageName + ", " + Version)
 	fmt.Println("running on...")
 	fmt.Println(runtime.GOOS + ", " + runtime.Version())
+	fmt.Println("Git Info: " + GitCommit)
 	return nil
 }
 
