@@ -9,7 +9,7 @@ import (
 
 var (
 	// Version Contains the version number for a particular Resumic build
-	version string
+	version = "dev"
 	// GitCommit contains the commit that this build is based on
 	gitCommit = "none"
 )
@@ -17,10 +17,8 @@ var (
 const packageName string = "Resumic"
 
 func versionFunc(cmd *cobra.Command, args []string) error {
-	fmt.Println(packageName + ", " + version)
-	fmt.Println("running on...")
-	fmt.Println(runtime.GOOS + ", " + runtime.Version())
-	fmt.Println("Git Info: " + gitCommit)
+	fmt.Println(packageName + "-" + version)
+	fmt.Println(runtime.GOOS + ", " + runtime.Version() + ", " + gitCommit)
 	return nil
 }
 
