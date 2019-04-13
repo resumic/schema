@@ -13,8 +13,10 @@ build:
 	@packr2 
 	@go build -o resumic
 	@packr2 clean
-	# Tests that run in Travis Build
+ifdef TRAVIS
 	go test -v ./...
+endif
+
 
 dev:
 	@go get github.com/gobuffalo/packr/v2/packr2
@@ -27,6 +29,11 @@ release:
 	@packr2
 	@go build -ldflags "-X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
 	@packr2 clean
+
+test:
+	go test -v ./...
+
+
 
 .PHONY: clean
 clean: ./resumic
