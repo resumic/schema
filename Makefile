@@ -13,6 +13,8 @@ build:
 	@packr2 
 	@go build -o resumic
 	@packr2 clean
+	# Tests that run in Travis Build
+	go test -v ./...
 
 dev:
 	@go get github.com/gobuffalo/packr/v2/packr2
