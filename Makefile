@@ -17,7 +17,7 @@ build: pre-build
 	@packr2 clean
 
 release: pre-build
-	@go build -ldflags "-X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
+	@go build -ldflags "-s -w -X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION)$(DIRTY_SUFFIX) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
 	@packr2 clean
 
 test: build
