@@ -8,10 +8,10 @@ import (
 )
 
 var (
-	// Version Contains the version number for a particular Resumic build
+	// Version contains the version number for a particular Resumic build
 	version = "dev"
 	// GitCommit contains the commit that this build is based on
-	gitCommit = "none"
+	gitCommit = "unknown"
 )
 
 const packageName string = "Resumic"
