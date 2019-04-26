@@ -24,7 +24,7 @@ func versionFunc(cmd *cobra.Command, args []string) error {
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Show version information for this build of Schema",
+	Short: "Show version information for this build of Resumic",
 	Args:  cobra.ExactArgs(0),
 	RunE:  versionFunc,
 }
