@@ -1,10 +1,10 @@
 # Build Info Variables
-FILE=./VERSION
+FILE = ./VERSION
 RESUMIC_VERSION = `cat $(FILE)`
 GITCOMMIT = `git describe --tags --always --dirty`
-CODEPATH=`go list -m`
-SUFFIX="-dev"
-export GO111MODULE=on
+CODEPATH = `go list -m`
+SUFFIX = "-dev"
+export GO111MODULE = on
 
 # Build Rules
 
@@ -22,8 +22,6 @@ release: pre-build
 
 test: build
 	go test -v ./...
-
-
 
 .PHONY: clean
 clean: ./resumic

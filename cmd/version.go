@@ -14,7 +14,9 @@ var (
 	gitCommit = "unknown"
 )
 
-const packageName string = "Resumic"
+const (
+	packageName = "Resumic"
+)
 
 func versionFunc(cmd *cobra.Command, args []string) error {
 	fmt.Println(packageName + "-" + version)
