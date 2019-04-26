@@ -11,16 +11,6 @@ export GO111MODULE=on
 build: 
 	@go get github.com/gobuffalo/packr/v2/packr2
 	@packr2 
-	@go build -o resumic
-	@packr2 clean
-ifdef TRAVIS
-	go test -v ./...
-endif
-
-
-dev:
-	@go get github.com/gobuffalo/packr/v2/packr2
-	@packr2 
 	@go build -ldflags "-X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION)$(DIRTY_SUFFIX) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
 	@packr2 clean
 
@@ -30,7 +20,7 @@ release:
 	@go build -ldflags "-X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
 	@packr2 clean
 
-test:
+test: build
 	go test -v ./...
 
 
