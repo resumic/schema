@@ -1,0 +1,226 @@
+{
+  "core": {
+    "title": "Software Engineer",
+    "workArea": "Munich Citycenter + 20kms",
+    "livingArea": "Germany"
+  },
+  "personal": {
+    "name": "John Doe",
+    "gender": "male",
+    "image": "example.com/Abcxyz",
+    "email": "lucas@example.com",
+    "phone": "912-217-7923",
+    "url": "http://www.example.com/",
+    "summary": "The man who sold the world!",
+    "currentLocation": {
+      "lat": 35.712758,
+      "long": 51.392114
+    },
+    "permanentLocation": {
+      "lat": 35.712758,
+      "long": 51.392114
+    },
+    "birthday": "1995-02-14",
+    "birthPlace": "Munich",
+    "profiles": [
+      {
+        "network": "github",
+        "username": "john_doe",
+        "url": "https://github.com/john_doe"
+      }
+    ],
+    "relationshipStatus": "married",
+    "postalAddress": "John Doe, Wittekindshof, Schulstrasse 4, 32547 Bad Oyenhausen, Germany"
+  },
+  "work": [
+    {
+      "name": "XYZ Inc",
+      "description": "A social media company",
+      "position": "Software Engineer",
+      "location": {
+        "lat": 35.712758,
+        "long": 51.392114
+      },
+      "url": "http://xyz.example.com",
+      "startDate": "2017-12-29",
+      "endDate": "2018-12-29",
+      "summary": "Developing and maintaining the company website using syna",
+      "highlights": [
+        "Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "XYZ Institute of Technology",
+      "location": {
+        "lat": 35.712758,
+        "long": 51.392114
+      },
+      "area": "Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2017-06-28",
+      "endDate": "2013-06-28",
+      "score": {
+        "type": "GPA",
+        "value": "3.4",
+        "best": "4",
+        "worst": "0"
+      },
+      "courses": [
+        "CS302 - Introduction to Algorithms"
+      ],
+      "honors": [
+        "Magna Cum Laude"
+      ],
+      "highlights": [
+        "Live abroad within a new culture"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Xyz",
+      "position": "Open Source Contributor",
+      "location": {
+        "lat": 35.712758,
+        "long": 51.392114
+      },
+      "url": "http://xyz.example.com",
+      "startDate": "2014-06-29",
+      "endDate": "2017-06-29",
+      "summary": "Frontend developer",
+      "highlights": [
+        "Invited as a speaker in Xyzcon'17"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "name": "Deep learning and Artificial Intelligence",
+      "publisher": "XYZ, Computer Magazine",
+      "releaseDate": "2015-08-01",
+      "resources": [
+        {
+          "url": "http://www.example.com/my-example-slides/",
+          "label": "Slides"
+        }
+      ],
+      "url": "http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html",
+      "summary": "Discussion of the advent of deep learning and artificial intelligence"
+    }
+  ],
+  "legal": [
+    {
+      "name": "XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format",
+      "legalType": "Patent, Trademark, Copyright",
+      "description": "Some legal document!",
+      "applicationDate": "2015-08-01",
+      "grantDate": "2016-09-01",
+      "endDate": "2020-09-03",
+      "resources": [
+        {
+          "url": "http://www.example.com/my-example-slides/",
+          "label": "Slides"
+        }
+      ],
+      "idNumber": "JP2004369746A",
+      "currentAssignee": "John Doe",
+      "previousAssignee": "John Doe",
+      "author": "John Doe",
+      "coAuthors": "John Doe"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "proficiency": "advanced",
+      "keywords": [
+        "HTML"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Awarded Software Process Achievement Award",
+      "date": "2016-06-12",
+      "awarder": "IEEE",
+      "summary": "Received for my work in Deep learning and AI"
+    }
+  ],
+  "projects": [
+    {
+      "name": "File Transfer application",
+      "location": {
+        "lat": 35.712758,
+        "long": 51.392114
+      },
+      "description": "Developed a client and server based application",
+      "highlights": [
+        "used Java AWT and Swing for client side userinterface"
+      ],
+      "keywords": [
+        "Java"
+      ],
+      "startDate": "2016-06-29",
+      "endDate": "2017-03-02",
+      "resources": [
+        {
+          "url": "http://www.example.com/my-example-slides/",
+          "label": "Slides"
+        }
+      ],
+      "url": "http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html",
+      "roles": [
+        "Team Lead"
+      ],
+      "entity": "greenpeace",
+      "type": "volunteering"
+    }
+  ],
+  "certificate": [
+    {
+      "code": "1Z0-062",
+      "name": "XYZ Certified Application Specialist (MCAS)",
+      "website": "http://www.example.org",
+      "verification": "http://www.example.org",
+      "grantDate": "2017-06-29",
+      "score": {
+        "type": "GPA",
+        "value": "3.4",
+        "best": "4",
+        "worst": "0"
+      },
+      "endDate": "2017-06-29",
+      "doesNotExpire": true
+    }
+  ],
+  "references": [
+    {
+      "name": "Stephan Mark",
+      "company": "Xyz",
+      "position": "Senior Software Engineer",
+      "reference": "Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Machine Learning",
+      "keywords": [
+        "Neural Networks"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "",
+    "version": "v1.0.0",
+    "lastModified": "2017-06-29T15:53:01+01:00",
+    "uuid": "078c39ce-23ee-4970-9637-c07379132dce"
+  }
+}

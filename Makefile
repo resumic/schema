@@ -20,6 +20,10 @@ release: pre-build
 	@go build -ldflags "-s -w -X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
 	@packr2 clean
 
+nopackr: # Builds without installing packr. Useful if offline.
+	@go build -ldflags "-s -w -X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
+
+
 test: build
 	go test -v ./...
 

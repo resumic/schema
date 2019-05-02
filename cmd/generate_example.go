@@ -10,7 +10,12 @@ import (
 )
 
 func generateExampleRun(cmd *cobra.Command, args []string) error {
-	examplePath := args[0]
+	var examplePath string
+	if len(args) == 0 {
+		examplePath = "resume_example.json"
+	} else {
+		examplePath = args[0]
+	}
 	example, err := schema.GenerateExample()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate the example: %s", err)
@@ -30,7 +35,7 @@ func generateExampleRun(cmd *cobra.Command, args []string) error {
 var generateExampleCmd = &cobra.Command{
 	Use:   "example PATH",
 	Short: "Generate an example json resume",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateExampleRun,
 }
 
