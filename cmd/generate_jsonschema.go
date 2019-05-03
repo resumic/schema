@@ -9,7 +9,12 @@ import (
 )
 
 func generateJSONSchemaRun(cmd *cobra.Command, args []string) error {
-	schemaPath := args[0]
+	var schemaPath string
+	if len(args) == 0 {
+		schemaPath = "resume.json"
+	} else {
+		schemaPath = args[0]
+	}
 	schema, err := schema.GenerateJSONSchema()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate JSON schema: %s", err)
@@ -25,7 +30,7 @@ func generateJSONSchemaRun(cmd *cobra.Command, args []string) error {
 var generateJSONSchemaCmd = &cobra.Command{
 	Use:   "jsonschema PATH",
 	Short: "Generate the jsonschema for the resumic schema",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateJSONSchemaRun,
 }
 

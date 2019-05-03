@@ -9,7 +9,12 @@ import (
 )
 
 func generateUISchemaRun(cmd *cobra.Command, args []string) error {
-	schemaPath := args[0]
+	var schemaPath string
+	if len(args) == 0 {
+		schemaPath = "resume.json"
+	} else {
+		schemaPath = args[0]
+	}
 	schema, err := schema.GenerateUISchema()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate UI schema: %s", err)
@@ -25,7 +30,7 @@ func generateUISchemaRun(cmd *cobra.Command, args []string) error {
 var generateUISchemaCmd = &cobra.Command{
 	Use:   "uischema PATH",
 	Short: "Generate the uischema for the resumic schema",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateUISchemaRun,
 }
 
