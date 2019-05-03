@@ -10,7 +10,12 @@ import (
 )
 
 func validateRun(cmd *cobra.Command, args []string) error {
-	resumePath := args[0]
+	var resumePath string
+	if len(args) == 0 {
+		resumePath = "resume.json"
+	} else {
+		resumePath = args[0]
+	}
 
 	resume, err := ioutil.ReadFile(resumePath)
 	if err != nil {
@@ -23,14 +28,14 @@ func validateRun(cmd *cobra.Command, args []string) error {
 		}
 		return fmt.Errorf("Couldn't validate the resume: %s", err)
 	}
-	fmt.Printf("%s is valid and conforming with the resumic schema", resumePath)
+	fmt.Printf("%s is valid and conforming with the resumic schema\n", resumePath)
 	return nil
 }
 
 var validateCmd = &cobra.Command{
 	Use:   "validate PATH",
 	Short: "Validate a json resume",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.MaximumNArgs(1),
 	RunE:  validateRun,
 }
 
