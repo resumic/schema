@@ -1,9 +1,9 @@
 project:
   name: "Resumic"
-  state: "unstable"
-  #image: "https://github.com/resumic/schema/blob/master/media/logo.svg"
-  #website: "about.resumic.io"
-  oneLiner: "Standardized and generic data schema for a perfect resume/CV"
+  state: "alpha"
+  image: "https://github.com/resumic/schema/blob/master/media/logo.svg"
+  website: "https://resumic.org"
+  oneLiner: "Standardized and generic data schema for your resume/CV"
   description: |
     Easily share your machine readable data or export your resume/CV to a great looking website or PDF.
   version: "v0.1.0"
@@ -16,33 +16,34 @@ vision:
     - "Generic schema additions only"
   concept: "Resumic strives to provide a standardized and generic data schema for resumes/CVs."
   aim: "Resumic aims to be a generic data schema with a thin layer of tooling around to enable easily working with your data."
+
 supportLinks:
-  documentation: "/docs" # recommended
-  examples: "/examples"
+  documentation: "/docs"
 
 contributionLinks:
   issueTemplate: "/.github/ISSUE_TEMPLATE.md"
   starterIssues: "https://github.com/resumic/schema/labels/starter%20issue" # replace dear-github with your actual url
 
 emails:
-  commercialSupport: "support@okkur.io"
-  security: "security@okkur.io"
-  coc: "coc@okkur.io"
+  commercialSupport: "support@okkur.org"
+  security: "security@okkur.org"
+  coc: "coc@okkur.org"
 
 copyright:
   year: "2017"
 
 cla:
-  copyrightHolder: "Michael Grosser"
+  copyrightHolder: "nzt.ventures GmbH"
+  mail: "legal@nzt.ventures"
 
 maintainers:
-  - name: "Suramya Shah"
-    nick: "ss22ever"
   - name: "Michael Grosser"
     nick: "stp-ip"
+  - name: "Arman Mazdaee"
+    nick: "armanmazdaee"
 
 repo:
-  link: "https://github.com/resumic/schema/"
+  link: "https://s.resumic.org/code"
   type: "Github"
 
 issueTemplate:
@@ -51,7 +52,7 @@ issueTemplate:
   - "CLI version"
 
 badges:
-  - image: "https://img.shields.io/badge/state-unstable-red.svg"
+  - image: "https://img.shields.io/badge/state-alpha-blue.svg"
     alt: "state"
   - image: "https://img.shields.io/github/release/resumic/schema.svg"
     link: "https://github.com/resumic/schema/releases"
@@ -62,6 +63,6 @@ badges:
   - image: "https://travis-ci.org/resumic/schema.svg?branch=master"
     alt: "Build Status"
     link: "https://travis-ci.org/resumic/schema"
-  - image: "https://goreportcard.com/badge/github.com/resumic/schema"
-    alt: "Go Report Card"
-    link: "https://goreportcard.com/report/github.com/resumic/schema"
+
+reposeed:
+  configVersion: "v1"
