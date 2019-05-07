@@ -24,6 +24,6 @@ Subject to the terms and conditions of this Agreement, You hereby grant to nzt.v
 
 7.  Should You wish to submit work that is not Your original creation, You may submit it to nzt.ventures GmbH separately from any Contribution, identifying the complete details of its source and of any license or other restriction (including, but not limited to, related patents, trademarks, and license agreements) of which you are personally aware, and conspicuously marking the work as "Submitted on behalf of a third-party: [named here]".
 
-8.  It is Your responsibility to notify GitLab.com when any change is required to the list of designated employees excluded from submitting Contributions on Your behalf per Section 4. Such notification should be sent via email to legal@nzt.ventures.
+8.  It is Your responsibility to notify nzt.ventures GmbH when any change is required to the list of designated employees excluded from submitting Contributions on Your behalf per Section 4. Such notification should be sent via email to legal@nzt.ventures.
 
 This text is licensed under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/) and the original source is the Google Open Source Programs Office.
