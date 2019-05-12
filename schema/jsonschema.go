@@ -98,6 +98,7 @@ func generateObjectJSONSchema(typ reflect.Type, tags schemaTags) (map[string]int
 	if len(required) > 0 {
 		schema["required"] = required
 	}
+	schema["additionalProperties"] = false
 	return schema, nil
 }
 

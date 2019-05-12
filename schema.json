@@ -1,9 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
   "properties": {
     "awards": {
       "description": "list of awards have been received",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "awarder": {
             "description": "name of the awarder",
@@ -34,6 +36,7 @@
     },
     "certificate": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "code": {
             "description": "code of the certificate",
@@ -57,6 +60,7 @@
             "type": "string"
           },
           "score": {
+            "additionalProperties": false,
             "description": "exam score",
             "properties": {
               "best": {
@@ -103,6 +107,7 @@
       "type": "array"
     },
     "core": {
+      "additionalProperties": false,
       "properties": {
         "livingArea": {
           "description": "living area which could be city or country or even continent",
@@ -124,6 +129,7 @@
     },
     "education": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "area": {
             "description": "area of study",
@@ -159,6 +165,7 @@
             "type": "string"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of institution",
             "properties": {
               "lat": {
@@ -175,6 +182,7 @@
             "type": "object"
           },
           "score": {
+            "additionalProperties": false,
             "properties": {
               "best": {
                 "description": "best possible score",
@@ -224,6 +232,7 @@
     },
     "interests": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "keywords": {
             "description": "keywords of the interest",
@@ -247,6 +256,7 @@
     "languages": {
       "description": "list of languages",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "language": {
             "description": "name of language",
@@ -273,6 +283,7 @@
     "legal": {
       "description": "list of legals",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "applicationDate": {
             "description": "date of the application",
@@ -320,6 +331,7 @@
           "resources": {
             "description": "multiple resources with label",
             "items": {
+              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "label of the resource",
@@ -348,6 +360,7 @@
       "type": "array"
     },
     "meta": {
+      "additionalProperties": false,
       "description": "the schema version and any other tooling configuration",
       "properties": {
         "canonical": {
@@ -371,6 +384,7 @@
       "type": "object"
     },
     "personal": {
+      "additionalProperties": false,
       "description": "sensitive informations",
       "properties": {
         "birthPlace": {
@@ -383,6 +397,7 @@
           "type": "string"
         },
         "currentLocation": {
+          "additionalProperties": false,
           "description": "living location",
           "properties": {
             "lat": {
@@ -415,6 +430,7 @@
           "type": "string"
         },
         "permanentLocation": {
+          "additionalProperties": false,
           "description": "permanently living location",
           "properties": {
             "lat": {
@@ -440,6 +456,7 @@
         "profiles": {
           "description": "list of social networks",
           "items": {
+            "additionalProperties": false,
             "properties": {
               "network": {
                 "description": "name of the network",
@@ -483,6 +500,7 @@
     "projects": {
       "description": "list of career projects",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "description": {
             "description": "short summary of project",
@@ -512,6 +530,7 @@
             "type": "array"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of the project",
             "properties": {
               "lat": {
@@ -534,6 +553,7 @@
           "resources": {
             "description": "specify multiple resources with label",
             "items": {
+              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "label of the resource",
@@ -586,6 +606,7 @@
     "publications": {
       "description": "list of publications",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "name": {
             "description": "name of the publication",
@@ -602,6 +623,7 @@
           "resources": {
             "description": "multiple resources with label",
             "items": {
+              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "label of the resource",
@@ -643,6 +665,7 @@
     "references": {
       "description": "list of references",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "company": {
             "description": "company name",
@@ -671,6 +694,7 @@
     "skills": {
       "description": "list of professional skill-sets",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "keywords": {
             "description": "some keywords pertaining to the skill",
@@ -705,6 +729,7 @@
     },
     "volunteer": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "endDate": {
             "description": "end date",
@@ -719,6 +744,7 @@
             "type": "array"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of activity",
             "properties": {
               "lat": {
@@ -769,6 +795,7 @@
     },
     "work": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "description": {
             "description": "companies primary activity",
@@ -787,6 +814,7 @@
             "type": "array"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of the company",
             "properties": {
               "lat": {
