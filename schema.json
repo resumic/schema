@@ -23,6 +23,11 @@
             "type": "string"
           }
         },
+        "required": [
+          "title",
+          "date",
+          "awarder"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -71,6 +76,12 @@
                 "type": "string"
               }
             },
+            "required": [
+              "type",
+              "value",
+              "best",
+              "worst"
+            ],
             "type": "object"
           },
           "verification": {
@@ -84,6 +95,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "name"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -103,6 +117,9 @@
           "type": "string"
         }
       },
+      "required": [
+        "title"
+      ],
       "type": "object"
     },
     "education": {
@@ -151,6 +168,10 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "score": {
@@ -172,6 +193,12 @@
                 "type": "string"
               }
             },
+            "required": [
+              "type",
+              "value",
+              "best",
+              "worst"
+            ],
             "type": "object"
           },
           "startDate": {
@@ -184,6 +211,13 @@
             "type": "string"
           }
         },
+        "required": [
+          "institution",
+          "area",
+          "studyType",
+          "startDate",
+          "endDate"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -203,6 +237,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "name"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -226,6 +263,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "language"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -291,11 +331,18 @@
                   "type": "string"
                 }
               },
+              "required": [
+                "url",
+                "label"
+              ],
               "type": "object"
             },
             "type": "array"
           }
         },
+        "required": [
+          "name"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -345,6 +392,10 @@
               "type": "number"
             }
           },
+          "required": [
+            "lat",
+            "long"
+          ],
           "type": "object"
         },
         "email": {
@@ -373,6 +424,10 @@
               "type": "number"
             }
           },
+          "required": [
+            "lat",
+            "long"
+          ],
           "type": "object"
         },
         "phone": {
@@ -400,6 +455,11 @@
                 "type": "string"
               }
             },
+            "required": [
+              "network",
+              "username",
+              "url"
+            ],
             "type": "object"
           },
           "type": "array"
@@ -461,6 +521,10 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "name": {
@@ -481,6 +545,10 @@
                   "type": "string"
                 }
               },
+              "required": [
+                "url",
+                "label"
+              ],
               "type": "object"
             },
             "type": "array"
@@ -506,6 +574,11 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "startDate",
+          "endDate"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -540,6 +613,10 @@
                   "type": "string"
                 }
               },
+              "required": [
+                "url",
+                "label"
+              ],
               "type": "object"
             },
             "type": "array"
@@ -554,6 +631,11 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "publisher",
+          "releaseDate"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -579,6 +661,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "reference"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -610,6 +695,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "proficiency"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -639,6 +728,10 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "organization": {
@@ -664,6 +757,12 @@
             "type": "string"
           }
         },
+        "required": [
+          "organization",
+          "position",
+          "startDate",
+          "endDate"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -697,6 +796,10 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "name": {
@@ -722,11 +825,34 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "position",
+          "startDate",
+          "endDate"
+        ],
         "type": "object"
       },
       "type": "array"
     }
   },
+  "required": [
+    "core",
+    "personal",
+    "work",
+    "education",
+    "volunteer",
+    "publications",
+    "legal",
+    "skills",
+    "awards",
+    "projects",
+    "certificate",
+    "references",
+    "languages",
+    "interests",
+    "meta"
+  ],
   "title": "Resumic resume Schema",
   "type": "object"
 }

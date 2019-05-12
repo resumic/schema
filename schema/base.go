@@ -24,6 +24,20 @@ func getJSONName(field reflect.StructField) string {
 	return name
 }
 
+func isOmitEmpty(field reflect.StructField) bool {
+	jsonTag := field.Tag.Get("json")
+	if jsonTag == "" {
+		return false
+	}
+	tags := strings.Split(jsonTag, ",")[1:]
+	for _, tag := range tags {
+		if tag == "omitempty" {
+			return true
+		}
+	}
+	return false
+}
+
 type schemaTags map[string]string
 
 func newSchemaTags(tag reflect.StructTag) schemaTags {
