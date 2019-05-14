@@ -1,4 +1,4 @@
-<a href='https://resumic.org'><img src='https://github.com/resumic/schema/blob/master/media/logo.svg' width='500'/></a>
+<a href='https://resumic.org'><img src='https://raw.githubusercontent.com/resumic/schema/master/media/logo.svg?sanitize=true' width='500'/></a>
 
 Standardized and generic data schema for your resume/CV
 

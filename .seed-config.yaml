@@ -1,7 +1,7 @@
 project:
   name: "Resumic"
   state: "alpha"
-  image: "https://github.com/resumic/schema/blob/master/media/logo.svg"
+  image: "https://raw.githubusercontent.com/resumic/schema/master/media/logo.svg?sanitize=true"
   website: "https://resumic.org"
   oneLiner: "Standardized and generic data schema for your resume/CV"
   description: |
