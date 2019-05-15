@@ -122,9 +122,6 @@
           "type": "string"
         }
       },
-      "required": [
-        "title"
-      ],
       "type": "object"
     },
     "education": {
@@ -596,8 +593,7 @@
         },
         "required": [
           "name",
-          "startDate",
-          "endDate"
+          "startDate"
         ],
         "type": "object"
       },
@@ -655,8 +651,7 @@
         },
         "required": [
           "name",
-          "publisher",
-          "releaseDate"
+          "publisher"
         ],
         "type": "object"
       },
@@ -786,8 +781,7 @@
         "required": [
           "organization",
           "position",
-          "startDate",
-          "endDate"
+          "startDate"
         ],
         "type": "object"
       },
@@ -856,8 +850,7 @@
         "required": [
           "name",
           "position",
-          "startDate",
-          "endDate"
+          "startDate"
         ],
         "type": "object"
       },

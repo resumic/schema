@@ -24,7 +24,7 @@ type profileSchema struct {
 }
 
 type coreSchema struct {
-	Title      string `json:"title" schema:"description:job title;example:Software Engineer"`
+	Title      string `json:"title,omitempty" schema:"description:job title;example:Software Engineer"`
 	WorkArea   string `json:"workArea,omitempty" schema:"description:work area which could be city or country or even remote;example:Munich Citycenter + 20kms"`
 	LivingArea string `json:"livingArea,omitempty" schema:"description:living area which could be city or country or even continent;example:Germany"`
 }
@@ -53,7 +53,7 @@ type workSchema struct {
 	Location    locationSchema `json:"location,omitempty" schema:"description:location of the company"`
 	URL         string         `json:"url,omitempty" schema:"description:url of the company website;format:uri;example:http://xyz.example.com"`
 	StartDate   string         `json:"startDate" schema:"description:start date;format:date;example:2017-12-29"`
-	EndDate     string         `json:"endDate" schema:"description:end date;format:date;example:2018-12-29"`
+	EndDate     string         `json:"endDate,omitempty" schema:"description:end date;format:date;example:2018-12-29"`
 	Summary     string         `json:"summary,omitempty" schema:"description:an overview of responsibilities;example:Developing and maintaining the company website using syna"`
 	Highlights  []string       `json:"highlights,omitempty" schema:"description:some of accomplishments;items_example:Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers"`
 }
@@ -64,7 +64,7 @@ type educationSchema struct {
 	Area        string         `json:"area" schema:"description:area of study;example:Engineering"`
 	StudyType   string         `json:"studyType" schema:"description:type of study;example:Bachelor"`
 	StartDate   string         `json:"startDate" schema:"description:start date;format:date;example:2017-06-28"`
-	EndDate     string         `json:"endDate" schema:"description:end date;format:date;example:2013-06-28"`
+	EndDate     string         `json:"endDate,omitepmty" schema:"description:end date;format:date;example:2013-06-28"`
 	Score       scoreSchema    `json:"score,omitempty"`
 	Courses     []string       `json:"courses,omitempty" schema:"description:notable courses/subjects;items_example:CS302 - Introduction to Algorithms"`
 	Honors      []string       `json:"honors,omitempty" schema:"description:some education honours;items_example:Magna Cum Laude"`
@@ -77,7 +77,7 @@ type volunteerSchema struct {
 	Location     locationSchema `json:"location,omitempty" schema:"description:location of activity"`
 	URL          string         `json:"url,omitempty" schema:"description:related link to support volunteer experience;format:uri;example:http://xyz.example.com"`
 	StartDate    string         `json:"startDate" schema:"description:start date;format:date;example:2014-06-29"`
-	EndDate      string         `json:"endDate" schema:"description:end date;format:date;example:2017-06-29"`
+	EndDate      string         `json:"endDate,omitempty" schema:"description:end date;format:date;example:2017-06-29"`
 	Summary      string         `json:"summary,omitempty" schema:"description:an overview of responsibilities;example:Frontend developer"`
 	Highlights   []string       `json:"highlights,omitempty" schema:"description:some of accomplishments;items_example:Invited as a speaker in Xyzcon'17"`
 }
@@ -85,7 +85,7 @@ type volunteerSchema struct {
 type publicationSchema struct {
 	Name        string           `json:"name" schema:"description:name of the publication;example:Deep learning and Artificial Intelligence"`
 	Publisher   string           `json:"publisher" schema:"description:name of the publisher;example:XYZ, Computer Magazine"`
-	ReleaseDate string           `json:"releaseDate" schema:"description:release date of publication;example:2015-08-01"`
+	ReleaseDate string           `json:"releaseDate,omitempty" schema:"description:release date of publication;example:2015-08-01"`
 	Resources   []resourceSchema `json:"resources,omitempty" schema:"description:multiple resources with label"`
 	URL         string           `json:"url,omitempty" schema:"description:url of the publication;format:uri;example:http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"`
 	Summary     string           `json:"summary,omitempty" schema:"description:short summary of the publication;example:Discussion of the advent of deep learning and artificial intelligence"`
@@ -126,7 +126,7 @@ type projectSchema struct {
 	Highlights  []string         `json:"highlights,omitempty" schema:"description:specify multiple features;items_example:used Java AWT and Swing for client side userinterface"`
 	Keywords    []string         `json:"keywords,omitempty" schema:"description:specify special elements involved;items_example:Java"`
 	StartDate   string           `json:"startDate" schema:"start date;format:date;example:2016-06-29"`
-	EndDate     string           `json:"endDate" schema:"description:end date;format:date;example:2017-03-02"`
+	EndDate     string           `json:"endDate,omitempty" schema:"description:end date;format:date;example:2017-03-02"`
 	Resources   []resourceSchema `json:"resources,omitempty" schema:"description:specify multiple resources with label"`
 	URL         string           `json:"url,omitempty" schema:"description:url of the project;format:uri;example:http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html"`
 	Roles       []string         `json:"roles,omitempty" schema:"description:specify your role on this project;items_example:Team Lead"`
@@ -153,7 +153,7 @@ type referenceSchema struct {
 }
 
 type languageSchema struct {
-	Language string `json:"language" schema:"description:name of language;example:English"`
+	Language string `json:"language,omitepty" schema:"description:name of language;example:English"`
 	Level    string `json:"level,omitempty" schema:"description:proficiency level for the language;enum:basic,conversational,fluent,native;example:fluent"`
 }
 
