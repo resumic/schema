@@ -1,9 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
   "properties": {
     "awards": {
       "description": "list of awards have been received",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "awarder": {
             "description": "name of the awarder",
@@ -23,12 +25,18 @@
             "type": "string"
           }
         },
+        "required": [
+          "title",
+          "date",
+          "awarder"
+        ],
         "type": "object"
       },
       "type": "array"
     },
     "certificate": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "code": {
             "description": "code of the certificate",
@@ -52,6 +60,7 @@
             "type": "string"
           },
           "score": {
+            "additionalProperties": false,
             "description": "exam score",
             "properties": {
               "best": {
@@ -71,6 +80,12 @@
                 "type": "string"
               }
             },
+            "required": [
+              "type",
+              "value",
+              "best",
+              "worst"
+            ],
             "type": "object"
           },
           "verification": {
@@ -84,11 +99,15 @@
             "type": "string"
           }
         },
+        "required": [
+          "name"
+        ],
         "type": "object"
       },
       "type": "array"
     },
     "core": {
+      "additionalProperties": false,
       "properties": {
         "livingArea": {
           "description": "living area which could be city or country or even continent",
@@ -107,6 +126,7 @@
     },
     "education": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "area": {
             "description": "area of study",
@@ -142,6 +162,7 @@
             "type": "string"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of institution",
             "properties": {
               "lat": {
@@ -151,9 +172,14 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "score": {
+            "additionalProperties": false,
             "properties": {
               "best": {
                 "description": "best possible score",
@@ -172,6 +198,12 @@
                 "type": "string"
               }
             },
+            "required": [
+              "type",
+              "value",
+              "best",
+              "worst"
+            ],
             "type": "object"
           },
           "startDate": {
@@ -184,12 +216,20 @@
             "type": "string"
           }
         },
+        "required": [
+          "institution",
+          "area",
+          "studyType",
+          "startDate",
+          "endDate"
+        ],
         "type": "object"
       },
       "type": "array"
     },
     "interests": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "keywords": {
             "description": "keywords of the interest",
@@ -203,6 +243,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "name"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -210,6 +253,7 @@
     "languages": {
       "description": "list of languages",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "language": {
             "description": "name of language",
@@ -226,6 +270,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "language"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -233,6 +280,7 @@
     "legal": {
       "description": "list of legals",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "applicationDate": {
             "description": "date of the application",
@@ -280,6 +328,7 @@
           "resources": {
             "description": "multiple resources with label",
             "items": {
+              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "label of the resource",
@@ -291,16 +340,24 @@
                   "type": "string"
                 }
               },
+              "required": [
+                "url",
+                "label"
+              ],
               "type": "object"
             },
             "type": "array"
           }
         },
+        "required": [
+          "name"
+        ],
         "type": "object"
       },
       "type": "array"
     },
     "meta": {
+      "additionalProperties": false,
       "description": "the schema version and any other tooling configuration",
       "properties": {
         "canonical": {
@@ -324,6 +381,7 @@
       "type": "object"
     },
     "personal": {
+      "additionalProperties": false,
       "description": "sensitive informations",
       "properties": {
         "birthPlace": {
@@ -336,6 +394,7 @@
           "type": "string"
         },
         "currentLocation": {
+          "additionalProperties": false,
           "description": "living location",
           "properties": {
             "lat": {
@@ -345,6 +404,10 @@
               "type": "number"
             }
           },
+          "required": [
+            "lat",
+            "long"
+          ],
           "type": "object"
         },
         "email": {
@@ -364,6 +427,7 @@
           "type": "string"
         },
         "permanentLocation": {
+          "additionalProperties": false,
           "description": "permanently living location",
           "properties": {
             "lat": {
@@ -373,6 +437,10 @@
               "type": "number"
             }
           },
+          "required": [
+            "lat",
+            "long"
+          ],
           "type": "object"
         },
         "phone": {
@@ -385,6 +453,7 @@
         "profiles": {
           "description": "list of social networks",
           "items": {
+            "additionalProperties": false,
             "properties": {
               "network": {
                 "description": "name of the network",
@@ -400,6 +469,11 @@
                 "type": "string"
               }
             },
+            "required": [
+              "network",
+              "username",
+              "url"
+            ],
             "type": "object"
           },
           "type": "array"
@@ -423,6 +497,7 @@
     "projects": {
       "description": "list of career projects",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "description": {
             "description": "short summary of project",
@@ -452,6 +527,7 @@
             "type": "array"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of the project",
             "properties": {
               "lat": {
@@ -461,6 +537,10 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "name": {
@@ -470,6 +550,7 @@
           "resources": {
             "description": "specify multiple resources with label",
             "items": {
+              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "label of the resource",
@@ -481,6 +562,10 @@
                   "type": "string"
                 }
               },
+              "required": [
+                "url",
+                "label"
+              ],
               "type": "object"
             },
             "type": "array"
@@ -506,6 +591,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "startDate"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -513,6 +602,7 @@
     "publications": {
       "description": "list of publications",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "name": {
             "description": "name of the publication",
@@ -529,6 +619,7 @@
           "resources": {
             "description": "multiple resources with label",
             "items": {
+              "additionalProperties": false,
               "properties": {
                 "label": {
                   "description": "label of the resource",
@@ -540,6 +631,10 @@
                   "type": "string"
                 }
               },
+              "required": [
+                "url",
+                "label"
+              ],
               "type": "object"
             },
             "type": "array"
@@ -554,6 +649,10 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "publisher"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -561,6 +660,7 @@
     "references": {
       "description": "list of references",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "company": {
             "description": "company name",
@@ -579,6 +679,9 @@
             "type": "string"
           }
         },
+        "required": [
+          "reference"
+        ],
         "type": "object"
       },
       "type": "array"
@@ -586,6 +689,7 @@
     "skills": {
       "description": "list of professional skill-sets",
       "items": {
+        "additionalProperties": false,
         "properties": {
           "keywords": {
             "description": "some keywords pertaining to the skill",
@@ -610,12 +714,17 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "proficiency"
+        ],
         "type": "object"
       },
       "type": "array"
     },
     "volunteer": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "endDate": {
             "description": "end date",
@@ -630,6 +739,7 @@
             "type": "array"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of activity",
             "properties": {
               "lat": {
@@ -639,6 +749,10 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "organization": {
@@ -664,12 +778,18 @@
             "type": "string"
           }
         },
+        "required": [
+          "organization",
+          "position",
+          "startDate"
+        ],
         "type": "object"
       },
       "type": "array"
     },
     "work": {
       "items": {
+        "additionalProperties": false,
         "properties": {
           "description": {
             "description": "companies primary activity",
@@ -688,6 +808,7 @@
             "type": "array"
           },
           "location": {
+            "additionalProperties": false,
             "description": "location of the company",
             "properties": {
               "lat": {
@@ -697,6 +818,10 @@
                 "type": "number"
               }
             },
+            "required": [
+              "lat",
+              "long"
+            ],
             "type": "object"
           },
           "name": {
@@ -722,11 +847,33 @@
             "type": "string"
           }
         },
+        "required": [
+          "name",
+          "position",
+          "startDate"
+        ],
         "type": "object"
       },
       "type": "array"
     }
   },
+  "required": [
+    "core",
+    "personal",
+    "work",
+    "education",
+    "volunteer",
+    "publications",
+    "legal",
+    "skills",
+    "awards",
+    "projects",
+    "certificate",
+    "references",
+    "languages",
+    "interests",
+    "meta"
+  ],
   "title": "Resumic resume Schema",
   "type": "object"
 }

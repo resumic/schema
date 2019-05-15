@@ -15,17 +15,27 @@ func (e *UnsupportedKindError) Error() string {
 
 func getJSONName(field reflect.StructField) string {
 	tag := field.Tag.Get("json")
-	if tag == "" {
-		return field.Name
-	}
-	if tag == "-" {
-		return ""
-	}
 	name := strings.Split(tag, ",")[0]
 	if name == "" {
 		return field.Name
+	} else if name == "-" {
+		return ""
 	}
 	return name
+}
+
+func isOmitEmpty(field reflect.StructField) bool {
+	jsonTag := field.Tag.Get("json")
+	if jsonTag == "" {
+		return false
+	}
+	tags := strings.Split(jsonTag, ",")[1:]
+	for _, tag := range tags {
+		if tag == "omitempty" {
+			return true
+		}
+	}
+	return false
 }
 
 type schemaTags map[string]string
