@@ -153,8 +153,8 @@ type referenceSchema struct {
 }
 
 type languageSchema struct {
-	Language string `json:"language,omitepty" schema:"description:name of language;example:English"`
-	Level    string `json:"level,omitempty" schema:"description:proficiency level for the language;enum:basic,conversational,fluent,native;example:fluent"`
+	Language string `json:"language" schema:"description:name of language;example:English"`
+	Level    string `json:"level" schema:"description:proficiency level for the language;enum:basic,conversational,fluent,native;example:fluent"`
 }
 
 type interestSchema struct {

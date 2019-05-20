@@ -270,7 +270,8 @@
           }
         },
         "required": [
-          "language"
+          "language",
+          "level"
         ],
         "type": "object"
       },
