@@ -220,8 +220,7 @@
           "institution",
           "area",
           "studyType",
-          "startDate",
-          "endDate"
+          "startDate"
         ],
         "type": "object"
       },
