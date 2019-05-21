@@ -1,0 +1,24 @@
+{{ with .education }}
+    <div class="education-container container-block">
+        <h2 class="container-block-title">Education</h2>
+        {{ range . }}
+            <div class="item">
+                <h4 class="degree">
+                    {{ .studyType }} in {{ .area }}
+                </h4>
+
+                <h5 class="meta">{{ .institution }}</h5>
+
+                <div class="time">
+                    {{ .startDate | dateFormat "2006" }}
+                    -
+                    {{ with .endDate }}
+                        {{ . | dateFormat "2006" }}
+                    {{ else }}
+                        Present
+                    {{ end }}
+                </div>
+            </div>
+        {{ end }}
+    </div>
+{{ end }}

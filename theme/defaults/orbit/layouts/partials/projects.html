@@ -1,0 +1,20 @@
+{{ with .projects }}
+    <section class="section projects-section">
+        <h2 class="section-title">
+            <span class="icon-holder"><i class="fas fa-archive"></i></span>
+            Projects
+        </h2>
+
+        {{ range . }}
+            <div class="item">
+                <span class="project-title">
+                    <a href="{{ .url }}">{{ .name }}</a>
+                </span>
+                {{ with .description}}
+                    -
+                    <span class="project-tagline">{{ . }}</span>
+                {{ end }}
+            </div>
+        {{ end }}
+    </section>
+{{ end }}

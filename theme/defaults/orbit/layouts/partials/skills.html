@@ -1,0 +1,37 @@
+{{ with .skills }}
+    <section class="skills-section section">
+        <h2 class="section-title">
+            <span class="icon-holder"><i class="fas fa-rocket"></i></span>
+            Skills &amp; Proficiency
+        </h2>
+
+        <div class="skillset">        
+            {{ range . }}
+                <div class="item">
+                    <h3 class="level-title">{{ .name }}</h3>
+
+                    {{ $level := "" }}
+                    {{ if eq .proficiency "beginner" }}
+                        {{ $level = "20" }}
+                    {{ else if eq .proficiency "early" }}
+                        {{ $level = "40" }}
+                    {{ else if eq .proficiency "competent" }}
+                        {{ $level = "60" }}
+                    {{ else if eq .proficiency "advanced" }}
+                        {{ $level = "80" }}
+                    {{ else if eq .proficiency "expert" }}
+                        {{ $level = "100" }}
+                    {{ end }}
+                    <div class="progress level-bar">
+                        <div class="progress-bar theme-progress-bar"
+                            role="progressbar" style="width: {{ $level }}%"
+                            aria-valuenow="{{ $level }}"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+                        </div>
+                    </div>                               
+                </div>
+            {{ end }}
+        </div>  
+    </section>
+{{ end }}

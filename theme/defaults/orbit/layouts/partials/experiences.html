@@ -1,0 +1,36 @@
+{{ with .work }}
+    <section class="section experiences-section">
+        <h2 class="section-title">
+            <span class="icon-holder"><i class="fas fa-briefcase"></i></span>
+            Experiences
+        </h2>
+        
+        {{ range . }}
+            <div class="item">
+                <div class="meta">
+                    <div class="upper-row">
+                        <h3 class="job-title">{{ .position }}</h3>
+                        <div class="time">
+                            {{ .startDate | dateFormat "2006" }}
+                            -
+                            {{ with .endDate }}
+                                {{ . | dateFormat "2006" }}
+                            {{ else }}
+                                Present
+                            {{ end }}
+                        </div>
+                    </div>
+                    <div class="company">
+                        {{ .name }}
+                    </div>
+                </div>
+
+                {{ with .summary }}
+                    <div class="details">
+                        <p> {{ . }} </p>  
+                    </div>
+                {{ end }}
+            </div>
+        {{ end }}
+    </section>
+{{ end }}
