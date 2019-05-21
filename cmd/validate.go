@@ -9,12 +9,20 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	verbose bool
+)
+
 func validateRun(cmd *cobra.Command, args []string) error {
 	resumePath := args[0]
 
 	resume, err := ioutil.ReadFile(resumePath)
 	if err != nil {
 		return fmt.Errorf("Couldn't read the resume json file from %s: %s", resumePath, err)
+	}
+
+	if verbose {
+		fmt.Println("Verbose passed!")
 	}
 
 	if err := schema.ValidateResume(resume); err != nil {
@@ -36,4 +44,6 @@ var validateCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(validateCmd)
+
+	validateCmd.Flags().BoolVarP(&verbose, "verbose", "v", false, "Indicate verbose output")
 }
