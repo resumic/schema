@@ -31,7 +31,7 @@ func validateRun(cmd *cobra.Command, args []string) error {
 		}
 		return fmt.Errorf("Couldn't validate the resume: %s", err)
 	}
-	fmt.Printf("%s is valid and conforming with the resumic schema", resumePath)
+	fmt.Printf("%s is valid and conforming with the resumic schema\n", resumePath)
 	return nil
 }
 
