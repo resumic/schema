@@ -8,13 +8,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var schemaPath string
+
 func generateJSONSchemaRun(cmd *cobra.Command, args []string) error {
-	var schemaPath string
-	if len(args) == 0 {
-		schemaPath = "resume.json"
-	} else {
-		schemaPath = args[0]
-	}
 	schema, err := schema.GenerateJSONSchema()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate JSON schema: %s", err)
@@ -35,5 +31,6 @@ var generateJSONSchemaCmd = &cobra.Command{
 }
 
 func init() {
+	generateJSONSchemaCmd.Flags().StringVarP(&schemaPath, "output", "o", "resume.json", "Specify an output file for the resume data")
 	generateCmd.AddCommand(generateJSONSchemaCmd)
 }
