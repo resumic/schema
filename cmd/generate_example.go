@@ -13,7 +13,6 @@ import (
 var outputFileName string
 
 func generateExampleRun(cmd *cobra.Command, args []string) error {
-	fmt.Println(outputFileName)
 	example, err := schema.GenerateExample()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate the example: %s", err)
