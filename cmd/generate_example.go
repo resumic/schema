@@ -9,6 +9,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Flag to specify output
+var output string
+
 func generateExampleRun(cmd *cobra.Command, args []string) error {
 	var examplePath string
 	if len(args) == 0 {
@@ -40,5 +43,6 @@ var generateExampleCmd = &cobra.Command{
 }
 
 func init() {
+	generateExampleCmd.Flags().StringVarP(&output, "output", "o", "resume_example.json", "Specify a custom output file for example resume data.")
 	generateCmd.AddCommand(generateExampleCmd)
 }
