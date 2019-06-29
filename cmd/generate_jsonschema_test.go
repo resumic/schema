@@ -12,7 +12,7 @@ func TestGenerateJSONSchemaRunValid(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not generate temp file: %s", err)
 	}
-	err = Execute([]string{"generate", "jsonschema", tempFile.Name()})
+	err = Execute([]string{"generate", "jsonschema", "-o", tempFile.Name()})
 	if err != nil {
 		t.Fatalf("Could not generate schema, %s", err)
 	}

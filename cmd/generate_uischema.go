@@ -8,22 +8,18 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var uiSchemaPath string
+
 func generateUISchemaRun(cmd *cobra.Command, args []string) error {
-	var schemaPath string
-	if len(args) == 0 {
-		schemaPath = "resume.json"
-	} else {
-		schemaPath = args[0]
-	}
 	schema, err := schema.GenerateUISchema()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate UI schema: %s", err)
 	}
-	err = ioutil.WriteFile(schemaPath, schema, 0600)
+	err = ioutil.WriteFile(uiSchemaPath, schema, 0600)
 	if err != nil {
-		return fmt.Errorf("Couldn't write the schema to %s: %s", schemaPath, err)
+		return fmt.Errorf("Couldn't write the schema to %s: %s", uiSchemaPath, err)
 	}
-	fmt.Printf("UI schema file created successfully at %s\n", schemaPath)
+	fmt.Printf("UI schema file created successfully at %s\n", uiSchemaPath)
 	return nil
 }
 
@@ -35,5 +31,6 @@ var generateUISchemaCmd = &cobra.Command{
 }
 
 func init() {
+	generateUISchemaCmd.Flags().StringVarP(&uiSchemaPath, "output", "o", "resume.json", "Specify an output file for the resume data")
 	generateCmd.AddCommand(generateUISchemaCmd)
 }
