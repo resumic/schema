@@ -9,17 +9,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func validateRun(cmd *cobra.Command, args []string) error {
-	var resumePath string
-	if len(args) == 0 {
-		resumePath = "resume.json"
-	} else {
-		resumePath = args[0]
-	}
+var resumePathValidate string
 
-	resume, err := ioutil.ReadFile(resumePath)
+func validateRun(cmd *cobra.Command, args []string) error {
+
+	resume, err := ioutil.ReadFile(resumePathValidate)
 	if err != nil {
-		return fmt.Errorf("Couldn't read the resume json file from %s: %s", resumePath, err)
+		return fmt.Errorf("Couldn't read the resume json file from %s: %s", resumePathValidate, err)
 	}
 
 	if err := schema.ValidateResume(resume); err != nil {
@@ -28,7 +24,7 @@ func validateRun(cmd *cobra.Command, args []string) error {
 		}
 		return fmt.Errorf("Couldn't validate the resume: %s", err)
 	}
-	fmt.Printf("%s is valid and conforming with the resumic schema\n", resumePath)
+	fmt.Printf("%s is valid and conforming with the resumic schema\n", resumePathValidate)
 	return nil
 }
 
@@ -40,5 +36,6 @@ var validateCmd = &cobra.Command{
 }
 
 func init() {
+	validateCmd.Flags().StringVarP(&resumePathValidate, "resume", "r", "resume.json", "Path to resume data file")
 	rootCmd.AddCommand(validateCmd)
 }
