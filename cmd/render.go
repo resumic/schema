@@ -3,7 +3,6 @@ package cmd
 import (
 	"fmt"
 	"io/ioutil"
-	"strings"
 
 	"github.com/resumic/schema/render"
 	"github.com/resumic/schema/theme"
@@ -16,35 +15,37 @@ const (
 	defaultResume = "resume.json"
 )
 
+var (
+	resumePath string
+	htmlPath   string
+)
+
 func renderRun(cmd *cobra.Command, args []string) error {
-	var (
-		resumePath string
-		htmlPath   string
-	)
-	switch argLen := len(args); argLen {
-	// No args: use defaults for input file and output file.
-	case 0:
-		resumePath = defaultResume
-		htmlPath = defaultHTML
-	// 1 argument: check to see what the file type is. If JSON, use as input file.
-	// If HTML, use as output file. This doesn't permit using files with no extension.
-	case 1:
-		if strings.Contains(args[0], ".json") {
-			resumePath = args[0]
-			htmlPath = defaultHTML
-		} else if strings.Contains(args[0], ".html") {
-			resumePath = defaultResume
-			htmlPath = args[0]
-		} else {
-			return fmt.Errorf("Please provide argument(s) with a valid .json or .html extension")
-		}
-	// 2 args: use args for input and output files.
-	case 2:
-		resumePath = args[0]
-		htmlPath = args[1]
-	}
-	// resumePath := args[0]
-	// htmlPath := args[1]
+
+	// switch argLen := len(args); argLen {
+	// // No args: use defaults for input file and output file.
+	// case 0:
+	// 	resumePath = defaultResume
+	// 	htmlPath = defaultHTML
+	// // 1 argument: check to see what the file type is. If JSON, use as input file.
+	// // If HTML, use as output file. This doesn't permit using files with no extension.
+	// case 1:
+	// 	if strings.Contains(args[0], ".json") {
+	// 		resumePath = args[0]
+	// 		htmlPath = defaultHTML
+	// 	} else if strings.Contains(args[0], ".html") {
+	// 		resumePath = defaultResume
+	// 		htmlPath = args[0]
+	// 	} else {
+	// 		return fmt.Errorf("Please provide argument(s) with a valid .json or .html extension")
+	// 	}
+	// // 2 args: use args for input and output files.
+	// case 2:
+	// 	resumePath = args[0]
+	// 	htmlPath = args[1]
+	// }
+	// // resumePath := args[0]
+	// // htmlPath := args[1]
 	cacheDir, err := cmd.Flags().GetString("cacheDir")
 	if err != nil {
 		panic(err)
@@ -89,6 +90,8 @@ var renderCmd = &cobra.Command{
 }
 
 func init() {
+	renderCmd.Flags().StringVarP(&resumePath, "resume", "r", "resume.json", "Path to resume data file")
+	renderCmd.Flags().StringVarP(&htmlPath, "output", "o", "resume.html", "Path to output file")
 	renderCmd.Flags().StringP("theme", "t", "test-theme", "Theme to use")
 	renderCmd.Flags().StringP("themesDir", "d", "", "Filesystem path to themes directory")
 	rootCmd.AddCommand(renderCmd)
