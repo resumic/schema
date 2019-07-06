@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"io/ioutil"
+	"path/filepath"
 
 	"github.com/resumic/schema/render"
 	"github.com/resumic/schema/theme"
@@ -29,6 +30,11 @@ func renderRun(cmd *cobra.Command, args []string) error {
 		themesDir, err = theme.GetThemesDir(themesName, cacheDir)
 		if err != nil {
 			return err
+		}
+	} else {
+		themesDir, err = filepath.Abs(themesDir)
+		if err != nil {
+			return fmt.Errorf("Couldn't convert themesDir to absolute: %s", err)
 		}
 	}
 
