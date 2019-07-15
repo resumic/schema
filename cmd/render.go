@@ -9,12 +9,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Added in case we change default filenames.
-const (
-	defaultHTML   = "resume.html"
-	defaultResume = "resume.json"
-)
-
 var (
 	resumePath string
 	htmlPath   string
