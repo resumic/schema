@@ -52,7 +52,7 @@ func renderRun(cmd *cobra.Command, args []string) error {
 }
 
 var renderCmd = &cobra.Command{
-	Use:   "render JSON_PATH (defaults to resume.json) HTML_PATH (defaults to resume.html)",
+	Use:   "render",
 	Short: "Render json resume to html",
 	Args:  cobra.MaximumNArgs(2),
 	RunE:  renderRun,
