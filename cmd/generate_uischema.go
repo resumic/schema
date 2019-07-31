@@ -24,7 +24,7 @@ func generateUISchemaRun(cmd *cobra.Command, args []string) error {
 }
 
 var generateUISchemaCmd = &cobra.Command{
-	Use:   "uischema PATH",
+	Use:   "uischema",
 	Short: "Generate the uischema for the resumic schema",
 	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateUISchemaRun,
