@@ -24,7 +24,7 @@ func generateJSONSchemaRun(cmd *cobra.Command, args []string) error {
 }
 
 var generateJSONSchemaCmd = &cobra.Command{
-	Use:   "jsonschema PATH",
+	Use:   "jsonschema",
 	Short: "Generate the jsonschema for the resumic schema",
 	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateJSONSchemaRun,
