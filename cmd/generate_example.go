@@ -31,7 +31,7 @@ func generateExampleRun(cmd *cobra.Command, args []string) error {
 }
 
 var generateExampleCmd = &cobra.Command{
-	Use:   "example PATH",
+	Use:   "example",
 	Short: "Generate an example json resume",
 	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateExampleRun,
