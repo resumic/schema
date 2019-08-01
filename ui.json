@@ -464,7 +464,7 @@
       "publisher": {
         "ui:placeholder": "XYZ, Computer Magazine"
       },
-      "releaseDate": {
+      "publicationDate": {
         "ui:placeholder": "2015-08-01"
       },
       "resources": {
@@ -487,7 +487,7 @@
       "ui:order": [
         "name",
         "publisher",
-        "releaseDate",
+        "publicationDate",
         "resources",
         "url",
         "summary"

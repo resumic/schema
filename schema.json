@@ -612,8 +612,8 @@
             "description": "name of the publisher",
             "type": "string"
           },
-          "releaseDate": {
-            "description": "release date of publication",
+          "publicationDate": {
+            "description": "date of publication",
             "format": "date",
             "type": "string"
           },

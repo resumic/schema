@@ -99,7 +99,7 @@
     {
       "name": "Deep learning and Artificial Intelligence",
       "publisher": "XYZ, Computer Magazine",
-      "releaseDate": "2015-08-01",
+      "publicationDate": "2015-08-01",
       "resources": [
         {
           "url": "http://www.example.com/my-example-slides/",
