@@ -83,12 +83,12 @@ type volunteerSchema struct {
 }
 
 type publicationSchema struct {
-	Name        string           `json:"name" schema:"description:name of the publication;example:Deep learning and Artificial Intelligence"`
-	Publisher   string           `json:"publisher" schema:"description:name of the publisher;example:XYZ, Computer Magazine"`
-	ReleaseDate string           `json:"releaseDate,omitempty" schema:"description:release date of publication;example:2015-08-01"`
-	Resources   []resourceSchema `json:"resources,omitempty" schema:"description:multiple resources with label"`
-	URL         string           `json:"url,omitempty" schema:"description:url of the publication;format:uri;example:http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"`
-	Summary     string           `json:"summary,omitempty" schema:"description:short summary of the publication;example:Discussion of the advent of deep learning and artificial intelligence"`
+	Name            string           `json:"name" schema:"description:name of the publication;example:Deep learning and Artificial Intelligence"`
+	Publisher       string           `json:"publisher" schema:"description:name of the publisher;example:XYZ, Computer Magazine"`
+	PublicationDate string           `json:"publicationDate,omitempty" schema:"description:date of publication;format:date;example:2015-08-01"`
+	Resources       []resourceSchema `json:"resources,omitempty" schema:"description:multiple resources with label"`
+	URL             string           `json:"url,omitempty" schema:"description:url of the publication;format:uri;example:http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"`
+	Summary         string           `json:"summary,omitempty" schema:"description:short summary of the publication;example:Discussion of the advent of deep learning and artificial intelligence"`
 }
 
 type legalSchema struct {
