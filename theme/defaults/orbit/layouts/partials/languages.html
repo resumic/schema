@@ -1,0 +1,16 @@
+{{ with .languages }}
+    <div class="languages-container container-block">
+        <h2 class="container-block-title">Languages</h2>
+
+        <ul class="list-unstyled interests-list">
+            {{ range . }}
+                <li>
+                    {{ .language }}
+                    <span class="lang-desc">
+                        ({{ .level | title }})
+                    </span>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}

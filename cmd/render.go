@@ -62,7 +62,7 @@ var renderCmd = &cobra.Command{
 }
 
 func init() {
-	renderCmd.Flags().StringP("theme", "t", "test-theme", "Theme to use")
+	renderCmd.Flags().StringP("theme", "t", "orbit", "Theme to use")
 	renderCmd.Flags().StringP("themesDir", "d", "", "Filesystem path to themes directory")
 	rootCmd.AddCommand(renderCmd)
 }

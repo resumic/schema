@@ -64,7 +64,7 @@ type educationSchema struct {
 	Area        string         `json:"area" schema:"description:area of study;example:Engineering"`
 	StudyType   string         `json:"studyType" schema:"description:type of study;example:Bachelor"`
 	StartDate   string         `json:"startDate" schema:"description:start date;format:date;example:2017-06-28"`
-	EndDate     string         `json:"endDate,omitepmty" schema:"description:end date;format:date;example:2013-06-28"`
+	EndDate     string         `json:"endDate,omitempty" schema:"description:end date;format:date;example:2013-06-28"`
 	Score       scoreSchema    `json:"score,omitempty"`
 	Courses     []string       `json:"courses,omitempty" schema:"description:notable courses/subjects;items_example:CS302 - Introduction to Algorithms"`
 	Honors      []string       `json:"honors,omitempty" schema:"description:some education honours;items_example:Magna Cum Laude"`
@@ -153,8 +153,8 @@ type referenceSchema struct {
 }
 
 type languageSchema struct {
-	Language string `json:"language,omitepty" schema:"description:name of language;example:English"`
-	Level    string `json:"level,omitempty" schema:"description:proficiency level for the language;enum:basic,conversational,fluent,native;example:fluent"`
+	Language string `json:"language" schema:"description:name of language;example:English"`
+	Level    string `json:"level" schema:"description:proficiency level for the language;enum:basic,conversational,fluent,native;example:fluent"`
 }
 
 type interestSchema struct {

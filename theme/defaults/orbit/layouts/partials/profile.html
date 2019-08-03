@@ -1,0 +1,13 @@
+<div class="profile-container">
+    {{ with .personal.image }}
+        <img class="profile" src="{{ . }}" alt="" />
+    {{ end }}
+
+    {{ with .personal.name }}
+        <h1 class="name">{{ . }}</h1>
+    {{ end }}
+
+    {{ with .core.title}}
+        <h3 class="tagline">{{ . }}</h3>
+    {{ end }}
+</div>

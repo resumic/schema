@@ -220,8 +220,7 @@
           "institution",
           "area",
           "studyType",
-          "startDate",
-          "endDate"
+          "startDate"
         ],
         "type": "object"
       },
@@ -271,7 +270,8 @@
           }
         },
         "required": [
-          "language"
+          "language",
+          "level"
         ],
         "type": "object"
       },

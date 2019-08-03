@@ -1,0 +1,43 @@
+<div class="contact-container container-block">
+    <ul class="list-unstyled contact-list">
+        {{ with .personal.email }}
+            <li class="email">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:{{ . }}">{{.}}</a>
+            </li>
+        {{ end }}
+
+        {{ with .personal.phone }}
+            <li class="phone">
+                <i class="fas fa-phone"></i>
+                <a href="tel:{{ . }}">{{.}}</a>
+            </li>
+        {{ end }}
+
+        {{ with .personal.url }}
+            <li class="website">
+                <i class="fas fa-globe"></i>
+                <a href="{{ . }}" target="_blank">{{ . | replaceRE "^https?://(.*)" "$1" }}</a>
+            </li>
+        {{ end }}
+
+        {{ with .personal.profiles }}
+            {{ range . }}
+                <li class="social-media">
+                    {{ if eq .network "github" }}
+                        <i class="fab fa-github"></i>
+                    {{ else if eq .network "twitter" }}
+                        <i class="fab fa-twitter"></i>
+                    {{ else if eq .network "linkedin" }}
+                        <i class="fab fa-linkedin-in"></i>
+                    {{ else if eq .network "facebook" }}
+                        <i class="fab fa-facebook"></i>
+                    {{ else }}
+                        <i class="fas fa-user-friends"></i>
+                    {{ end }}
+                    <a href="{{ .url }}" target="_blank">{{ .url | replaceRE "^https?://(.*)" "$1" }}</a>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</div>
