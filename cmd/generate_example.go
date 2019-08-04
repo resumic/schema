@@ -9,8 +9,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Flag to specify output. Default value is "resume_example.json"
+var outputFileName string
+
 func generateExampleRun(cmd *cobra.Command, args []string) error {
-	examplePath := args[0]
 	example, err := schema.GenerateExample()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate the example: %s", err)
@@ -19,21 +21,23 @@ func generateExampleRun(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return fmt.Errorf("Couldn't marshal the example to json: %s", err)
 	}
-	err = ioutil.WriteFile(examplePath, exampleJSON, 0600)
+	err = ioutil.WriteFile(outputFileName, exampleJSON, 0600)
+
 	if err != nil {
-		return fmt.Errorf("Couldn't write the example to %s: %s", examplePath, err)
+		return fmt.Errorf("Couldn't write the example to %s: %s", outputFileName, err)
 	}
-	fmt.Printf("Example file created successfully at %s\n", examplePath)
+	fmt.Printf("Example file created successfully at %s\n", outputFileName)
 	return nil
 }
 
 var generateExampleCmd = &cobra.Command{
-	Use:   "example PATH",
+	Use:   "example",
 	Short: "Generate an example json resume",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateExampleRun,
 }
 
 func init() {
+	generateExampleCmd.Flags().StringVarP(&outputFileName, "output", "o", "resume_example.json", "Specify a custom output file for example resume data.")
 	generateCmd.AddCommand(generateExampleCmd)
 }

@@ -10,9 +10,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	resumePath string
+	htmlPath   string
+)
+
 func renderRun(cmd *cobra.Command, args []string) error {
-	resumePath := args[0]
-	htmlPath := args[1]
 	cacheDir, err := cmd.Flags().GetString("cacheDir")
 	if err != nil {
 		panic(err)
@@ -55,13 +58,15 @@ func renderRun(cmd *cobra.Command, args []string) error {
 }
 
 var renderCmd = &cobra.Command{
-	Use:   "render JSON_PATH HTML_PATH",
+	Use:   "render",
 	Short: "Render json resume to html",
-	Args:  cobra.ExactArgs(2),
+	Args:  cobra.MaximumNArgs(2),
 	RunE:  renderRun,
 }
 
 func init() {
+	renderCmd.Flags().StringVarP(&resumePath, "resume", "r", "resume.json", "Path to resume data file")
+	renderCmd.Flags().StringVarP(&htmlPath, "output", "o", "resume.html", "Path to output file")
 	renderCmd.Flags().StringP("theme", "t", "test-theme", "Theme to use")
 	renderCmd.Flags().StringP("themesDir", "d", "", "Filesystem path to themes directory")
 	rootCmd.AddCommand(renderCmd)

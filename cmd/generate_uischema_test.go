@@ -12,7 +12,7 @@ func TestGenerateUISchemaRunValid(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not generate temp file: %s", err)
 	}
-	err = Execute([]string{"generate", "uischema", tempFile.Name()})
+	err = Execute([]string{"generate", "uischema", "-o", tempFile.Name()})
 	if err != nil {
 		t.Fatalf("Could not generate schema, %s", err)
 	}
