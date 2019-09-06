@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/resumic/schema/cmd"
+	"go.resumic.org/schema/cmd"
 )
 
 func main() {

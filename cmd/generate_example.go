@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/resumic/schema/schema"
+	"go.resumic.org/schema/schema"
 	"github.com/spf13/cobra"
 )
 

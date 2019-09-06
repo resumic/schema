@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/resumic/schema/render"
-	"github.com/resumic/schema/theme"
 	"github.com/spf13/cobra"
+	"go.resumic.org/schema/render"
+	"go.resumic.org/schema/theme"
 )
 
 func renderRun(cmd *cobra.Command, args []string) error {

@@ -6,7 +6,7 @@ project:
   oneLiner: "Standardized and generic data schema for your resume/CV"
   description: |
     Easily share your machine readable data or export your resume/CV to a great looking website or PDF.
-  version: "v0.1.0"
+  version: "v0.1.1"
 
 vision:
   type: "community"
@@ -55,7 +55,7 @@ badges:
   - image: "https://img.shields.io/badge/state-alpha-blue.svg"
     alt: "state"
   - image: "https://img.shields.io/github/release/resumic/schema.svg"
-    link: "https://github.com/resumic/schema/releases"
+    link: "https://s.resumic.org/releases"
     alt: "release"
   - image: "https://img.shields.io/github/license/resumic/schema.svg"
     link: "LICENSE"

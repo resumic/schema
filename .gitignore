@@ -1,2 +1,4 @@
 *.exe
 resumic
+packrd
+theme/theme-packr.go

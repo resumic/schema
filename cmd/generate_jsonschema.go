@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/resumic/schema/schema"
 	"github.com/spf13/cobra"
+	"go.resumic.org/schema/schema"
 )
 
 func generateJSONSchemaRun(cmd *cobra.Command, args []string) error {
