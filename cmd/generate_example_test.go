@@ -12,7 +12,7 @@ func TestGenerateExampleRunValid(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not generate temp file: %s", err)
 	}
-	err = Execute([]string{"generate", "example", tempFile.Name()})
+	err = Execute([]string{"generate", "example", "-o", tempFile.Name()})
 	if err != nil {
 		t.Fatalf("Could not generate example, %s", err)
 	}

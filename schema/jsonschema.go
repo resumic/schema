@@ -77,11 +77,15 @@ func generateObjectJSONSchema(typ reflect.Type, tags schemaTags) (map[string]int
 	}
 
 	properties := map[string]interface{}{}
+	required := []string{}
 	for i := 0; i < typ.NumField(); i++ {
 		field := typ.Field(i)
 		fieldName := getJSONName(field)
 		if fieldName == "" {
 			continue
+		}
+		if !isOmitEmpty(field) {
+			required = append(required, fieldName)
 		}
 		fieldTags := newSchemaTags(field.Tag)
 		property, err := generateJSONSchema(field.Type, fieldTags)
@@ -91,6 +95,10 @@ func generateObjectJSONSchema(typ reflect.Type, tags schemaTags) (map[string]int
 		properties[fieldName] = property
 	}
 	schema["properties"] = properties
+	if len(required) > 0 {
+		schema["required"] = required
+	}
+	schema["additionalProperties"] = false
 	return schema, nil
 }
 

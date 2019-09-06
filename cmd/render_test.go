@@ -18,7 +18,7 @@ func TestRenderRun(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not make temp file: %s", err)
 	}
-	err = Execute([]string{"--cacheDir", cacheDir, "render", resumePath, tempFile.Name()})
+	err = Execute([]string{"--cacheDir", cacheDir, "render", "-r", resumePath, "-o", tempFile.Name()})
 	if err != nil {
 		t.Fatalf("Could not render the resume html: %s", err)
 	}

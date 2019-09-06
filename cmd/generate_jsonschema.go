@@ -8,8 +8,9 @@ import (
 	"go.resumic.org/schema/schema"
 )
 
+var schemaPath string
+
 func generateJSONSchemaRun(cmd *cobra.Command, args []string) error {
-	schemaPath := args[0]
 	schema, err := schema.GenerateJSONSchema()
 	if err != nil {
 		return fmt.Errorf("Couldn't generate JSON schema: %s", err)
@@ -23,12 +24,13 @@ func generateJSONSchemaRun(cmd *cobra.Command, args []string) error {
 }
 
 var generateJSONSchemaCmd = &cobra.Command{
-	Use:   "jsonschema PATH",
+	Use:   "jsonschema",
 	Short: "Generate the jsonschema for the resumic schema",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.MaximumNArgs(1),
 	RunE:  generateJSONSchemaRun,
 }
 
 func init() {
+	generateJSONSchemaCmd.Flags().StringVarP(&schemaPath, "output", "o", "resume.json", "Specify an output file for the resume data")
 	generateCmd.AddCommand(generateJSONSchemaCmd)
 }

@@ -9,9 +9,6 @@ Standardized and generic data schema for your resume/CV
 # Resumic
 Easily share your machine readable data or export your resume/CV to a great looking website or PDF.
 
-## Using Resumic
-Take a look at our full [documentation](/docs).
-
 ## Support
 For detailed information on support options see our [support guide](/SUPPORT.md).
 
