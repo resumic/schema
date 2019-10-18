@@ -49,7 +49,7 @@ type personalSchema struct {
 type workSchema struct {
 	Name        string         `json:"name" schema:"description:name of company;example:XYZ Inc"`
 	Description string         `json:"description,omitempty" schema:"description:companies primary activity;example:A social media company"`
-	Position    string         `json:"position" schema:"description:position at the company;example:Software Engineer"`
+	Position    []string       `json:"position" schema:"description:position at the company;items_example:Software Engineer"`
 	Location    locationSchema `json:"location,omitempty" schema:"description:location of the company"`
 	URL         string         `json:"url,omitempty" schema:"description:url of the company website;format:uri;example:http://xyz.example.com"`
 	StartDate   string         `json:"startDate" schema:"description:start date;format:date;example:2017-12-29"`

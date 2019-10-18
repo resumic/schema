@@ -461,11 +461,11 @@
       "name": {
         "ui:placeholder": "Deep learning and Artificial Intelligence"
       },
-      "publisher": {
-        "ui:placeholder": "XYZ, Computer Magazine"
-      },
       "publicationDate": {
         "ui:placeholder": "2015-08-01"
+      },
+      "publisher": {
+        "ui:placeholder": "XYZ, Computer Magazine"
       },
       "resources": {
         "items": {
@@ -634,9 +634,9 @@
         "ui:placeholder": "XYZ Inc"
       },
       "position": {
-          "items": {
-            "ui:placeholder": "Software Engineer"
-          }
+        "items": {
+          "ui:placeholder": "Software Engineer"
+        }
       },
       "startDate": {
         "ui:placeholder": "2017-12-29"
