@@ -634,7 +634,9 @@
         "ui:placeholder": "XYZ Inc"
       },
       "position": {
-        "ui:placeholder": "Software Engineer"
+          "items": {
+            "ui:placeholder": "Software Engineer"
+          }
       },
       "startDate": {
         "ui:placeholder": "2017-12-29"

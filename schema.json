@@ -831,7 +831,10 @@
           },
           "position": {
             "description": "position at the company",
-            "type": "string"
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
           },
           "startDate": {
             "description": "start date",
