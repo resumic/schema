@@ -31,6 +31,6 @@ var generateUISchemaCmd = &cobra.Command{
 }
 
 func init() {
-	generateUISchemaCmd.Flags().StringVarP(&uiSchemaPath, "output", "o", "resume.json", "Specify an output file for the resume data")
+	generateUISchemaCmd.Flags().StringVarP(&uiSchemaPath, "output", "o", "ui-schema.json", "Specify an output file for the resume data")
 	generateCmd.AddCommand(generateUISchemaCmd)
 }

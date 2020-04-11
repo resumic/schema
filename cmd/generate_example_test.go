@@ -16,7 +16,7 @@ func TestGenerateExampleRunValid(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not generate example, %s", err)
 	}
-	r, err := compareJSONFiles("../example.json", tempFile.Name())
+	r, err := compareJSONFiles("../resume-example.json", tempFile.Name())
 	if err != nil {
 		t.Fatalf("could not compare example.json and generated schema: %s", err)
 	}
