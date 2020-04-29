@@ -16,7 +16,7 @@ func TestGenerateUISchemaRunValid(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Could not generate schema, %s", err)
 	}
-	r, err := compareJSONFiles("../ui.json", tempFile.Name())
+	r, err := compareJSONFiles("../ui-schema.json", tempFile.Name())
 	if err != nil {
 		t.Fatalf("could not compare ui.json and generated schema: %s", err)
 	}

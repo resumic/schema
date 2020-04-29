@@ -31,6 +31,6 @@ var generateJSONSchemaCmd = &cobra.Command{
 }
 
 func init() {
-	generateJSONSchemaCmd.Flags().StringVarP(&schemaPath, "output", "o", "resume.json", "Specify an output file for the resume data")
+	generateJSONSchemaCmd.Flags().StringVarP(&schemaPath, "output", "o", "schema.json", "Specify an output file for the resume data")
 	generateCmd.AddCommand(generateJSONSchemaCmd)
 }

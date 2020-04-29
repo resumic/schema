@@ -7,7 +7,7 @@ import (
 )
 
 func TestRenderRun(t *testing.T) {
-	resumePath := "../example.json"
+	resumePath := "../resume-example.json"
 	htmlPath := "../example.html"
 	cacheDir, err := ioutil.TempDir("", "")
 	if err != nil {

@@ -1,0 +1,1148 @@
+{
+  "$schema": {
+    "ui:placeholder": "https://schema.resumic.org/latest.json"
+  },
+  "awards": {
+    "awards": {
+      "items": {
+        "date": {
+          "ui:placeholder": "2016-06-12"
+        },
+        "description": {
+          "ui:placeholder": "slightly known award for supposedly doing the good fight"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "name": {
+          "ui:placeholder": "Nobel Peace Prize"
+        },
+        "summary": {
+          "ui:placeholder": "Due to my long time work on preventing harm, I was lucky to be awarded the Nobel Peace Prize."
+        },
+        "ui:order": [
+          "name",
+          "description",
+          "date",
+          "entity",
+          "summary"
+        ]
+      }
+    },
+    "summary": {
+      "ui:placeholder": "Most awards are of honory mention, but I personally want to point out Award XYZ as it is one of my most precious ones."
+    },
+    "ui:order": [
+      "awards",
+      "summary"
+    ]
+  },
+  "certificates": {
+    "certificates": {
+      "items": {
+        "code": {
+          "ui:placeholder": "1Z0-062"
+        },
+        "description": {
+          "ui:placeholder": "software application specialization certificate"
+        },
+        "endDate": {
+          "ui:placeholder": "2017-06-29"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "image": {
+          "ui:placeholder": "https://resumic.org/assets/certificate.svg"
+        },
+        "name": {
+          "ui:placeholder": "XYZ Certified Application Specialist (MCAS)"
+        },
+        "perpetual": {
+          "ui:placeholder": "true"
+        },
+        "score": {
+          "best": {
+            "ui:placeholder": "4"
+          },
+          "label": {
+            "ui:placeholder": "GPA"
+          },
+          "ui:order": [
+            "value",
+            "best",
+            "worst",
+            "label"
+          ],
+          "value": {
+            "ui:placeholder": "3.4"
+          },
+          "worst": {
+            "ui:placeholder": "0"
+          }
+        },
+        "startDate": {
+          "ui:placeholder": "2017-06-29"
+        },
+        "ui:order": [
+          "name",
+          "description",
+          "entity",
+          "startDate",
+          "endDate",
+          "code",
+          "score",
+          "verification",
+          "perpetual",
+          "image"
+        ],
+        "verification": {
+          "ui:placeholder": "https://www.coursera.org/account/accomplishments/verify/XYZ"
+        }
+      }
+    },
+    "summary": {
+      "ui:placeholder": "Personally prefer the technology over specific certificates, but happy to take additional certification exams to validate my experiences."
+    },
+    "ui:order": [
+      "certificates",
+      "summary"
+    ]
+  },
+  "core": {
+    "disposition": {
+      "authorization": {
+        "items": {
+          "ui:placeholder": "US Permanent Resident Card"
+        }
+      },
+      "commitmentType": {},
+      "relocation": {
+        "area": {
+          "ui:placeholder": "English Speaking Countries"
+        },
+        "ui:order": [
+          "willingness",
+          "area"
+        ],
+        "willingness": {
+          "ui:placeholder": "true"
+        }
+      },
+      "remote": {
+        "ui:placeholder": "true"
+      },
+      "travelTime": {
+        "ui:placeholder": "25"
+      },
+      "ui:order": [
+        "travelTime",
+        "authorization",
+        "commitmentType",
+        "remote",
+        "workArea",
+        "relocation"
+      ],
+      "workArea": {
+        "location": {
+          "lat": {
+            "ui:placeholder": "48.1548895"
+          },
+          "long": {
+            "ui:placeholder": "11.4717966"
+          },
+          "ui:order": [
+            "lat",
+            "long"
+          ]
+        },
+        "radius": {
+          "ui:placeholder": "5km"
+        },
+        "ui:order": [
+          "location",
+          "radius"
+        ]
+      }
+    },
+    "livingArea": {
+      "location": {
+        "lat": {
+          "ui:placeholder": "48.1548895"
+        },
+        "long": {
+          "ui:placeholder": "11.4717966"
+        },
+        "ui:order": [
+          "lat",
+          "long"
+        ]
+      },
+      "radius": {
+        "ui:placeholder": "5km"
+      },
+      "ui:order": [
+        "location",
+        "radius"
+      ]
+    },
+    "summary": {
+      "ui:placeholder": "Passionate individual looking for my next xyz challenge"
+    },
+    "title": {
+      "ui:placeholder": "Software Engineer"
+    },
+    "ui:order": [
+      "title",
+      "livingArea",
+      "disposition",
+      "summary"
+    ]
+  },
+  "education": {
+    "education": {
+      "items": {
+        "area": {
+          "ui:placeholder": "Engineering"
+        },
+        "courses": {
+          "items": {
+            "ui:placeholder": "CS302 - Introduction to Algorithms"
+          }
+        },
+        "degree": {
+          "ui:placeholder": "Bachelor of Science"
+        },
+        "endDate": {
+          "ui:placeholder": "2013-06-28"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "highlights": {
+          "items": {
+            "ui:placeholder": "Live abroad within a new culture"
+          }
+        },
+        "honors": {
+          "items": {
+            "ui:placeholder": "Magna Cum Laude"
+          }
+        },
+        "location": {
+          "lat": {
+            "ui:placeholder": "48.1548895"
+          },
+          "long": {
+            "ui:placeholder": "11.4717966"
+          },
+          "ui:order": [
+            "lat",
+            "long"
+          ]
+        },
+        "score": {
+          "best": {
+            "ui:placeholder": "4"
+          },
+          "label": {
+            "ui:placeholder": "GPA"
+          },
+          "ui:order": [
+            "value",
+            "best",
+            "worst",
+            "label"
+          ],
+          "value": {
+            "ui:placeholder": "3.4"
+          },
+          "worst": {
+            "ui:placeholder": "0"
+          }
+        },
+        "startDate": {
+          "ui:placeholder": "2017-06-28"
+        },
+        "studyStage": {
+          "ui:placeholder": "higher"
+        },
+        "summary": {
+          "ui:placeholder": "My studies with institute XYZ was a great experience taking my knowledge accumulation to new heights. The campus live not only enabled meeting new friends, but to build out my network."
+        },
+        "ui:order": [
+          "degree",
+          "area",
+          "entity",
+          "studyStage",
+          "startDate",
+          "endDate",
+          "location",
+          "score",
+          "honors",
+          "courses",
+          "summary",
+          "highlights"
+        ]
+      }
+    },
+    "summary": {
+      "ui:placeholder": "My diverse education gives me an additional context in my area of work."
+    },
+    "ui:order": [
+      "education",
+      "summary"
+    ]
+  },
+  "interests": {
+    "interests": {
+      "items": {
+        "keywords": {
+          "items": {
+            "ui:placeholder": "Neural Networks"
+          }
+        },
+        "name": {
+          "ui:placeholder": "Machine Learning"
+        },
+        "ui:order": [
+          "name",
+          "keywords"
+        ]
+      }
+    },
+    "summary": {
+      "ui:placeholder": "My interest give me the necessary downtime to balance work and family obligations."
+    },
+    "ui:order": [
+      "interests",
+      "summary"
+    ]
+  },
+  "languages": {
+    "languages": {
+      "items": {
+        "language": {
+          "ui:placeholder": "English"
+        },
+        "level": {
+          "ui:placeholder": "1"
+        },
+        "ui:order": [
+          "language",
+          "level"
+        ]
+      }
+    },
+    "summary": {
+      "ui:placeholder": "Due to an extended time in a country my fluency is great."
+    },
+    "ui:order": [
+      "languages",
+      "summary"
+    ]
+  },
+  "legal": {
+    "legal": {
+      "items": {
+        "applicationDate": {
+          "ui:placeholder": "2015-08-01"
+        },
+        "coAuthors": {
+          "items": {
+            "name": {
+              "ui:placeholder": "John Doe"
+            },
+            "ui:order": [
+              "name",
+              "url"
+            ],
+            "url": {
+              "ui:placeholder": "https://linkedin.com/john_doe"
+            }
+          }
+        },
+        "currentAssignee": {
+          "ui:placeholder": "John Doe"
+        },
+        "description": {
+          "ui:placeholder": "Some legal document!"
+        },
+        "endDate": {
+          "ui:placeholder": "2020-09-03"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "grantDate": {
+          "ui:placeholder": "2016-09-01"
+        },
+        "identifier": {
+          "items": {
+            "id": {
+              "ui:placeholder": "10.1000/182"
+            },
+            "label": {
+              "ui:placeholder": "DOI"
+            },
+            "ui:order": [
+              "id",
+              "label"
+            ]
+          }
+        },
+        "legalType": {
+          "ui:placeholder": "Patent, Trademark, Copyright"
+        },
+        "name": {
+          "ui:placeholder": "XYZ's patent on LZW compression, a fundamental part of the widely used GIF graphics format"
+        },
+        "previousAssignee": {
+          "ui:placeholder": "John Doe"
+        },
+        "resources": {
+          "items": {
+            "label": {
+              "ui:placeholder": "Slides"
+            },
+            "ui:order": [
+              "url",
+              "label"
+            ],
+            "url": {
+              "ui:placeholder": "http://www.example.com/my-example-slides/"
+            }
+          }
+        },
+        "roles": {
+          "items": {
+            "ui:placeholder": "Reviewer"
+          }
+        },
+        "summary": {
+          "ui:placeholder": "Build out onboarding process as core maintainer"
+        },
+        "ui:order": [
+          "name",
+          "description",
+          "entity",
+          "legalType",
+          "applicationDate",
+          "grantDate",
+          "endDate",
+          "resources",
+          "identifier",
+          "currentAssignee",
+          "previousAssignee",
+          "roles",
+          "coAuthors",
+          "summary"
+        ]
+      }
+    },
+    "summary": {
+      "ui:placeholder": "As a hobby inventor I was able to amass a wide variety of copyright, patent and other legal objects."
+    },
+    "ui:order": [
+      "legal",
+      "summary"
+    ]
+  },
+  "meta": {
+    "canonical": {
+      "ui:placeholder": "http://example.org/my-resume.json"
+    },
+    "lastModified": {
+      "ui:placeholder": "2017-06-29T15:53:01+01:00"
+    },
+    "schema": {
+      "filters": {
+        "ui:order": []
+      },
+      "localization": {
+        "ui:order": []
+      },
+      "ui:order": [
+        "filters",
+        "localization"
+      ]
+    },
+    "schemaVersion": {
+      "ui:placeholder": "v1.0.0"
+    },
+    "tooling": {
+      "ui:order": []
+    },
+    "ui:order": [
+      "canonical",
+      "version",
+      "lastModified",
+      "uuid",
+      "tooling",
+      "schema",
+      "schemaVersion"
+    ],
+    "uuid": {
+      "ui:placeholder": "078c39ce-23ee-4970-9637-c07379132dce"
+    },
+    "version": {
+      "ui:placeholder": "v1.0.0"
+    }
+  },
+  "personal": {
+    "birthPlace": {
+      "ui:placeholder": "Munich"
+    },
+    "birthday": {
+      "ui:placeholder": "1995-02-14"
+    },
+    "citizenship": {
+      "ui:placeholder": "Germany"
+    },
+    "currentLocation": {
+      "lat": {
+        "ui:placeholder": "48.1548895"
+      },
+      "long": {
+        "ui:placeholder": "11.4717966"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "email": {
+      "ui:placeholder": "lucas@example.com"
+    },
+    "identityGender": {
+      "ui:placeholder": "male"
+    },
+    "image": {
+      "ui:placeholder": "https://resumic.org/assets/profile.svg"
+    },
+    "legalGender": {
+      "ui:placeholder": "male"
+    },
+    "name": {
+      "ui:placeholder": "John Doe"
+    },
+    "permanentLocation": {
+      "lat": {
+        "ui:placeholder": "48.1548895"
+      },
+      "long": {
+        "ui:placeholder": "11.4717966"
+      },
+      "ui:order": [
+        "lat",
+        "long"
+      ]
+    },
+    "phone": {
+      "ui:placeholder": "912-217-7923"
+    },
+    "postalAddress": {
+      "ui:placeholder": "John Doe, Wittekindshof, Schulstrasse 4, 32547 Bad Oyenhausen, Germany"
+    },
+    "profiles": {
+      "items": {
+        "network": {
+          "ui:placeholder": "Github"
+        },
+        "ui:order": [
+          "network",
+          "username",
+          "url"
+        ],
+        "url": {
+          "ui:placeholder": "https://github.com/john_doe"
+        },
+        "username": {
+          "ui:placeholder": "john_doe"
+        }
+      }
+    },
+    "pronouns": {
+      "ui:placeholder": "they/their/them"
+    },
+    "relationshipStatus": {
+      "ui:placeholder": "married"
+    },
+    "ui:order": [
+      "name",
+      "legalGender",
+      "identityGender",
+      "pronouns",
+      "email",
+      "phone",
+      "currentLocation",
+      "permanentLocation",
+      "birthday",
+      "birthPlace",
+      "citizenship",
+      "profiles",
+      "relationshipStatus",
+      "postalAddress",
+      "url",
+      "image"
+    ],
+    "url": {
+      "ui:placeholder": "http://www.example.com/"
+    }
+  },
+  "projects": {
+    "projects": {
+      "items": {
+        "description": {
+          "ui:placeholder": "Open CV standard"
+        },
+        "endDate": {
+          "ui:placeholder": "2017-03-02"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "highlights": {
+          "items": {
+            "ui:placeholder": "Used by a broad community"
+          }
+        },
+        "image": {
+          "ui:placeholder": "https://resumic.org/assets/project.svg"
+        },
+        "keywords": {
+          "items": {
+            "ui:placeholder": "JSON"
+          }
+        },
+        "location": {
+          "lat": {
+            "ui:placeholder": "48.1548895"
+          },
+          "long": {
+            "ui:placeholder": "11.4717966"
+          },
+          "ui:order": [
+            "lat",
+            "long"
+          ]
+        },
+        "name": {
+          "ui:placeholder": " Resumic"
+        },
+        "resources": {
+          "items": {
+            "label": {
+              "ui:placeholder": "Slides"
+            },
+            "ui:order": [
+              "url",
+              "label"
+            ],
+            "url": {
+              "ui:placeholder": "http://www.example.com/my-example-slides/"
+            }
+          }
+        },
+        "roles": {
+          "items": {
+            "ui:placeholder": "Team Lead"
+          }
+        },
+        "startDate": {
+          "ui:placeholder": "2016-06-29"
+        },
+        "summary": {
+          "ui:placeholder": "Starting a new CV standard to create a new CV was definitely not the most efficient use of time."
+        },
+        "type": {
+          "ui:placeholder": "open source|volunteering|hobby"
+        },
+        "ui:order": [
+          "name",
+          "description",
+          "startDate",
+          "endDate",
+          "roles",
+          "entity",
+          "type",
+          "location",
+          "url",
+          "image",
+          "resources",
+          "summary",
+          "highlights",
+          "keywords"
+        ],
+        "url": {
+          "ui:placeholder": "http://www.example.org/csdl/mags/co/1996/10/rx069-abs.html"
+        }
+      }
+    },
+    "summary": {
+      "ui:placeholder": "Most of my projects are work related and can't be shown extensively. I'm happy to talk about them in detail on a call."
+    },
+    "ui:order": [
+      "projects",
+      "summary"
+    ]
+  },
+  "publications": {
+    "publications": {
+      "items": {
+        "coAuthors": {
+          "items": {
+            "name": {
+              "ui:placeholder": "John Doe"
+            },
+            "ui:order": [
+              "name",
+              "url"
+            ],
+            "url": {
+              "ui:placeholder": "https://linkedin.com/john_doe"
+            }
+          }
+        },
+        "description": {
+          "ui:placeholder": "Discussion of the advent of deep learning and artificial intelligence"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "highlights": {
+          "items": {
+            "ui:placeholder": "Changed how we see the world"
+          }
+        },
+        "identifier": {
+          "items": {
+            "id": {
+              "ui:placeholder": "10.1000/182"
+            },
+            "label": {
+              "ui:placeholder": "DOI"
+            },
+            "ui:order": [
+              "id",
+              "label"
+            ]
+          }
+        },
+        "image": {
+          "ui:placeholder": "https://resumic.org/assets/publication.svg"
+        },
+        "name": {
+          "ui:placeholder": "Deep learning and Artificial Intelligence"
+        },
+        "publicationDate": {
+          "ui:placeholder": "2015-08-01"
+        },
+        "resources": {
+          "items": {
+            "label": {
+              "ui:placeholder": "Slides"
+            },
+            "ui:order": [
+              "url",
+              "label"
+            ],
+            "url": {
+              "ui:placeholder": "http://www.example.com/my-example-slides/"
+            }
+          }
+        },
+        "roles": {
+          "items": {
+            "ui:placeholder": "Reviewer"
+          }
+        },
+        "summary": {
+          "ui:placeholder": "Writing this publication opened up a huge wave of new research areas. The work together with \u003cperson\u003e was the highlight of my research in the field of AI."
+        },
+        "ui:order": [
+          "name",
+          "description",
+          "entity",
+          "publicationDate",
+          "roles",
+          "coAuthors",
+          "identifier",
+          "url",
+          "image",
+          "resources",
+          "summary",
+          "highlights"
+        ],
+        "url": {
+          "ui:placeholder": "http://www.computer.org.example.com/csdl/mags/co/2015/10/rx069-abs.html"
+        }
+      }
+    },
+    "summary": {
+      "ui:placeholder": "Thanks to my co-Authors and the willing reviewers my publications far surpass my imaginations."
+    },
+    "ui:order": [
+      "publications",
+      "summary"
+    ]
+  },
+  "references": {
+    "references": {
+      "items": {
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "name": {
+          "ui:placeholder": "Stephan Mark"
+        },
+        "reference": {
+          "ui:placeholder": " Person was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing."
+        },
+        "role": {
+          "ui:placeholder": "Senior Software Engineer"
+        },
+        "ui:order": [
+          "name",
+          "reference",
+          "entity",
+          "role"
+        ]
+      }
+    },
+    "summary": {
+      "ui:placeholder": "My references are great due to specific items. For contact details about my references please reach out directly"
+    },
+    "ui:order": [
+      "references",
+      "summary"
+    ]
+  },
+  "skills": {
+    "skills": {
+      "items": {
+        "keywords": {
+          "items": {
+            "ui:placeholder": "HTML"
+          }
+        },
+        "name": {
+          "ui:placeholder": "Web Development"
+        },
+        "proficiency": {
+          "ui:placeholder": "4"
+        },
+        "ui:order": [
+          "name",
+          "proficiency",
+          "keywords"
+        ]
+      }
+    },
+    "summary": {
+      "ui:placeholder": "My passion for figuring out things brings me to discover and learn new skills. I only listed only the most relevant skills. Please reach out for any further questions."
+    },
+    "ui:order": [
+      "skills",
+      "summary"
+    ]
+  },
+  "ui:order": [
+    "$schema",
+    "core",
+    "personal",
+    "work",
+    "education",
+    "volunteer",
+    "publications",
+    "legal",
+    "skills",
+    "awards",
+    "projects",
+    "certificates",
+    "references",
+    "languages",
+    "interests",
+    "meta"
+  ],
+  "volunteer": {
+    "summary": {
+      "ui:placeholder": "Creating positive change is not only important in my professional life, but also in my private life and I do my best to help and volunteer."
+    },
+    "ui:order": [
+      "volunteer",
+      "summary"
+    ],
+    "volunteer": {
+      "items": {
+        "endDate": {
+          "ui:placeholder": "2017-06-29"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "highlights": {
+          "items": {
+            "ui:placeholder": "Set up huge donor run"
+          }
+        },
+        "location": {
+          "lat": {
+            "ui:placeholder": "48.1548895"
+          },
+          "long": {
+            "ui:placeholder": "11.4717966"
+          },
+          "ui:order": [
+            "lat",
+            "long"
+          ]
+        },
+        "resources": {
+          "items": {
+            "label": {
+              "ui:placeholder": "Slides"
+            },
+            "ui:order": [
+              "url",
+              "label"
+            ],
+            "url": {
+              "ui:placeholder": "http://www.example.com/my-example-slides/"
+            }
+          }
+        },
+        "roles": {
+          "items": {
+            "ui:placeholder": "Open Source Contributor"
+          }
+        },
+        "startDate": {
+          "ui:placeholder": "2014-06-29"
+        },
+        "summary": {
+          "ui:placeholder": "Doing accounting work to keep things afloat."
+        },
+        "ui:order": [
+          "roles",
+          "entity",
+          "startDate",
+          "endDate",
+          "location",
+          "resources",
+          "summary",
+          "highlights"
+        ]
+      }
+    }
+  },
+  "work": {
+    "summary": {
+      "ui:placeholder": "My general work experience was interrupted by a new educational experience, which now enables me to do even more."
+    },
+    "ui:order": [
+      "work",
+      "summary"
+    ],
+    "work": {
+      "items": {
+        "endDate": {
+          "ui:placeholder": "2018-12-29"
+        },
+        "entity": {
+          "description": {
+            "ui:placeholder": "A good things entity"
+          },
+          "image": {
+            "ui:placeholder": "https://resumic.org/assets/entity.svg"
+          },
+          "name": {
+            "ui:placeholder": "Entity of Things"
+          },
+          "ui:order": [
+            "name",
+            "description",
+            "url",
+            "image"
+          ],
+          "url": {
+            "ui:placeholder": "http://xyz.example.com"
+          }
+        },
+        "highlights": {
+          "items": {
+            "ui:placeholder": "Worked with mobile team at Twitter to develop remote debugging tools for mobile browsers"
+          }
+        },
+        "location": {
+          "lat": {
+            "ui:placeholder": "48.1548895"
+          },
+          "long": {
+            "ui:placeholder": "11.4717966"
+          },
+          "ui:order": [
+            "lat",
+            "long"
+          ]
+        },
+        "roles": {
+          "items": {
+            "ui:placeholder": "Software Engineer"
+          }
+        },
+        "startDate": {
+          "ui:placeholder": "2017-12-29"
+        },
+        "summary": {
+          "ui:placeholder": "The work with company XYZ was a great experience taking my knowledge accumulation to new heights. The remote team setup made me aware of my love for remote working."
+        },
+        "ui:order": [
+          "roles",
+          "entity",
+          "startDate",
+          "endDate",
+          "location",
+          "summary",
+          "highlights"
+        ]
+      }
+    }
+  }
+}

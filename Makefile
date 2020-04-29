@@ -14,6 +14,9 @@ pre-build:
 
 build: pre-build
 	@go build -ldflags "-X $(CODEPATH)/cmd.version=$(RESUMIC_VERSION)$(SUFFIX) -X $(CODEPATH)/cmd.gitCommit=$(GITCOMMIT)" -o resumic
+	./resumic generate example
+	./resumic generate uischema
+	./resumic generate jsonschema
 	@packr2 clean
 
 release: pre-build

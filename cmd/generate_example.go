@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"go.resumic.org/schema/schema"
 	"github.com/spf13/cobra"
+	"go.resumic.org/schema/schema"
 )
 
-// Flag to specify output. Default value is "resume_example.json"
+// Flag to specify output. Default value is "resume-example.json"
 var outputFileName string
 
 func generateExampleRun(cmd *cobra.Command, args []string) error {
@@ -38,6 +38,6 @@ var generateExampleCmd = &cobra.Command{
 }
 
 func init() {
-	generateExampleCmd.Flags().StringVarP(&outputFileName, "output", "o", "resume_example.json", "Specify a custom output file for example resume data.")
+	generateExampleCmd.Flags().StringVarP(&outputFileName, "output", "o", "resume-example.json", "Specify a custom output file for example resume data.")
 	generateCmd.AddCommand(generateExampleCmd)
 }
